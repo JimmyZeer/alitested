@@ -97,6 +97,29 @@ article section {
 .comparison-container {
     overflow-x: auto;
     margin: 3rem 0;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+}
+
+.comparison-container::after {
+    content: '↔ Défilez';
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: var(--accent);
+    color: white;
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 0 0 0 8px;
+    opacity: 0.8;
+    pointer-events: none;
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .comparison-container::after {
+        display: block;
+    }
 }
 
 table {
@@ -202,6 +225,10 @@ nav a:hover {
     margin-bottom: 2rem;
 }
 
+.brand-display {
+    font-size: 4.5rem;
+}
+
 /* Guide Grid */
 .guide-grid {
     display: grid;
@@ -225,6 +252,18 @@ nav a:hover {
     transform: translateY(-10px);
     border-color: var(--primary-glow);
     background: rgba(255, 255, 255, 0.05);
+}
+
+.guide-card.featured {
+    grid-column: span 2;
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.8) 100%);
+    border-color: var(--accent);
+}
+
+.guide-card.featured .badge {
+    background: var(--accent);
+    color: #fff;
+    border-color: rgba(59, 130, 246, 0.3);
 }
 
 .guide-card .badge {
@@ -271,12 +310,69 @@ nav a:hover {
 }
 
 @media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    header {
+        padding: 4rem 0 3rem;
+    }
+
+    .hero {
+        padding: 6rem 0 4rem;
+    }
+
     .hero h1 {
-        font-size: 3rem;
+        font-size: 2.75rem;
+    }
+
+    .brand-display {
+        font-size: 3.5rem !important;
+    }
+
+    .container {
+        padding: 0 1.25rem;
+    }
+
+    .glass-panel {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .guide-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .guide-card.featured {
+        grid-column: span 1;
     }
 
     .trust-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
+    }
+
+    article section {
+        margin-bottom: 3rem;
+    }
+
+    .lead {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .hero h1 {
+        font-size: 2.25rem;
+    }
+
+    .brand-display {
+        font-size: 3rem !important;
     }
 }
