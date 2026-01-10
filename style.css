@@ -1,0 +1,282 @@
+:root {
+    /* Brand Colors */
+    --primary: #f85032;
+    /* AliExpress Orange-Red */
+    --primary-glow: rgba(248, 80, 50, 0.4);
+    --bg-dark: #0a0a0c;
+    --card-bg: #16161a;
+    --text-main: #e0e0e0;
+    --text-dim: #a0a0a0;
+    --accent: #3b82f6;
+    --warning: #fbbf24;
+    --danger: #ef4444;
+    --success: #10b981;
+
+    /* Typography */
+    --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-display: 'Outfit', var(--font-main);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1.5rem;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Glassmorphism Components */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+/* Header & Intro */
+header {
+    padding: 6rem 0 4rem;
+    text-align: center;
+    background: radial-gradient(circle at top, rgba(248, 80, 50, 0.1) 0%, transparent 70%);
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.5rem 1.25rem;
+    background: rgba(248, 80, 50, 0.1);
+    color: var(--primary);
+    border-radius: 100px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--primary-glow);
+}
+
+h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+/* Content specific styles */
+article section {
+    margin-bottom: 5rem;
+}
+
+.lead {
+    font-size: 1.25rem;
+    color: var(--text-dim);
+    max-width: 800px;
+    margin: 0 auto 3rem;
+}
+
+/* Comparison Table */
+.comparison-container {
+    overflow-x: auto;
+    margin: 3rem 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+th,
+td {
+    padding: 1.25rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+th {
+    background: rgba(255, 255, 255, 0.02);
+    font-weight: 600;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.875rem 2rem;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px -5px var(--primary-glow);
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px -5px var(--primary-glow);
+}
+
+/* Honest Warning Box */
+.warning-box {
+    border-left: 4px solid var(--warning);
+    background: rgba(251, 191, 36, 0.05);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+
+.warning-box h4 {
+    color: var(--warning);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Detailed Reviews */
+.product-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 2.5rem;
+    margin-top: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.verdict {
+    background: rgba(16, 185, 129, 0.05);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.faq-item {
+    margin-bottom: 2rem;
+}
+
+footer {
+    padding: 4rem 0;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--text-dim);
+    font-size: 0.875rem;
+}
+
+/* Navigation */
+nav a:hover {
+    color: var(--primary) !important;
+}
+
+/* Hero Section */
+.hero {
+    padding: 10rem 0 6rem;
+    text-align: center;
+    background: radial-gradient(circle at center, rgba(248, 80, 50, 0.15) 0%, transparent 70%);
+}
+
+.hero h1 {
+    font-size: 4.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Guide Grid */
+.guide-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.guide-card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.guide-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-glow);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.guide-card .badge {
+    align-self: flex-start;
+    margin-bottom: 1rem;
+}
+
+.guide-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.guide-card p {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+}
+
+.guide-card footer {
+    border-top: none;
+    padding: 0;
+    text-align: left;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Sidebar/Value Proposition Section */
+.trust-section {
+    padding: 6rem 0;
+}
+
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.trust-item h4 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .trust-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
