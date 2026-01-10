@@ -46,6 +46,15 @@
                     avez probablement remarqué une explosion d'offres promettant des capacités "identiques au
                     concessionnaire" pour moins de 150 euros. Chez AliTested, notre rôle est d'apporter un regard froid
                     et technique sur ces affirmations.</p>
+                <div class="glass-panel"
+                    style="border-left: 4px solid var(--accent); background: rgba(var(--accent-rgb), 0.05);">
+                    <p><strong>En résumé :</strong> En 2026, choisir une valise diagnostic AliExpress fiable dépend de
+                        trois critères clés : la présence du diagnostic bidirectionnel, une politique de mises à jour
+                        claire et la compatibilité avec les véhicules récents (CAN-FD, DOIP). Contrairement aux scanners
+                        OBD basiques, certaines valises comme le Mucar 892BT ou l’OTOFIX D1 Lite permettent d’interroger
+                        tous les calculateurs et de tester les actionneurs. Le bon choix dépend avant tout de votre
+                        profil et de votre tolérance aux abonnements.</p>
+                </div>
                 <p>Le diagnostic moderne n'est pas qu'une question de lecture de codes. Avec l'arrivée des protocoles
                     <strong>CAN-FD</strong> et des <strong>Security Gateways</strong> (SGW), le hardware bon marché des
                     années 2010 ne suffit plus. Choisir une valise en 2026 demande de comprendre ce qui se cache sous la
@@ -54,7 +63,7 @@
             </section>
 
             <section id="why-deception">
-                <h2>Pourquoi 90 % des valises AliExpress déçoivent</h2>
+                <h2>Honnêtement, pourquoi 90 % des valises AliExpress déçoivent ?</h2>
                 <p>La majorité des retours négatifs que nous recevons concernent des attentes mal alignées avec la
                     réalité technique des produits AliExpress.</p>
 
@@ -102,8 +111,123 @@
                     ou Renault.</p>
             </section>
 
+            <section id="security-gateway-deep-dive">
+                <h2>Le défi technique des Security Gateways (SGW) en 2026</h2>
+                <p>Si vous possédez un véhicule moderne, l'obstacle majeur n'est plus le code défaut, mais le
+                    verrouillage du constructeur. Les "Security Gateways" sont des modules pare-feu qui empêchent toute
+                    modification via le port OBD sans une clé d'authentification numérique.</p>
+                <div class="product-card">
+                    <h3>FCA (Fiat Chrysler Automobiles) & Renault/Dacia</h3>
+                    <p>Le groupe FCA a été le pionnier avec son module SGW. Sur une Jeep ou une Alfa Romeo récente, vous
+                        pouvez lire les codes, mais vous ne pouvez pas les effacer ni faire de test actif sans passer
+                        par une plateforme comme AutoAuth. L'avantage du <strong>Mucar 892BT</strong> et de
+                        l'<strong>OTOFIX D1 Lite</strong> est leur intégration logicielle native de ces flux. Vous payez
+                        votre accès directement depuis la tablette, et l'outil gère le déverrouillage de manière
+                        transparente.</p>
+                    <p><strong>Chez Renault</strong>, le système est similaire mais plus fragmenté selon les versions
+                        logicielles. L'expertise AliTested montre que l'OTOFIX (écosystème Autel) a souvent une longueur
+                        d'avance sur la rapidité de déverrouillage de ces passerelles par rapport aux outils génériques
+                        low-cost.</p>
+                </div>
+            </section>
+
+            <section id="protocols-analysis">
+                <h2>Analyse Technique : CAN-FD, DOIP et la fin de l'ELM327</h2>
+                <p>Pourquoi votre ancien adaptateur Bluetooth à 10€ ne fonctionne plus sur votre voiture de 2023 ? La
+                    réponse tient en deux acronymes : <strong>CAN-FD</strong> et <strong>DOIP</strong>.</p>
+
+                <h3>CAN-FD : Plus vite, plus loin</h3>
+                <p>Le CAN classique est saturé. Les véhicules modernes embarquent tellement de capteurs que le bus de
+                    données ne suit plus. Le <strong>CAN-FD</strong> (Flexible Data-rate) permet de transférer des
+                    paquets de données 8 fois plus grands. Sans un matériel compatible (VCI), votre valise ne verra même
+                    pas les modules de confort ou les aides à la conduite.</p>
+
+                <h3>DOIP : Le diagnostic par Ethernet</h3>
+                <p>Volvo, Land Rover et BMW utilisent désormais le <strong>DOIP</strong> (Diagnostic Over IP). On ne
+                    parle plus de signaux électriques simples, mais de paquets IP, comme sur votre réseau domestique. Un
+                    <strong>scanner OBD bidirectionnel</strong> performant en 2026 doit embarquer une interface physique
+                    capable de traduire ces protocoles IP. C'est ici que la différence de prix entre un Mucar 892BT et
+                    un scanner bas de gamme se justifie : le hardware interne est radicalement différent.
+                </p>
+            </section>
+
+            <section id="manufacturer-specifics">
+                <h2>Spécificités par Marque : Pourquoi une valise ne fait pas tout</h2>
+                <p>Le diagnostic universel est un idéal, mais la réalité est faite de protocoles propriétaires. Voici ce
+                    qu'il faut savoir marque par marque en 2026.</p>
+
+                <div class="product-grid"
+                    style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem;">
+                    <div class="glass-panel">
+                        <h3>Groupe VAG (VW, Audi, Seat, Skoda)</h3>
+                        <p>Pour le groupe VAG, le codage est roi. Si vous voulez activer des options cachées (Video in
+                            Motion, Needle Sweep), le <strong>Mucar 892BT</strong> offre une excellente base. Cependant,
+                            pour passer les protections SFD (Vehicle Diagnostic Protection) sur les derniers modèles MQB
+                            Evo (Golf 8, Leon 4), un équipement supportant l'authentification officielle est nécessaire.
+                        </p>
+                    </div>
+                    <div class="glass-panel">
+                        <h3>BMW & Mini</h3>
+                        <p>BMW utilise massivement le <strong>DOIP</strong> pour son réseau Ethernet embarqué.
+                            L'<strong>OTOFIX D1 Lite</strong> excelle ici par sa rapidité de lecture. Il gère
+                            parfaitement les enregistrements de batterie et les réinitialisations de CBS (Condition
+                            Based Service) sans bugs logiciels fréquents sur les clones bas de gamme.</p>
+                    </div>
+                </div>
+
+                <div class="product-grid"
+                    style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem;">
+                    <div class="glass-panel">
+                        <h3>Mercedes-Benz</h3>
+                        <p>Mercedes est l'un des constructeurs les plus rigoureux sur le diagnostic. L'accès aux
+                            variantes de codage (Variant Coding) est souvent verrouillé. Les outils de notre comparatif
+                            permettent de réaliser l'essentiel : régénération FAP, saignement de frein SBC (sur les
+                            modèles compatibles) et lecture profonde des calculateurs de confort.</p>
+                    </div>
+                    <div class="glass-panel">
+                        <h3>Marques Asiatiques (Toyota, Hyundai, Kia)</h3>
+                        <p>Ces marques sont historiquement les plus "ouvertes" au diagnostic tiers. Le <strong>Mucar
+                                892BT</strong> identifie quasiment instantanément ces véhicules via Auto-VIN et permet
+                            un accès total aux tests actifs sur les systèmes hybrides.</p>
+                    </div>
+                </div>
+            </section>
+
             <section id="comparative-2026">
-                <h2>Comparatif AliTested 2026 (tests réels)</h2>
+                <h2>Comparatif AliTested 2026 : choisir sans se tromper</h2>
+
+                <div class="comparison-container" style="margin-bottom: 3rem;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Modèle</th>
+                                <th>Bidirectionnel</th>
+                                <th>Mises à jour</th>
+                                <th>Profil idéal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Mucar 892BT</strong></td>
+                                <td>Oui</td>
+                                <td>Gratuites à vie</td>
+                                <td>Particulier / long terme</td>
+                            </tr>
+                            <tr>
+                                <td><strong>OTOFIX D1 Lite</strong></td>
+                                <td>Oui</td>
+                                <td>2 ans incluses</td>
+                                <td>Amateur / petit atelier</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Launch / Thinkcar</strong></td>
+                                <td>Variable</td>
+                                <td>Souvent payantes</td>
+                                <td>Usage ponctuel</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
                 <div class="glass-panel">
                     <h3>🥇 Mucar 892BT — Le meilleur choix long terme</h3>
@@ -140,8 +264,18 @@
                 </div>
             </section>
 
+            <section id="hardware-vci">
+                <h2>VCI : Le cœur invisible de votre valise</h2>
+                <p>La VCI (Vehicle Communication Interface) est le petit boîtier que vous branchez sur la prise
+                    diagnostic. Sur AliExpress, on trouve de tout. Les VCIs de qualité utilisent des composants
+                    stabilisés pour éviter les micro-coupures de tension. Une micro-coupure pendant une adaptation
+                    d'angle de braquage ou un codage d'injecteur peut engendrer une mise en sécurité totale du véhicule.
+                    AliTested privilégie les marques comme OTOFIX et Mucar/Thinkcar car elles utilisent des schémas
+                    électroniques éprouvés issus de la recherche professionnelle.</p>
+            </section>
+
             <section id="models-to-avoid">
-                <h2>Les valises diagnostic AliExpress à éviter absolument</h2>
+                <h2>Les valises diagnostic AliExpress à éviter absolument (ce que personne ne dit)</h2>
                 <p>Voici les "red flags" qui doivent vous faire fuir, peu importe le nombre d'étoiles sur AliExpress :
                 </p>
                 <div class="warning-box">
@@ -181,23 +315,35 @@
                 </div>
             </section>
 
-            <section id="faq">
-                <h2>FAQ : Valise diagnostic AliExpress en 2026</h2>
+            <section id="faq-section">
+                <h2>FAQ – Valises diagnostic AliExpress</h2>
+
                 <div class="faq-item">
-                    <h3>Peut-on réellement faire du codage avec une valise AliExpress ?</h3>
-                    <p>Oui, pour du codage de confort (fenêtres, bips, start&stop) ou des adaptations d'injecteurs. Pour
-                        la reprogrammation de calculateurs vierges, l'équipement professionnel reste indispensable.</p>
+                    <h3>Quelle est la meilleure valise diagnostic AliExpress sans abonnement ?</h3>
+                    <p>En 2026, la meilleure <strong>valise diagnostic sans abonnement</strong> est le Mucar 892BT. Il
+                        offre un accès illimité à vie aux mises à jour des logiciels constructeurs et aux fonctions de
+                        service, ce qui en fait l'outil le plus rentable pour un particulier ou un amateur éclairé.</p>
                 </div>
+
                 <div class="faq-item">
-                    <h3>Pourquoi les prix varient autant pour le même modèle ?</h3>
-                    <p>Le prix dépend souvent de la période de mise à jour incluse et du type de VCI (l'adaptateur OBD).
-                        Vérifiez toujours si le vendeur est "Official" ou simplement un revendeur tiers.</p>
+                    <h3>Une valise AliExpress peut-elle remplacer un outil constructeur ?</h3>
+                    <p>Nuancée : non, mais elle couvre 95 % des besoins courants. Si le diagnostic bidirectionnel et la
+                        lecture de modules sont excellents sur les modèles haut de gamme, les fonctions de programmation
+                        en ligne lourdes restent le domaine réservé des outils officiels en concession.</p>
                 </div>
+
                 <div class="faq-item">
-                    <h3>Le Mucar 892BT est-il vraiment gratuit à vie ?</h3>
-                    <p>Oui, pour les diagnostics de tous les systèmes et les 28 fonctions de maintenance les plus
-                        courantes. C'est ce qui en fait notre recommandation numéro 1 en termes de <strong>valise OBD
-                            2026</strong>.</p>
+                    <h3>Le diagnostic bidirectionnel est-il vraiment utile ?</h3>
+                    <p>Oui. Le <strong>diagnostic bidirectionnel</strong> est indispensable pour isoler une panne. Par
+                        exemple, au lieu de deviner si un ventilateur est mort, vous pouvez forcer son activation via la
+                        valise pour tester le circuit électrique instantanément.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Faut-il éviter les valises OBD à moins de 100 € ?</h3>
+                    <p>Oui. Les <strong>valises OBD 2026</strong> à moins de 100 € sont souvent limitées au protocole
+                        moteur de base (OBDII standard) et ne peuvent pas accéder aux modules ABS, Airbag ou confort,
+                        rendant le diagnostic incomplet pour une réparation réelle.</p>
                 </div>
             </section>
 
