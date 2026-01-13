@@ -29,4 +29,11 @@
     <priority>1.0</priority>
   </url>
 
+  <url>
+    <loc>https://alitested.com/guides/thinkcar-tkey-101-test-avis.html</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
