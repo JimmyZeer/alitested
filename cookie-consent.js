@@ -55,8 +55,10 @@
                 });
             }
 
-            loadCloudflareRUM();
-            hideBanner();
+            // Force reload to ensure GTM/GA4 trigger correctly with the new consent
+            setTimeout(() => {
+                location.reload();
+            }, 300);
         });
 
         document.getElementById('cookie-refuse').addEventListener('click', () => {
