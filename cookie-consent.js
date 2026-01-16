@@ -3,7 +3,7 @@
  * Handles GDPR-compliant cookie consent for Cloudflare RUM tracking.
  */
 
-(function() {
+(function () {
     const CONSENT_KEY = 'cookie_consent';
     const RUM_SCRIPT_URL = 'https://static.cloudflareinsights.com/beacon.min.js';
     const CLOUDFLARE_TOKEN = 'YOUR_CLOUDFLARE_TOKEN'; // Replace with your actual token
@@ -44,6 +44,17 @@
         // Add event listeners
         document.getElementById('cookie-accept').addEventListener('click', () => {
             localStorage.setItem(CONSENT_KEY, 'accepted');
+
+            // Update Google Consent Mode v2
+            if (typeof gtag === 'function') {
+                gtag('consent', 'update', {
+                    'analytics_storage': 'granted',
+                    'ad_storage': 'granted',
+                    'ad_user_data': 'granted',
+                    'ad_personalization': 'granted'
+                });
+            }
+
             loadCloudflareRUM();
             hideBanner();
         });
@@ -75,6 +86,15 @@
         const consent = localStorage.getItem(CONSENT_KEY);
 
         if (consent === 'accepted') {
+            // Update Google Consent Mode v2 for returning users
+            if (typeof gtag === 'function') {
+                gtag('consent', 'update', {
+                    'analytics_storage': 'granted',
+                    'ad_storage': 'granted',
+                    'ad_user_data': 'granted',
+                    'ad_personalization': 'granted'
+                });
+            }
             loadCloudflareRUM();
         } else if (consent === null) {
             showBanner();
