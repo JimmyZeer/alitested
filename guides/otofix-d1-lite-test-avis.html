@@ -2,11 +2,12 @@
 <html lang="fr">
 
 <head>
-    <!-- Google Consent Mode v2 – Required for GTM-only setup -->
+    <!-- Google Consent Mode v2 (Persistent Patch) -->
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
 
+        // 1. On bloque par défaut
         gtag('consent', 'default', {
             analytics_storage: 'denied',
             ad_storage: 'denied',
@@ -14,6 +15,13 @@
             ad_personalization: 'denied',
             wait_for_update: 500
         });
+
+        // 2. On vérifie la persistance AVANT GTM
+        if (localStorage.getItem('cookie_consent') === 'accepted') {
+            gtag('consent', 'update', {
+                analytics_storage: 'granted'
+            });
+        }
     </script>
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
