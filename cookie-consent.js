@@ -1,23 +1,30 @@
 /**
- * AliTested - Cookie Consent Logic (FINAL – GTM ONLY)
+ * AliTested - Cookie Consent Logic (BULLETPROOF – GTM ONLY)
  */
 
 (function () {
     const CONSENT_KEY = 'cookie_consent';
 
     function updateConsentGranted() {
+        // 1. Mise à jour officielle Consent Mode
         gtag('consent', 'update', {
             analytics_storage: 'granted',
             ad_storage: 'denied',
             ad_user_data: 'denied',
             ad_personalization: 'denied'
         });
+
+        // 2. Event personnalisé pour forcer le déclenchement GTM
+        window.dataLayer.push({
+            'event': 'consent_update_event',
+            'consent_type': 'analytics'
+        });
     }
 
     function showBanner() {
         const banner = document.createElement('div');
         banner.id = 'cookie-consent-banner';
-        banner.className = 'cookie-banner'; // Keep the styling
+        banner.className = 'cookie-banner';
         banner.innerHTML = `
       <div class="cookie-content">
         <p>Nous utilisons des cookies afin de mesurer l’audience et améliorer l’expérience utilisateur.</p>
@@ -29,13 +36,13 @@
     `;
         document.body.appendChild(banner);
 
-        // Trigger animation (if defined in CSS)
         setTimeout(() => banner.classList.add('show'), 100);
 
         document.getElementById('cookie-accept').addEventListener('click', () => {
             localStorage.setItem(CONSENT_KEY, 'accepted');
             updateConsentGranted();
-            setTimeout(() => location.reload(), 300);
+            // On attend un peu que GTM traite l'event avant de reload
+            setTimeout(() => location.reload(), 400);
         });
 
         document.getElementById('cookie-refuse').addEventListener('click', () => {
