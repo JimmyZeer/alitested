@@ -1,109 +1,60 @@
 /**
- * AliTested - Cookie Consent Logic
- * Handles GDPR-compliant cookie consent for Cloudflare RUM tracking.
+ * AliTested - Cookie Consent Logic (FINAL – GTM ONLY)
  */
 
 (function () {
     const CONSENT_KEY = 'cookie_consent';
-    const RUM_SCRIPT_URL = 'https://static.cloudflareinsights.com/beacon.min.js';
-    const CLOUDFLARE_TOKEN = 'YOUR_CLOUDFLARE_TOKEN'; // Replace with your actual token
 
-    /**
-     * Injects the Cloudflare RUM script into the page.
-     */
-    function loadCloudflareRUM() {
-        if (document.querySelector(`script[src="${RUM_SCRIPT_URL}"]`)) return;
-
-        const script = document.createElement('script');
-        script.src = RUM_SCRIPT_URL;
-        script.defer = true;
-        script.setAttribute('data-cf-beacon', JSON.stringify({ token: CLOUDFLARE_TOKEN }));
-        document.body.appendChild(script);
-        console.log('Cloudflare RUM loaded.');
+    function updateConsentGranted() {
+        gtag('consent', 'update', {
+            analytics_storage: 'granted',
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied'
+        });
     }
 
-    /**
-     * Creates and shows the cookie consent banner.
-     */
     function showBanner() {
         const banner = document.createElement('div');
         banner.id = 'cookie-consent-banner';
-        banner.className = 'cookie-banner';
+        banner.className = 'cookie-banner'; // Keep the styling
         banner.innerHTML = `
-            <div class="cookie-content">
-                <p>Nous utilisons des cookies et des technologies similaires afin de mesurer l’audience et améliorer l’expérience utilisateur. Vous pouvez accepter ou refuser la collecte de données.</p>
-                <div class="cookie-actions">
-                    <button id="cookie-accept" class="cookie-btn cookie-btn-accept">Accepter</button>
-                    <button id="cookie-refuse" class="cookie-btn cookie-btn-refuse">Refuser</button>
-                </div>
-            </div>
-        `;
-
+      <div class="cookie-content">
+        <p>Nous utilisons des cookies afin de mesurer l’audience et améliorer l’expérience utilisateur.</p>
+        <div class="cookie-actions">
+          <button id="cookie-accept" class="cookie-btn cookie-btn-accept">Accepter</button>
+          <button id="cookie-refuse" class="cookie-btn cookie-btn-refuse">Refuser</button>
+        </div>
+      </div>
+    `;
         document.body.appendChild(banner);
 
-        // Add event listeners
+        // Trigger animation (if defined in CSS)
+        setTimeout(() => banner.classList.add('show'), 100);
+
         document.getElementById('cookie-accept').addEventListener('click', () => {
             localStorage.setItem(CONSENT_KEY, 'accepted');
-
-            // Update Google Consent Mode v2
-            if (typeof gtag === 'function') {
-                gtag('consent', 'update', {
-                    'analytics_storage': 'granted',
-                    'ad_storage': 'granted',
-                    'ad_user_data': 'granted',
-                    'ad_personalization': 'granted'
-                });
-            }
-
-            // Force reload to ensure GTM/GA4 trigger correctly with the new consent
-            setTimeout(() => {
-                location.reload();
-            }, 300);
+            updateConsentGranted();
+            setTimeout(() => location.reload(), 300);
         });
 
         document.getElementById('cookie-refuse').addEventListener('click', () => {
             localStorage.setItem(CONSENT_KEY, 'refused');
-            hideBanner();
-        });
-
-        // Trigger animation
-        setTimeout(() => banner.classList.add('show'), 100);
-    }
-
-    /**
-     * Hides the cookie consent banner.
-     */
-    function hideBanner() {
-        const banner = document.getElementById('cookie-consent-banner');
-        if (banner) {
             banner.classList.remove('show');
             setTimeout(() => banner.remove(), 500);
-        }
+        });
     }
 
-    /**
-     * Initializes the consent check.
-     */
     function init() {
         const consent = localStorage.getItem(CONSENT_KEY);
 
         if (consent === 'accepted') {
-            // Update Google Consent Mode v2 for returning users
-            if (typeof gtag === 'function') {
-                gtag('consent', 'update', {
-                    'analytics_storage': 'granted',
-                    'ad_storage': 'granted',
-                    'ad_user_data': 'granted',
-                    'ad_personalization': 'granted'
-                });
-            }
-            loadCloudflareRUM();
-        } else if (consent === null) {
+            updateConsentGranted();
+        } else if (!consent) {
             showBanner();
         }
     }
 
-    // Run on DOMContentLoaded
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', init);
     } else {
