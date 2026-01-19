@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://jimmyzeer.github.io/alitested/sitemap.xml
+Sitemap: https://alitested.com/sitemap.xml
