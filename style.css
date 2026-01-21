@@ -11,6 +11,8 @@
     --warning: #fbbf24;
     --danger: #ef4444;
     --success: #10b981;
+    --border-light: rgba(255, 255, 255, 0.08);
+    --border-highlight: rgba(255, 255, 255, 0.15);
 
     /* Typography */
     --font-main: 'Inter', system-ui, -apple-system, sans-serif;
@@ -48,12 +50,16 @@ h3 {
 
 /* Glassmorphism Components */
 .glass-panel {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border-light);
     border-radius: 20px;
     padding: 2.5rem;
     margin-bottom: 3rem;
+    box-shadow:
+        0 10px 30px -10px rgba(0, 0, 0, 0.5),
+        inset 0 1px 1px var(--border-highlight);
 }
 
 /* Header & Intro */
@@ -124,10 +130,12 @@ article section {
 
 table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
     background: var(--card-bg);
     border-radius: 12px;
     overflow: hidden;
+    border: 1px solid var(--border-light);
 }
 
 th,
@@ -138,10 +146,38 @@ td {
 }
 
 th {
+    background: rgba(255, 255, 255, 0.03);
+    font-weight: 700;
+    color: #fff;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+tbody tr {
+    transition: background 0.2s ease;
+}
+
+tbody tr:hover {
     background: rgba(255, 255, 255, 0.02);
-    font-weight: 600;
-    color: var(--text-dim);
-    font-size: 0.9rem;
+}
+
+/* Sticky Column for Mobile Context */
+@media (max-width: 600px) {
+
+    table td:first-child,
+    table th:first-child {
+        position: sticky;
+        left: 0;
+        z-index: 10;
+        background: var(--card-bg);
+        border-right: 2px solid var(--border-light);
+    }
+
+    tbody tr:hover td:first-child {
+        background: #1c1c21;
+        /* Slightly lighter for hover context */
+    }
 }
 
 .cta-button {
@@ -241,23 +277,29 @@ nav a:hover {
     background: var(--card-bg);
     border-radius: 20px;
     padding: 2rem;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: all 0.3s ease;
+    border: 1px solid var(--border-light);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     text-decoration: none;
     display: flex;
     flex-direction: column;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 .guide-card:hover {
-    transform: translateY(-10px);
-    border-color: var(--primary-glow);
+    transform: translateY(-8px);
+    border-color: var(--primary);
     background: rgba(255, 255, 255, 0.05);
+    box-shadow:
+        0 20px 25px -5px rgba(0, 0, 0, 0.3),
+        0 10px 10px -5px rgba(0, 0, 0, 0.2),
+        inset 0 1px 1px var(--border-highlight);
 }
 
 .guide-card.featured {
     grid-column: span 2;
-    background: linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.8) 100%);
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.9) 100%);
     border-color: var(--accent);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.1);
 }
 
 .guide-card.featured .badge {
