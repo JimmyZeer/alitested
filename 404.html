@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Introuvable | AliTested</title>
+    <meta name="robots" content="noindex, follow">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        .error-hero {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: radial-gradient(circle at center, rgba(248, 80, 50, 0.1) 0%, transparent 70%);
+        }
+
+        .error-code {
+            font-size: 8rem;
+            font-family: var(--font-display);
+            font-weight: 800;
+            color: var(--primary);
+            margin: 0;
+            line-height: 1;
+            text-shadow: 0 0 30px rgba(248, 80, 50, 0.3);
+            animation: glitch 1s linear infinite;
+        }
+
+        @keyframes glitch {
+
+            2%,
+            64% {
+                transform: translate(2px, 0) skew(0deg);
+            }
+
+            4%,
+            60% {
+                transform: translate(-2px, 0) skew(0deg);
+            }
+
+            62% {
+                transform: translate(0, 0) skew(5deg);
+            }
+        }
+
+        .action-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            width: 100%;
+            max-width: 600px;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav style="padding: 1.5rem 0; position: absolute; width: 100%; top: 0;">
+        <div class="container" style="text-align: center;">
+            <a href="index.html">
+                <img src="media/logo.png" alt="AliTested Logo" style="height: 40px;">
+            </a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="error-hero">
+            <h1 class="error-code">404</h1>
+            <h2 style="font-size: 2rem; margin-top: 1rem;">Oups ! Panne Moteur ?</h2>
+            <p class="lead" style="max-width: 500px;">
+                La page que vous cherchez semble avoir été démontée ou n'a jamais existé. Pas de panique, on a les
+                outils pour vous remettre sur la route.
+            </p>
+
+            <div class="glass-panel"
+                style="padding: 1rem; display: flex; align-items: center; gap: 1rem; width: 100%; max-width: 500px; margin-bottom: 2rem;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="var(--text-dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="text" id="errorSearch" placeholder="Rechercher un guide (ex: Autel, Valise...)"
+                    style="background: transparent; border: none; width: 100%; color: #fff; font-size: 1.1rem; outline: none;">
+            </div>
+
+            <div class="action-grid">
+                <a href="index.html" class="cta-button"
+                    style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1);">
+                    🏠 Retour Accueil
+                </a>
+                <a href="guides/kingbolen-k7-test-avis.html" class="cta-button">
+                    🚀 Voir le Test K7
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.getElementById('errorSearch').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                window.location.href = 'index.html?s=' + encodeURIComponent(e.target.value);
+            }
+        });
+    </script>
+</body>
+
+</html>
