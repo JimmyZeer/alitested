@@ -3,7 +3,14 @@
 
   <url>
     <loc>https://alitested.com/</loc>
-    <lastmod>2026-01-26</lastmod>
+    <lastmod>2026-02-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://alitested.com/guides/vcds-2025-vagcom-hex-v2-test-avis.html</loc>
+    <lastmod>2026-02-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
