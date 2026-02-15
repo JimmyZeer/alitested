@@ -81,357 +81,185 @@
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
+    <nav>
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="/" style="font-size: 1.2rem; font-weight: 800; color: #111827; letter-spacing: -0.05em;">
+                ALITESTED<span style="color: var(--primary);">.</span>
+            </a>
+            <div style="display: flex; gap: 1.5rem;">
+                <a href="#silos">Guides</a>
+                <a href="#top-picks" style="color: var(--success);">Top Picks</a>
+            </div>
+        </div>
+    </nav>
+
     <section class="hero">
         <div class="container">
-            <span class="badge">L'Expertise AliExpress Sans Filtre</span>
-            <h1 style="font-size: 0; opacity: 0; position: absolute;">Tests experts et guides d’achat AliExpress en
-                électronique automobile</h1>
-            <div class="brand-display" aria-hidden="true" style="margin-bottom: 2rem;">
-                <img src="media/logo_new.png" alt="AliTested - Expert Diagnostic Auto"
-                    style="height: 120px; width: auto; display: block; margin: 0 auto;">
-            </div>
-            <p class="lead" style="max-width: 600px; margin: 0 auto;">Nous testons le matériel AliExpress pour vous
-                épargner les pièges techniques et les fausses promesses.</p>
-        </div>
-    </section>
-
-    <!-- Search Section -->
-    <section class="container" style="margin-top: -2rem; position: relative; z-index: 10;">
-        <div class="glass-panel" style="padding: 1rem; display: flex; align-items: center; gap: 1rem;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                stroke="var(--text-dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="11" cy="11" r="8"></circle>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
-            <input type="text" id="guideSearch" placeholder="Rechercher un modèle, une marque, un code défaut..."
-                style="background: transparent; border: none; width: 100%; color: #fff; font-size: 1.1rem; outline: none; font-family: var(--font-main);">
+            <span class="badge">Analyse Indépendante 2026</span>
+            <h1>Le Diagnostic Auto Pro,<br>Sans la Facture Pro.</h1>
+            <p class="lead">Ne payez plus 1500€ pour une valise. Nous testons les meilleurs outils AliExpress (Mucar,
+                Thinkcar) pour vous aider à diagnostiquer, coder et réparer vous-même.</p>
         </div>
     </section>
 
     <main class="container">
 
-        <section id="mission" class="glass-panel" style="margin-top: 2rem;">
-            <div class="trust-grid">
-                <div class="trust-item">
-                    <h4>0% Marketing Fluff</h4>
-                    <p>Nous ignorons les adjectifs promotionnels pour nous concentrer sur les benchmarks réels et la
-                        qualité des composants.</p>
-                </div>
-                <div class="trust-item">
-                    <h4>Expertise Matérielle</h4>
-                    <p>On ne se contente pas de regarder le prix. On analyse les puces, les types de RAM et les systèmes
-                        de refroidissement.</p>
-                </div>
-                <div class="trust-item">
-                    <h4>Transparence Totale</h4>
-                    <p>Nous listons ouvertement ce qu'il ne faut pas acheter. Votre satisfaction passe avant nos
-                        commissions affiliées.</p>
-                </div>
+        <!-- SILOS: ENTRY POINTS -->
+        <section id="silos" style="margin-top: -2rem;">
+            <div class="guide-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+
+                <!-- Silo A: Diag -->
+                <a href="guides/meilleure-valise-diagnostic-multimarque.html" class="guide-card"
+                    style="border-top: 4px solid var(--primary);">
+                    <div style="margin-bottom: 1rem; color: var(--primary);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                        </svg>
+                    </div>
+                    <h3>Diagnostic Multimarque</h3>
+                    <p>Lire les codes défauts, comprendre les voyants et effacer les erreurs moteur/ABS/Airbag.</p>
+                    <footer>Voir les Valises →</footer>
+                </a>
+
+                <!-- Silo B: Clés -->
+                <a href="guides/programmation-cle-voiture-diy.html" class="guide-card"
+                    style="border-top: 4px solid var(--warning);">
+                    <div style="margin-bottom: 1rem; color: var(--warning);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4" />
+                        </svg>
+                    </div>
+                    <h3>Clés & Serrurerie</h3>
+                    <p>Double de clé perdu ? Apprenez à programmer des nouvelles clés et télécommandes.</p>
+                    <footer>Voir le Matériel →</footer>
+                </a>
+
+                <!-- Silo C: Entretien -->
+                <a href="guides/entretien-auto-reset-electronique.html" class="guide-card"
+                    style="border-top: 4px solid var(--success);">
+                    <div style="margin-bottom: 1rem; color: var(--success);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M12 2.69l5.74 5.74-5.74 5.74c-.78.78-.78 2.05 0 2.83l.87.87c.78.78 2.05.78 2.83 0l5.74-5.74L21.31 12 12 21.31 2.69 12 12 2.69z" />
+                        </svg>
+                    </div>
+                    <h3>Maintenance & Reset</h3>
+                    <p>Vidange, FAP, AdBlue, Freins Électriques... Remettez à zéro tous vos indicateurs à vie.</p>
+                    <footer>Voir les Tutos →</footer>
+                </a>
+
             </div>
         </section>
 
-        <section id="silos" style="margin-top: 2rem;">
-            <h2 style="text-align: center; margin-bottom: 2rem;">Nos Univers Experts</h2>
-            <div class="container">
-                <div class="guide-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
-
-                    <!-- Silo A -->
-                    <a href="guides/meilleure-valise-diagnostic-multimarque.html" class="guide-card featured"
-                        style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(10, 10, 12, 0.9) 100%); border: 1px solid var(--accent);">
-                        <span class="badge" style="background-color: var(--accent); color: #fff;">Diagnostic Pro</span>
-                        <h3>Diagnostic Multimarque</h3>
-                        <p>Les meilleures valises (Mucar, Thinkcar) pour lire et effacer tous les codes défauts.</p>
-                        <footer style="color: var(--accent);">Explorer l'univers Diag →</footer>
-                    </a>
-
-                    <!-- Silo B -->
-                    <a href="guides/programmation-cle-voiture-diy.html" class="guide-card featured"
-                        style="background: linear-gradient(135deg, rgba(248, 80, 50, 0.1) 0%, rgba(10, 10, 12, 0.9) 100%); border: 1px solid #f85032;">
-                        <span class="badge" style="background-color: #f85032; color: #fff;">Serrurerie Auto</span>
-                        <h3>Clés & Programmation</h3>
-                        <p>Perte de clé ? Double à faire ? Découvrez comment programmer vos clés vous-même.</p>
-                        <footer style="color: #f85032;">Explorer l'univers Clés →</footer>
-                    </a>
-
-                    <!-- Silo C -->
-                    <a href="guides/entretien-auto-reset-electronique.html" class="guide-card featured"
-                        style="background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(10, 10, 12, 0.9) 100%); border: 1px solid #22c55e;">
-                        <span class="badge" style="background-color: #22c55e; color: #000;">Entretien & Reset</span>
-                        <h3>Maintenance & Reset</h3>
-                        <p>Vidange, FAP, AdBlue, Freins... Les outils pour éteindre tous les voyants d'entretien.</p>
-                        <footer style="color: #22c55e;">Explorer l'univers Maintenance →</footer>
-                    </a>
-
-                </div>
-            </div>
-        </section>
-
-        <section id="guides">
-            <h2 style="text-align: center; margin-bottom: 3rem;">Nos Guides d'Achat Réels</h2>
+        <!-- TOP PICKS SECTION -->
+        <section id="top-picks" style="margin-top: 5rem;">
+            <h2 style="border-bottom: 2px solid #E5E7EB; padding-bottom: 1rem; margin-bottom: 2rem;">Les Choix de la
+                Rédaction</h2>
 
             <div class="guide-grid">
-                <!-- Nouveau Guide Technique (Silo C) -->
-                <a href="guides/code-defaut-p20e8-solution.html" class="guide-card featured"
-                    style="background: linear-gradient(135deg, rgba(220, 38, 38, 0.1) 0%, rgba(10, 10, 12, 0.9) 100%); border: 1px solid var(--danger);">
-                    <span class="badge" style="background-color: var(--danger); color: #fff;">Problème Connu</span>
-                    <h3>Solution Code P20E8 (AdBlue)</h3>
-                    <p>Le défaut "Démarrage Interdit" sur Peugeot/Citroën. Diagnostic, réparation et solutions
-                        (Réservoir, Injecteur).</p>
-                    <footer style="font-weight: 600; color: var(--danger);">Voir la solution →</footer>
-                </a>
 
-                <!-- Article Pilier - Nouveau -->
-                <a href="guides/kingbolen-k7-test-avis.html" class="guide-card featured"
-                    style="background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(10, 10, 12, 0.9) 100%);">
-                    <span class="badge" style="background-color: #22c55e; color: #000;">Mise à jour Gratuite</span>
-                    <h3>Test KINGBOLEN K7</h3>
-                    <p>Le seul scanner 7" pro avec Mises à jour à vie, CAN FD et ECU Coding. Fini les abonnements !</p>
-                    <footer style="font-weight: 600; color: #22c55e;">Lire le verdict (2600 mots) →</footer>
-                </a>
+                <!-- Pick 1: Mucar 892BT -->
+                <div class="guide-card featured" style="background: #F9FAFB; border-color: var(--border);">
+                    <span class="badge" style="background: var(--primary); color: white;">Top 1 - Rapport
+                        Qualité/Prix</span>
+                    <h3>Mucar 892BT</h3>
+                    <p>Le seul outil à moins de 80€ qui offre le diagnostic bidirectionnel et le codage ECU.
+                        Indispensable.</p>
+                    <div style="margin-top: 1rem;">
+                        <ul
+                            style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem; color: var(--text-secondary);">
+                            <li style="margin-bottom: 0.5rem;">✅ Diag Tous Systèmes</li>
+                            <li style="margin-bottom: 0.5rem;">✅ Mises à jour à vie</li>
+                            <li style="margin-bottom: 0.5rem;">✅ Code Promo : <strong
+                                    style="color: var(--text-main);">VIPTHINKCAR</strong></li>
+                        </ul>
+                    </div>
+                    <a href="guides/mucar-892bt-test-avis.html" class="cta-button"
+                        style="margin-top: 1.5rem; text-align: center;">Lire le Test & Acheter</a>
+                </div>
 
-                <!-- Article Pilier - Nouveau VCDS -->
-                <a href="guides/vcds-2025-vagcom-hex-v2-test-avis.html" class="guide-card featured"
-                    style="background: linear-gradient(135deg, rgba(0, 122, 255, 0.1) 0%, rgba(10, 10, 12, 0.9) 100%);">
-                    <span class="badge" style="background-color: var(--accent); color: #fff;">Best Seller 2026</span>
-                    <h3>Test VCDS HEX V2 2025</h3>
-                    <p>Le diagnostic VAGCOM ultime à moins de 30€ ? Analyse de la version 25.3 : codage, adaptations et
-                        mises à jour.</p>
-                    <footer style="font-weight: 600; color: var(--accent);">Lire le test (Prix Choc) →</footer>
-                </a>
+                <!-- Pick 2: TKey 101 -->
+                <div class="guide-card" style="background: white;">
+                    <span class="badge" style="background: #E5E7EB; color: var(--text-main);">Programmation Clés</span>
+                    <h3>Thinkcar TKey 101</h3>
+                    <p>La solution la plus simple pour cloner des clés et des transpondeurs sans connaissances
+                        techniques.</p>
+                    <a href="guides/thinkcar-tkey-101-test-avis.html"
+                        style="margin-top: auto; color: var(--primary); font-weight: 600;">Lire le test →</a>
+                </div>
 
-                <!-- Article Pilier - Nouveau -->
-                <a href="guides/autel-maxicom-mk900-bt-test-avis.html" class="guide-card featured"
-                    style="background: linear-gradient(135deg, rgba(255, 68, 68, 0.1) 0%, rgba(10, 10, 12, 0.9) 100%);">
-                    <span class="badge">Nouveauté 2026</span>
-                    <h3>Test Autel MaxiCOM MK900-BT</h3>
-                    <p>CAN-FD, DoIP et plus de 3000 tests actifs : découvrez pourquoi cette valise supplante le
-                        MK808BT Pro en 2026.</p>
-                    <footer style="font-weight: 600; color: var(--accent);">Lire le test complet →</footer>
-                </a>
-
-                <a href="guides/quelle-valise-diagnostic-aliexpress-choisir-2026.html" class="guide-card featured"
-                    style="background: linear-gradient(135deg, rgba(57, 255, 20, 0.1) 0%, rgba(10, 10, 12, 0.9) 100%);">
-                    <span class="badge">Nouvel Article 2026</span>
-                    <h3>Comment choisir sa valise AliExpress ?</h3>
-                    <p>Le guide expert anti-arnaque pour comprendre les protocoles, le bidirectionnel et la
-                        compatibilité réelle avec les voitures Européennes.</p>
-                    <footer style="font-weight: 600; color: var(--accent);">Lire le guide anti-arnaque →</footer>
-                </a>
-
-                <a href="guides/valise-diagnostic-aliexpress-psa-renault-vag.html" class="guide-card featured"
-                    style="background: linear-gradient(135deg, rgba(0, 200, 255, 0.1) 0%, rgba(10, 10, 12, 0.9) 100%);">
-                    <span class="badge">Focus Compatibilité 2026</span>
-                    <h3>PSA, Renault, VAG : Les vraies compatibles</h3>
-                    <p>90 % des valises AliExpress échouent sur les marques européennes. Voici celles qui fonctionnent
-                        vraiment avec SGW et CAN FD.</p>
-                    <footer style="font-weight: 600; color: var(--accent);">Voir les modèles testés →</footer>
-                </a>
-
-                <a href="guides/comparatif-valise-diagnostic-aliexpress.html" class="guide-card featured">
-                    <span class="badge">Guide Pilier 2026</span>
-                    <h3>Comparatif des meilleures valises</h3>
-                    <p>Le comparatif ultime pour éviter les arnaques et choisir l'outil adapté à votre voiture et votre
-                        budget en 2026.</p>
-                    <footer style="font-weight: 600; color: var(--accent);">Lire le comparatif honnête →</footer>
-                </a>
-
-                <!-- Nouveau Guide Bidirectionnel -->
-                <a href="guides/meilleure-valise-diagnostic-bidirectionnelle-pas-chere.html" class="guide-card featured"
-                    style="background: linear-gradient(135deg, rgba(248, 80, 50, 0.1) 0%, rgba(10, 10, 12, 0.9) 100%);">
-                    <span class="badge">Top Test 2026</span>
-                    <h3>Diagnostic bidirectionnel : Nos tests réels</h3>
-                    <p>Découvrez quelles valises bidirectionnelles à prix accessible fonctionnent vraiment sur le
-                        terrain. Autel, Mucar, Thinkcar au crible.</p>
-                    <footer style="font-weight: 600; color: var(--primary);">Voir le classement expert →</footer>
-                </a>
-
-                <!-- Nouveau Guide Erreurs à éviter -->
-                <a href="guides/valise-diagnostic-bidirectionnelle-aliexpress-erreurs.html" class="guide-card">
-                    <span class="badge">Alerte Expert 2026</span>
-                    <h3>Valise AliExpress : Erreurs à éviter</h3>
-                    <p>Android obsolète, fausses promesses du bidirectionnel et SGW : lisez ceci avant de cliquer sur
-                        "Acheter".</p>
-                    <footer>Voir les erreurs à éviter →</footer>
-                </a>
-                <!-- Article réel 2 -->
-                <a href="guides/mucar-892bt-test-avis.html" class="guide-card">
-                    <span class="badge">Automobile</span>
-                    <h3>Test Mucar 892BT</h3>
-                    <p>Codage ECU, IA intégrée et diagnostic bidirectionnel : pourquoi cette valise domine le marché en
-                        2026.</p>
-                    <footer>Voir le test Mucar 892BT complet →</footer>
-                </a>
-
-                <!-- Article réel 2.5 (Nouveau) -->
-                <a href="guides/thinkcar-thinkscan-689bt-test-avis.html" class="guide-card">
-                    <span class="badge">Nouveauté 2026</span>
-                    <h3>Test Thinkcar 689BT</h3>
-                    <p>CAN FD, DOIP et évolutivité modulaire : la nouvelle référence du diagnostic pro sans abonnement.
+                <!-- Pick 3: Mucar VO7 -->
+                <div class="guide-card" style="background: white;">
+                    <span class="badge" style="background: #E5E7EB; color: var(--text-main);">Tablette Garage</span>
+                    <h3>Mucar VO7</h3>
+                    <p>Une tablette 7 pouces robuste pour l'atelier. Idéal si vous détestez utiliser votre téléphone.
                     </p>
-                    <footer>Voir le test Thinkcar 689BT →</footer>
+                    <a href="guides/mucar-vo7-test-avis.html"
+                        style="margin-top: auto; color: var(--primary); font-weight: 600;">Lire le test →</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- LATEST GUIDES -->
+        <section id="latest-guides" style="margin-top: 5rem;">
+            <h2 style="font-size: 1.5rem; color: var(--text-secondary); margin-bottom: 2rem;">Derniers Guides Publiés
+            </h2>
+
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+
+                <a href="guides/code-defaut-p20e8-solution.html"
+                    style="display: block; padding: 1.5rem; border: 1px solid var(--border); border-radius: 8px; color: var(--text-main); transition: 0.2s;"
+                    onmouseover="this.style.background='#F9FAFB'" onmouseout="this.style.background='white'">
+                    <span
+                        style="font-size: 0.8rem; color: var(--danger); font-weight: 700; text-transform: uppercase;">Problème
+                        Connu</span>
+                    <h3 style="margin: 0.5rem 0 0.5rem; font-size: 1.25rem;">Solution Code P20E8 (AdBlue)
+                        Peugeot/Citroën</h3>
+                    <p style="margin: 0; color: var(--text-secondary); font-size: 1rem;">Comment éviter le remplacement
+                        du réservoir d'urée à 1200€ grâce au diagnostic.</p>
                 </a>
 
-                <!-- Article réel 3 -->
-                <a href="guides/otofix-d1-lite-test-avis.html" class="guide-card">
-                    <span class="badge">Automobile</span>
-                    <h3>Test OTOFIX D1 Lite</h3>
-                    <p>L'excellence Autel à prix réduit : analyse du diagnostic bidirectionnel et des limites de mise à
-                        jour.</p>
-                    <footer>Voir la valise diagnostic OTOFIX D1 Lite →</footer>
+                <a href="guides/kingbolen-k7-test-avis.html"
+                    style="display: block; padding: 1.5rem; border: 1px solid var(--border); border-radius: 8px; color: var(--text-main); transition: 0.2s;"
+                    onmouseover="this.style.background='#F9FAFB'" onmouseout="this.style.background='white'">
+                    <span
+                        style="font-size: 0.8rem; color: var(--success); font-weight: 700; text-transform: uppercase;">Bon
+                        Plan</span>
+                    <h3 style="margin: 0.5rem 0 0.5rem; font-size: 1.25rem;">Test KINGBOLEN K7 : La révélation 2026</h3>
+                    <p style="margin: 0; color: var(--text-secondary); font-size: 1rem;">Mises à jour gratuites à vie
+                        sur une tablette 7 pouces compatible CAN-FD.</p>
                 </a>
 
-                <!-- Article réel 4 -->
-                <a href="guides/thinkcar-tkey-101-test-avis.html" class="guide-card">
-                    <span class="badge">Automobile</span>
-                    <h3>Test THINKCAR TKey 101</h3>
-                    <p>Programmation de clés, Super Chip et clonage : l'outil ultime pour vos doubles de clés auto.</p>
-                    <footer>Voir le test TKey 101 complet →</footer>
+                <a href="guides/autel-maxicom-mk900-bt-test-avis.html"
+                    style="display: block; padding: 1.5rem; border: 1px solid var(--border); border-radius: 8px; color: var(--text-main); transition: 0.2s;"
+                    onmouseover="this.style.background='#F9FAFB'" onmouseout="this.style.background='white'">
+                    <span
+                        style="font-size: 0.8rem; color: var(--text-dim); font-weight: 700; text-transform: uppercase;">Premium</span>
+                    <h3 style="margin: 0.5rem 0 0.5rem; font-size: 1.25rem;">Autel MK900-BT : Le roi des tests actifs
+                    </h3>
+                    <p style="margin: 0; color: var(--text-secondary); font-size: 1rem;">Si vous avez le budget, c'est
+                        l'outil le plus rapide du marché actuel.</p>
                 </a>
 
-                <!-- Nouveaux Articles MUCAR -->
-                <a href="guides/mucar-vo7-test-avis.html" class="guide-card featured"
-                    style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(10, 10, 12, 0.9) 100%);">
-                    <span class="badge" style="background-color: var(--accent); color: #fff;">Expert Choice</span>
-                    <h3>Test Mucar VO7</h3>
-                    <p>Tablette 7" avec 3 ans de mises à jour gratuites. Le meilleur rapport qualité/prix pour les
-                        garages ?</p>
-                    <footer style="font-weight: 600; color: var(--accent);">Lire le test Mucar VO7 →</footer>
-                </a>
-
-                <a href="guides/mucar-cs90-test-avis.html" class="guide-card featured"
-                    style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(10, 10, 12, 0.9) 100%);">
-                    <span class="badge" style="background-color: #10b981; color: #fff;">Budget</span>
-                    <h3>Test Mucar CS90</h3>
-                    <p>Diagnostic 4 systèmes et mises à jour à vie pour moins de 100€. L'outil parfait pour l'entretien
-                        courant.</p>
-                    <footer style="font-weight: 600; color: #10b981;">Lire le test Mucar CS90 →</footer>
-                </a>
-
-                <a href="guides/mucar-v06-test-avis.html" class="guide-card featured"
-                    style="background: linear-gradient(135deg, rgba(236, 72, 153, 0.1) 0%, rgba(10, 10, 12, 0.9) 100%);">
-                    <span class="badge" style="background-color: #ec4899; color: #fff;">Polyvalent</span>
-                    <h3>Test Mucar V06</h3>
-                    <p>Le diagnostic tous systèmes sans abonnement. Une tablette robuste pour les mécaniciens exigeants.
-                    </p>
-                    <footer style="font-weight: 600; color: #ec4899;">Lire le test Mucar V06 →</footer>
-                </a>
-
-                <a href="guides/mucar-bt200-test-avis.html" class="guide-card featured"
-                    style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(10, 10, 12, 0.9) 100%);">
-                    <span class="badge" style="background-color: #f59e0b; color: #fff;">Mobile</span>
-                    <h3>Test Mucar BT200</h3>
-                    <p>Transformez votre smartphone en valise pro. Idéal pour avoir un outil de diag toujours dans la
-                        boîte à gants.</p>
-                    <footer style="font-weight: 600; color: #f59e0b;">Lire le test Mucar BT200 →</footer>
-                </a>
-
-                <a href="guides/guide-choix-valise-obd2.html" class="guide-card featured"
-                    style="background: linear-gradient(135deg, rgba(255, 165, 0, 0.1) 0%, rgba(10, 10, 12, 0.9) 100%);">
-                    <span class="badge" style="background-color: #fbbf24; color: #000;">Guide Ultime</span>
-                    <h3>Comment choisir sa valise ?</h3>
-                    <p>Dongle ou Tablette ? Mises à jour gratuites ou payantes ? Ne vous faites plus avoir par le
-                        marketing.</p>
-                    <footer style="font-weight: 600; color: #fbbf24;">Lire le guide complet →</footer>
-                </a>
-
-                <!-- Nouveaux Articles THINKCAR -->
-                <a href="guides/thinkcar-thinkdiag-mini-test-avis.html" class="guide-card featured"
-                    style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(10, 10, 12, 0.9) 100%);">
-                    <span class="badge" style="background-color: #8b5cf6; color: #fff;">Compact</span>
-                    <h3>Test Thinkdiag Mini</h3>
-                    <p>La puissance de Thinkcar dans un format mini. Que vaut-il face à son grand frère le Thinkdiag 2 ?
-                    </p>
-                    <footer style="font-weight: 600; color: #8b5cf6;">Lire le test Thinkdiag Mini →</footer>
-                </a>
-
-                <a href="guides/thinkcar-thinktool-lite-test-avis.html" class="guide-card featured"
-                    style="background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(10, 10, 12, 0.9) 100%); border-color: #ef4444;">
-                    <span class="badge" style="background-color: #ef4444; color: #fff;">Innovant</span>
-                    <h3>Test Thinktool Lite</h3>
-                    <p>Imprimante intégrée et conception modulaire. La tablette qui change la vie des pros en
-                        déplacement.</p>
-                    <footer style="font-weight: 600; color: #ef4444;">Lire le test Thinktool Lite →</footer>
-                </a>
-
-                <a href="guides/thinkcar-vs-launch-vs-autel.html" class="guide-card featured"
-                    style="background: linear-gradient(135deg, rgba(0, 255, 255, 0.1) 0%, rgba(10, 10, 12, 0.9) 100%);">
-                    <span class="badge" style="background-color: #06b6d4; color: #fff;">Comparatif Choc</span>
-                    <h3>Thinkcar vs Launch vs Autel</h3>
-                    <p>Le match des géants chinois. Qui offre les meilleures mises à jour en 2026 ? Analyse sans langue
-                        de bois.</p>
-                    <footer style="font-weight: 600; color: #06b6d4;">Lire le comparatif →</footer>
-                </a>
-
-                <!-- Pas de mock data ici comme demandé -->
             </div>
         </section>
 
     </main>
 
-    <section id="expert-seo" class="container">
-        <div class="glass-panel"
-            style="padding: 2.5rem; font-size: 0.95rem; color: var(--text-dim); margin-top: 5rem; border: 1px solid rgba(255,255,255,0.03);">
-            <p><strong>AliTested</strong> est un site indépendant spécialisé dans les tests et guides d’achat de
-                matériel AliExpress dédié à l’électronique automobile et au diagnostic véhicule. Nous analysons des
-                outils tels que les valises de diagnostic OBD, les équipements de codage ECU, les interfaces de
-                communication CAN et les accessoires d’atelier utilisés en automobile moderne.</p>
-            <p style="margin-top: 1rem;">Chaque produit est évalué selon ses fonctionnalités réelles, sa compatibilité
-                avec les véhicules, ses limites techniques et les éventuels risques liés à son utilisation. L’objectif
-                d’AliTested est d’aider les particuliers avertis, les passionnés d’automobile et les petits ateliers à
-                choisir du matériel fiable sans abonnement caché ni promesse marketing excessive. Nos analyses
-                privilégient la transparence, l’expertise technique et la durabilité des équipements recommandés.</p>
-            <p
-                style="margin-top: 1rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1rem; font-style: italic;">
-                Les tests publiés sur AliTested sont réalisés dans une optique d’usage réel, en tenant compte des
-                contraintes rencontrées en atelier et sur des véhicules de différentes générations.</p>
-        </div>
-    </section>
-
-    <footer style="margin-top: 8rem;">
+    <footer class="main-footer">
         <div class="container">
-            <p>&copy; 2026 AliTested - Le Hub de confiance pour vos achats AliExpress.</p>
+            <p>&copy; 2026 AliTested - L'Expertise Diagnostic Indépendante.</p>
+            <p style="font-size: 0.8rem; margin-top: 1rem; color: #9CA3AF;">En tant que Partenaire Amazon et AliExpress,
+                nous réalisons un bénéfice sur les achats remplissant les conditions requises.</p>
         </div>
     </footer>
 
-    <script>
-        document.getElementById('guideSearch').addEventListener('input', function (e) {
-            const term = e.target.value.toLowerCase();
-            const cards = document.querySelectorAll('.guide-card');
-            let hasResults = false;
-
-            cards.forEach(card => {
-                const title = card.querySelector('h3').textContent.toLowerCase();
-                const desc = card.querySelector('p').textContent.toLowerCase();
-                const badge = card.querySelector('.badge').textContent.toLowerCase();
-
-                if (title.includes(term) || desc.includes(term) || badge.includes(term)) {
-                    card.style.display = 'flex';
-                    hasResults = true;
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-
-            // Handle no results
-            const grid = document.querySelector('.guide-grid');
-            let noResults = document.getElementById('no-results-msg');
-
-            if (!hasResults && term.length > 0) {
-                if (!noResults) {
-                    noResults = document.createElement('p');
-                    noResults.id = 'no-results-msg';
-                    noResults.textContent = "Aucun guide trouvé pour cette recherche.";
-                    noResults.style.textAlign = 'center';
-                    noResults.style.color = 'var(--text-dim)';
-                    noResults.style.gridColumn = '1 / -1';
-                    noResults.style.padding = '2rem';
-                    grid.appendChild(noResults);
-                }
-            } else if (noResults) {
-                noResults.remove();
-            }
-        });
-    </script>
     <script src="cookie-consent.js" defer></script>
 </body>
 

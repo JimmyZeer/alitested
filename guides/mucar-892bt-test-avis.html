@@ -111,7 +111,7 @@
         </div>
     </header>
 
-    <main class="container">
+    <main class="container" style="max-width: 750px;">
 
         <article>
             <p style="margin-bottom: 2rem; font-style: italic; color: var(--text-dim);">Choisir une <strong>valise
@@ -119,9 +119,44 @@
                 comme un <strong>scanner OBD professionnel</strong> accessible, offrant un <strong>diagnostic
                     bidirectionnel</strong> rare dans cette gamme de prix.</p>
 
+            <!-- Verdict Box (Wirecutter Style) -->
+            <div class="alitested-verdict">
+                <div class="alitested-header">
+                    <span class="alitested-tag">Meilleur Choix 2026</span>
+                    <span style="font-weight:bold; color:#111827;">9.5/10</span>
+                </div>
+
+                <h3 class="alitested-title">Mucar 892BT</h3>
+                <p style="color:#4B5563; margin-top:5px;">La puissance d'un outil pro, le prix d'un outil DIY.</p>
+
+                <div class="alitested-grid">
+                    <div class="alitested-list alitested-pros">
+                        <strong>Pourquoi on l'aime :</strong>
+                        <ul>
+                            <li>Diagnostic "Tous Systèmes" (Moteur, ABS, Airbag...)</li>
+                            <li>Mises à jour gratuites à vie</li>
+                            <li>Bluetooth rapide & interface FR</li>
+                        </ul>
+                    </div>
+                    <div class="alitested-list alitested-cons">
+                        <strong>Points faibles :</strong>
+                        <ul>
+                            <li>Pas de codage en ligne (SCN)</li>
+                            <li>Nécessite un smartphone/tablette</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <a href="https://s.click.aliexpress.com/e/_c4NrXwth" class="alitested-cta">
+                    Voir le meilleur prix sur AliExpress
+                </a>
+                <p style="text-align:center; font-size:0.8em; color:#6B7280; margin-top:10px;">Livraison rapide &
+                    Garantie incluse</p>
+            </div>
+
             <!-- Introduction -->
             <section id="introduction">
-                <div class="glass-panel">
+                <div class="glass-panel" style="background: white; padding: 0; border: none; box-shadow: none;">
                     <h2>Comprendre le positionnement du Mucar 892BT sur le marché</h2>
                     <p>Le marché des outils de diagnostic sur AliExpress est en pleine mutation. Le <strong>Mucar
                             892BT</strong> se présente comme une solution intermédiaire entre les simples lecteurs de
@@ -203,7 +238,7 @@
                     </ul>
                 </div>
 
-                <div class="glass-panel" style="margin-top: 4rem;">
+                <div class="glass-panel" style="margin-top: 4rem; background: white; border: none; box-shadow: none;">
                     <h3>Mises à jour logicielle et services tiers</h3>
                     <p>L'offre "Lifetime Update" est un avantage concurrentiel fort. Elle couvre les mises à jour des
                         bases de données de diagnostic et l'évolution de l'application Mucar. C'est une économie
@@ -260,7 +295,7 @@
 
             <!-- Technical Depth Expansion -->
             <section id="protocols-deep-dive">
-                <div class="glass-panel" style="margin-top: 4rem;">
+                <div class="glass-panel" style="margin-top: 4rem; background: white; border: none; box-shadow: none;">
                     <h3>Analyse Protocoles : Pourquoi CANFD et DOIP sont obligatoires en 2026</h3>
                     <p>Pour le technicien ou l'amateur éclairé, la compatibilité <strong>CANFD</strong> (Controller Area
                         Network Flexible Data-Rate) et <strong>DOIP</strong> (Diagnostics over Internet Protocol) n'est
@@ -421,7 +456,7 @@
 
             <!-- Final Conclusion -->
             <section id="conclusion">
-                <div class="glass-panel">
+                <div class="glass-panel" style="background: white; border: none; box-shadow: none;">
                     <h2>Bilan AliTested : Un outil équilibré et transparent</h2>
                     <p>Le Mucar 892BT réussit le pari d'offrir une accessibilité technique avancée sans les contraintes
                         d'abonnement habituelles. En positionnant l'IA comme un outil d'assistance et en offrant une
@@ -442,13 +477,35 @@
 
     </main>
 
-    <footer>
+    <footer class="main-footer">
         <div class="container">
             <p>&copy; 2026 AliTested - Expert en diagnostic automobile. Aucun compromis sur la précision technique.</p>
         </div>
     </footer>
 
+    <!-- STICKY FOOTER MOBILE -->
+    <div class="sticky-footer">
+        <div class="sticky-footer-info">
+            Mucar 892BT
+            <span class="sticky-footer-price">Scanner Bidirectionnel</span>
+        </div>
+        <a href="https://s.click.aliexpress.com/e/_c4NrXwth" class="sticky-footer-btn">
+            Voir le Prix
+        </a>
+    </div>
+
     <script src="../cookie-consent.js" defer></script>
+    <script>
+        // Sticky Footer Logic
+        window.addEventListener('scroll', function () {
+            var footer = document.querySelector('.sticky-footer');
+            if (window.scrollY > 400) {
+                footer.classList.add('visible');
+            } else {
+                footer.classList.remove('visible');
+            }
+        });
+    </script>
 </body>
 
 </html>
