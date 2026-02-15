@@ -110,13 +110,48 @@
         </div>
     </header>
 
-    <main class="container">
+    <main class="container" style="max-width: 750px;">
 
         <article>
+            <!-- Verdict Box (Wirecutter Style) -->
+            <div class="alitested-verdict">
+                <div class="alitested-header">
+                    <span class="alitested-tag">Innovation Pro 2026</span>
+                    <span style="font-weight:bold; color:#111827;">9.6/10</span>
+                </div>
+
+                <h3 class="alitested-title">Thinkcar Thinktool Lite</h3>
+                <p style="color:#4B5563; margin-top:5px;">L'alliance parfaite entre tablette robuste et imprimante
+                    thermique intégrée.</p>
+
+                <div class="alitested-grid">
+                    <div class="alitested-list alitested-pros">
+                        <strong>Pourquoi on l'aime :</strong>
+                        <ul>
+                            <li>Imprimante thermique intégrée (Rapports Clients immédiats)</li>
+                            <li>Diagnostic OE-Level très rapide</li>
+                            <li>Supporte les modules d'extension (Oscilloscope, TKey 101...)</li>
+                        </ul>
+                    </div>
+                    <div class="alitested-list alitested-cons">
+                        <strong>Points faibles :</strong>
+                        <ul>
+                            <li>Prix plus élevé que Mucar</li>
+                            <li>Encombrant avec l'imprimante</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <a href="https://s.click.aliexpress.com/e/_DkM7n53" class="alitested-cta">
+                    Voir le prix sur AliExpress
+                </a>
+                <p style="text-align:center; font-size:0.8em; color:#6B7280; margin-top:10px;">Livraison rapide &
+                    Garantie incluse</p>
+            </div>
 
             <!-- Introduction -->
             <section id="introduction">
-                <div class="glass-panel">
+                <div class="glass-panel" style="background: white; border: none; box-shadow: none; padding: 0;">
                     <h2>Le Concept Modulaire : Une Révolution ?</h2>
                     <p>Imaginez une tablette robuste. Au dos, vous pouvez clipser :</p>
                     <ul>
@@ -243,7 +278,8 @@
             <!-- Limitations -->
             <section id="limitations">
                 <h2>Les Points Faibles</h2>
-                <div class="glass-panel" style="border-left: 4px solid #ff4444;">
+                <div class="glass-panel"
+                    style="border-left: 4px solid #ff4444; background: #FFF5F5; border: none; box-shadow: none;">
                     <ul>
                         <li><strong>Écran 6 pouces :</strong> C'est un peu petit pour lire des schémas électriques
                             complexes ou comparer 4 graphiques de données en temps réel.</li>
@@ -273,7 +309,7 @@
 
             <!-- Conclusion -->
             <section id="conclusion">
-                <div class="glass-panel">
+                <div class="glass-panel" style="background: white; border: none; box-shadow: none;">
                     <h2>Faut-il investir ?</h2>
                     <p>Le <strong>Thinktool Lite</strong> est l'investissement malin pour le pro qui démarre ou le
                         passionné exigeant. Avec ses 2 ans de mises à jour comprises et sa polyvalence modulaire, il
@@ -304,13 +340,34 @@
 
     </main>
 
-    <footer>
+    <footer class="main-footer">
         <div class="container">
             <p>&copy; 2026 AliTested - Expert en diagnostic automobile.</p>
         </div>
     </footer>
 
+    <!-- STICKY FOOTER -->
+    <div class="sticky-footer">
+        <div class="sticky-footer-info">
+            Thinktool Lite
+            <span class="sticky-footer-price">Diag Pro avec Imprimante</span>
+        </div>
+        <a href="https://s.click.aliexpress.com/e/_DkM7n53" class="sticky-footer-btn">
+            Voir le Prix
+        </a>
+    </div>
+
     <script src="../cookie-consent.js" defer></script>
+    <script>
+        window.addEventListener('scroll', function () {
+            var footer = document.querySelector('.sticky-footer');
+            if (window.scrollY > 400) {
+                footer.classList.add('visible');
+            } else {
+                footer.classList.remove('visible');
+            }
+        });
+    </script>
 </body>
 
 </html>

@@ -116,8 +116,7 @@
         </div>
     </header>
 
-    <main class="container">
-
+    <main class="container" style="max-width: 750px;">
         <p style="margin-bottom: 2rem; color: var(--text-dim); font-size: 0.9rem;">
             <a href="meilleure-valise-diagnostic-multimarque.html"
                 style="color: var(--accent); text-decoration: none;">← Voir le dossier complet : Diagnostic Multimarque
@@ -125,10 +124,45 @@
         </p>
 
         <article>
+            <!-- Verdict Box (Wirecutter Style) -->
+            <div class="alitested-verdict">
+                <div class="alitested-header">
+                    <span class="alitested-tag">Meilleur Rapport Qualité/Prix</span>
+                    <span style="font-weight:bold; color:#111827;">9.2/10</span>
+                </div>
+
+                <h3 class="alitested-title">Mucar VO7</h3>
+                <p style="color:#4B5563; margin-top:5px;">7 pouces, 3 ans de mises à jour : le roi du milieu de gamme.
+                </p>
+
+                <div class="alitested-grid">
+                    <div class="alitested-list alitested-pros">
+                        <strong>Pourquoi on l'aime :</strong>
+                        <ul>
+                            <li>Diagnostic "Tous Systèmes" réel (pas juste moteur)</li>
+                            <li>3 ans de mises à jour gratuites incluses</li>
+                            <li>28 Fonctions de service (FAP, Huile, Freins...)</li>
+                        </ul>
+                    </div>
+                    <div class="alitested-list alitested-cons">
+                        <strong>Points faibles :</strong>
+                        <ul>
+                            <li>Pas de codage en ligne avancé</li>
+                            <li>Stockage 32Go un peu juste</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <a href="https://s.click.aliexpress.com/e/_c3kaluZv" class="alitested-cta">
+                    Voir le meilleur prix sur AliExpress
+                </a>
+                <p style="text-align:center; font-size:0.8em; color:#6B7280; margin-top:10px;">Livraison rapide &
+                    Garantie incluse</p>
+            </div>
 
             <!-- Introduction -->
             <section id="introduction">
-                <div class="glass-panel">
+                <div class="glass-panel" style="background: white; border: none; box-shadow: none; padding: 0;">
                     <h2>Pourquoi le Mucar VO7 fait-il autant de bruit ?</h2>
                     <p>Dans la jungle des outils de diagnostic, deux catégories s'affrontent habituellement : les petits
                         dongles Bluetooth pas chers mais limités, et les tablettes pro hors de prix. Le <strong>Mucar
@@ -230,7 +264,8 @@
             <!-- Limitations -->
             <section id="limitations">
                 <h2>Ce qu'il faut savoir avant d'acheter (Les Limites)</h2>
-                <div class="glass-panel" style="border-left: 4px solid #ff4444;">
+                <div class="glass-panel"
+                    style="border-left: 4px solid #ff4444; background: #FFF5F5; border: none; box-shadow: none;">
                     <p>Soyons honnêtes, à ce prix, il y a quelques concessions par rapport à une Autel Ultra à 3000€ :
                     </p>
                     <ul>
@@ -325,31 +360,12 @@
 
             <!-- Conclusion -->
             <section id="conclusion">
-                <div class="glass-panel">
+                <div class="glass-panel" style="background: white; border: none; box-shadow: none;">
                     <h2>Notre Avis Final</h2>
                     <p>Le <strong>Mucar VO7</strong> est une excellente surprise. C'est l'outil idéal pour le "bricoleur
                         averti" ou le semi-pro qui veut aller plus loin qu'un simple lecteur de code, sans investir
                         1000€. Sa capacité à faire des tests actifs et ses 3 ans de mises à jour en font un champion du
                         rapport qualité/prix.</p>
-
-                    <div class="trust-grid" style="margin-top: 2rem;">
-                        <div class="trust-item">
-                            <h4 style="color: var(--primary);">✅ On aime</h4>
-                            <ul style="text-align: left; padding-left: 1rem; color: var(--text-dim);">
-                                <li>Rapport prix/fonctions imbattable.</li>
-                                <li>Diagnostic vraiment complet (tous modules).</li>
-                                <li>3 ans de tranquillité pour les mises à jour.</li>
-                                <li>Format tablette pratique et robuste.</li>
-                            </ul>
-                        </div>
-                        <div class="trust-item">
-                            <h4 style="color: #ff4444;">❌ On aime moins</h4>
-                            <ul style="text-align: left; padding-left: 1rem; color: var(--text-dim);">
-                                <li>Pas de codage ECU avancé (ce n'est pas son but).</li>
-                                <li>Capacité de stockage un peu juste.</li>
-                            </ul>
-                        </div>
-                    </div>
 
                     <div style="margin-top: 3rem; text-align: center;">
                         <a href="https://s.click.aliexpress.com/e/_c3kaluZv" class="cta-button"
@@ -365,13 +381,34 @@
 
     </main>
 
-    <footer>
+    <footer class="main-footer">
         <div class="container">
             <p>&copy; 2026 AliTested - Expert en diagnostic automobile.</p>
         </div>
     </footer>
 
+    <!-- STICKY FOOTER -->
+    <div class="sticky-footer">
+        <div class="sticky-footer-info">
+            Mucar VO7
+            <span class="sticky-footer-price">Tablette Diag Complète</span>
+        </div>
+        <a href="https://s.click.aliexpress.com/e/_c3kaluZv" class="sticky-footer-btn">
+            Voir le Prix
+        </a>
+    </div>
+
     <script src="../cookie-consent.js" defer></script>
+    <script>
+        window.addEventListener('scroll', function () {
+            var footer = document.querySelector('.sticky-footer');
+            if (window.scrollY > 400) {
+                footer.classList.add('visible');
+            } else {
+                footer.classList.remove('visible');
+            }
+        });
+    </script>
 </body>
 
 </html>

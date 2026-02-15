@@ -111,12 +111,48 @@
         </div>
     </header>
 
-    <main class="container">
+    <main class="container" style="max-width: 750px;">
 
         <article>
+            <!-- Verdict Box (Wirecutter Style) -->
+            <div class="alitested-verdict">
+                <div class="alitested-header">
+                    <span class="alitested-tag">L'Expertise Autel</span>
+                    <span style="font-weight:bold; color:#111827;">9.3/10</span>
+                </div>
+
+                <h3 class="alitested-title">OTOFIX D1 Lite</h3>
+                <p style="color:#4B5563; margin-top:5px;">La puissance logicielle d'Autel à un prix défiant toute
+                    concurrence.</p>
+
+                <div class="alitested-grid">
+                    <div class="alitested-list alitested-pros">
+                        <strong>Pourquoi on l'aime :</strong>
+                        <ul>
+                            <li>Logiciel Autel (Stabilité & Précision)</li>
+                            <li>Diagnostic Bidirectionnel complet</li>
+                            <li>Design ultra-fin et ergo "Smartphone"</li>
+                        </ul>
+                    </div>
+                    <div class="alitested-list alitested-cons">
+                        <strong>Points faibles :</strong>
+                        <ul>
+                            <li>Mises à jour payantes après 2 ans</li>
+                            <li>Dépendance à l'écosystème Autel</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <a href="https://s.click.aliexpress.com/e/_c3lAdHft" class="alitested-cta">
+                    Voir le prix sur AliExpress
+                </a>
+                <p style="text-align:center; font-size:0.8em; color:#6B7280; margin-top:10px;">Livraison rapide &
+                    Garantie incluse</p>
+            </div>
+
             <!-- Introduction -->
             <section id="introduction">
-                <div class="glass-panel">
+                <div class="glass-panel" style="background: white; border: none; box-shadow: none; padding: 0;">
                     <h2>Pourquoi l'existence de l'OTOFIX D1 Lite et que vaut-il réellement ?</h2>
                     <p>Le <strong>OTOFIX D1 Lite</strong> est né d'une volonté stratégique claire : proposer la
                         puissance logicielle de l'écosystème Autel dans un format matériel plus abordable.
@@ -137,10 +173,11 @@
                     </p>
                     <div class="warning-box">
                         <h4>⚠️ Avertissement de Transparence</h4>
-                        vie, et son efficacité dépendra de votre volonté de renouveler l'abonnement après cette
-                        période. Comparez les différentes options dans notre <a
-                            href="comparatif-valise-diagnostic-aliexpress.html">comparatif valises diagnostic
-                            AliExpress</a>. </p>
+                        <p>L'OTOFIX D1 Lite propose 2 ans de mises à jour. Ce n'est pas un outil "No Subscription" à
+                            vie, et son efficacité dépendra de votre volonté de renouveler l'abonnement après cette
+                            période. Comparez les différentes options dans notre <a
+                                href="comparatif-valise-diagnostic-aliexpress.html">comparatif valises diagnostic
+                                AliExpress</a>. </p>
                     </div>
                 </div>
             </section>
@@ -186,7 +223,7 @@
             </section>
 
             <section id="protocols-deep-dive">
-                <div class="glass-panel" style="margin-top: 4rem;">
+                <div class="glass-panel" style="margin-top: 4rem; background: white; border: none; box-shadow: none;">
                     <h3>Protocoles CAN-FD et DOIP : L'assurance d'une longévité limitée ?</h3>
                     <p>Nous avons mentionné le support <strong>CAN-FD</strong> et <strong>DOIP</strong>. Pour le
                         profane, cela peut sembler être du jargon commercial. Pour le pro, c'est la différence entre
@@ -291,7 +328,7 @@
                         réservées aux modèles D1 Pro ou MaxiSys.</p>
                 </div>
 
-                <div class="glass-panel">
+                <div class="glass-panel" style="background: white; border: none; box-shadow: none;">
                     <h3>3. Dépendance à l'écosystème Autel</h3>
                     <p>OTOFIX est une marque d'Autel, ce qui est une garantie de qualité logicielle, mais aussi une
                         forme d'enfermement. Le support client et les serveurs de diagnostic sont les mêmes. Cela
@@ -390,7 +427,7 @@
             </section>
 
             <section id="verdict">
-                <div class="glass-panel">
+                <div class="glass-panel" style="background: white; border: none; box-shadow: none;">
                     <h2>Verdict AliTested : Un investissement justifié ?</h2>
                     <p>L'OTOFIX D1 Lite est une machine de guerre en termes de vitesse et d'interface. Si vous appréciez
                         l'ergonomie Autel et que vous travaillez sur une flotte de véhicules récents, les 2 ans de mises
@@ -411,7 +448,7 @@
 
     </main>
 
-    <footer>
+    <footer class="main-footer">
         <div class="container">
             <p style="margin-bottom: 1rem; font-size: 0.85rem; color: var(--text-dim); opacity: 0.7;">Ce test a été
                 réalisé sans partenariat direct avec le fabricant.</p>
@@ -419,7 +456,30 @@
         </div>
     </footer>
 
+    <!-- STICKY FOOTER -->
+    <div class="sticky-footer">
+        <div class="sticky-footer-info">
+            OTOFIX D1 Lite
+            <span class="sticky-footer-price">Expertise Autel Accessible</span>
+        </div>
+        <a href="https://s.click.aliexpress.com/e/_c3lAdHft" class="sticky-footer-btn">
+            Voir le Prix
+        </a>
+    </div>
+
     <script src="../cookie-consent.js" defer></script>
+    <script>
+        window.addEventListener('scroll', function () {
+            var footer = document.querySelector('.sticky-footer');
+            if (window.scrollY > 400) {
+                footer.classList.add('visible');
+            } else {
+                footer.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+<script src="../cookie-consent.js" defer></script>
 </body>
 
 </html>

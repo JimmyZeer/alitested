@@ -108,18 +108,52 @@
         </div>
     </header>
 
-    <main class="container">
-
+    <main class="container" style="max-width: 750px;">
         <p style="margin-bottom: 2rem; color: var(--text-dim); font-size: 0.9rem;">
             <a href="programmation-cle-voiture-diy.html" style="color: var(--accent); text-decoration: none;">← Voir le
                 dossier complet : Programmation Clé & Serrurerie</a>
         </p>
 
         <article>
+            <!-- Verdict Box -->
+            <div class="alitested-verdict">
+                <div class="alitested-header">
+                    <span class="alitested-tag">Nouveauté 2026</span>
+                    <span style="font-weight:bold; color:#111827;">9/10</span>
+                </div>
+
+                <h3 class="alitested-title">Thinkcar TKey 101</h3>
+                <p style="color:#4B5563; margin-top:5px;">La programmation de clés enfin accessible aux particuliers.
+                </p>
+
+                <div class="alitested-grid">
+                    <div class="alitested-list alitested-pros">
+                        <strong>Pourquoi on l'aime :</strong>
+                        <ul>
+                            <li>Fini les factures de 300€ chez le concessionnaire</li>
+                            <li>Système "Super Chip" universel (gestion de stock facile)</li>
+                            <li>Guidage pas-à-pas sur la tablette</li>
+                        </ul>
+                    </div>
+                    <div class="alitested-list alitested-cons">
+                        <strong>Points faibles :</strong>
+                        <ul>
+                            <li>Nécessite une tablette Thinkcar/Mucar (Module Esclave)</li>
+                            <li>Pas compatible Mercedes/Volvo récents</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <a href="https://s.click.aliexpress.com/e/_DkM7n53" class="alitested-cta">
+                    Voir le prix sur AliExpress
+                </a>
+                <p style="text-align:center; font-size:0.8em; color:#6B7280; margin-top:10px;">Livraison rapide &
+                    Garantie incluse</p>
+            </div>
 
             <!-- Introduction -->
             <section id="introduction">
-                <div class="glass-panel">
+                <div class="glass-panel" style="background: white; border: none; box-shadow: none; padding: 0;">
                     <h2>À quoi ça sert concrètement ?</h2>
                     <p>Le TKey 101 ne sert pas à réparer une panne moteur. Il sert à :</p>
                     <ol>
@@ -205,7 +239,7 @@
             <!-- Limitations -->
             <section id="limitations">
                 <h2>Les Défauts Réels (À savoir)</h2>
-                <div class="glass-panel" style="border-left: 4px solid #ff4444;">
+                <div class="glass-panel" style="border-left: 4px solid #ff4444; background: #FFF5F5;">
                     <ul>
                         <li><strong>Pas pour les voitures 2024 ultra-sécurisées :</strong> Oubliez les dernières
                             Mercedes FBS4 ou les Volvo SPA2. Pour ça, il faut des outils à 3000€.</li>
@@ -273,22 +307,11 @@
 
             <!-- Conclusion -->
             <section id="conclusion">
-                <div class="glass-panel">
+                <div class="glass-panel" style="background: white; border: none; box-shadow: none;">
                     <h2>Faut-il l'acheter ?</h2>
                     <p>Une clé perdue chez VW ou Peugeot, c'est minimum 250€. Le <strong>Thinkcar Tkey 101</strong>
                         coûte moins de 100€. Si vous avez une famille avec 2 ou 3 voitures, il est rentabilisé dès le
                         premier usage. C'est un "Must-Have" pour compléter votre valise Thinkcar.</p>
-
-                    <div class="trust-grid" style="margin-top: 2rem;">
-                        <div class="trust-item">
-                            <h4 style="color: var(--primary);">✅ On aime</h4>
-                            <ul style="text-align: left; padding-left: 1rem; color: var(--text-dim);">
-                                <li>Prix très accessible.</li>
-                                <li>Simplicité des "Super Chips".</li>
-                                <li>Intégration parfaite dans l'appli diag.</li>
-                            </ul>
-                        </div>
-                    </div>
 
                     <div style="margin-top: 3rem; text-align: center;">
                         <a href="https://s.click.aliexpress.com/e/_DkM7n53" class="cta-button"
@@ -302,13 +325,34 @@
 
     </main>
 
-    <footer>
+    <footer class="main-footer">
         <div class="container">
             <p>&copy; 2026 AliTested - Expert en diagnostic automobile.</p>
         </div>
     </footer>
 
+    <!-- STICKY FOOTER -->
+    <div class="sticky-footer">
+        <div class="sticky-footer-info">
+            Thinkcar TKey 101
+            <span class="sticky-footer-price">Programmateur Clés Universel</span>
+        </div>
+        <a href="https://s.click.aliexpress.com/e/_DkM7n53" class="sticky-footer-btn">
+            Voir le Prix
+        </a>
+    </div>
+
     <script src="../cookie-consent.js" defer></script>
+    <script>
+        window.addEventListener('scroll', function () {
+            var footer = document.querySelector('.sticky-footer');
+            if (window.scrollY > 400) {
+                footer.classList.add('visible');
+            } else {
+                footer.classList.remove('visible');
+            }
+        });
+    </script>
 </body>
 
 </html>
