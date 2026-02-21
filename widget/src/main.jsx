@@ -2,12 +2,12 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import './index.css';
 import SuitcaseSelector from './components/SuitcaseSelector';
+import TechDictionary from './components/TechDictionary';
 
-// Find the root element in the HTML
-const container = document.getElementById('suitcase-selector-root');
-
-if (container) {
-    const root = createRoot(container);
+// Inject Suitcase Selector if container exists
+const suitcaseContainer = document.getElementById('suitcase-selector-root');
+if (suitcaseContainer) {
+    const root = createRoot(suitcaseContainer);
     root.render(
         <React.StrictMode>
             <div className="suitcase-widget-wrapper">
@@ -15,6 +15,17 @@ if (container) {
             </div>
         </React.StrictMode>
     );
-} else {
-    console.warn('SuitcaseSelector Widget Error: Container element with id "suitcase-selector-root" not found.');
+}
+
+// Inject Tech Dictionary if container exists
+const dictionaryContainer = document.getElementById('tech-dictionary-root');
+if (dictionaryContainer) {
+    const root = createRoot(dictionaryContainer);
+    root.render(
+        <React.StrictMode>
+            <div className="dictionary-widget-wrapper">
+                <TechDictionary />
+            </div>
+        </React.StrictMode>
+    );
 }
