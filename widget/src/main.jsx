@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import './index.css';
 import SuitcaseSelector from './components/SuitcaseSelector';
 import TechDictionary from './components/TechDictionary';
+import ExpertComparison from './components/ExpertComparison';
 
 // Inject Suitcase Selector if container exists
 const suitcaseContainer = document.getElementById('suitcase-selector-root');
@@ -25,6 +26,19 @@ if (dictionaryContainer) {
         <React.StrictMode>
             <div className="dictionary-widget-wrapper">
                 <TechDictionary />
+            </div>
+        </React.StrictMode>
+    );
+}
+
+// Inject Expert Comparison if container exists
+const expertContainer = document.getElementById('expert-comparison-root');
+if (expertContainer) {
+    const root = createRoot(expertContainer);
+    root.render(
+        <React.StrictMode>
+            <div className="expert-widget-wrapper">
+                <ExpertComparison />
             </div>
         </React.StrictMode>
     );
