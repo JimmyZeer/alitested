@@ -93,8 +93,7 @@ export default function SuitcaseSelector() {
 
     return (
         <div className="alitested-verdict animate-fade-in-up" style={{
-            maxWidth: '850px',
-            margin: '2rem auto',
+            margin: '0',
             padding: window.innerWidth > 768 ? '3rem' : '1.5rem',
             background: 'var(--bg-body)'
         }}>
