@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronRight, RotateCcw, CheckCircle2, Car, Wallet, Award, ShoppingCart, ExternalLink, Settings2 } from 'lucide-react';
+import { ChevronRight, RotateCcw, CheckCircle2, Car, Wallet, Award, ShoppingCart, Crosshair } from 'lucide-react';
 
 const CAR_BRANDS = [
     'Peugeot', 'Renault', 'Citroën', 'Volkswagen', 'Audi', 'BMW',
@@ -13,7 +13,7 @@ const PRODUCTS = [
         price: 'Moins de 100€',
         budgets: ['<100'],
         levels: ['debutant', 'confirme'],
-        image: '/media/placeholder.png', // Fallback, will try to use the site's real image if available later
+        image: '/media/placeholder.png',
         strengths: ['Diag Tous Systèmes', 'Mises à jour à vie', 'Bidirectionnel'],
         link: 'https://alitested.com/guides/mucar-892bt-test-avis.html',
         tag: 'Rapport Qualité/Prix'
@@ -73,7 +73,7 @@ export default function SuitcaseSelector() {
         setTimeout(() => {
             if (step < 3) setStep(step + 1);
             else setStep(4);
-        }, 150); // Small delay for visual feedback
+        }, 200);
     };
 
     const getRecommendations = () => {
@@ -92,62 +92,75 @@ export default function SuitcaseSelector() {
     };
 
     return (
-        <div className="w-full max-w-4xl mx-auto rounded-2xl md:rounded-[24px] shadow-xl overflow-hidden border border-slate-200 mb-8 bg-white transition-all duration-500 ease-in-out relative z-10">
+        <div className="alitested-verdict animate-fade-in-up" style={{
+            maxWidth: '850px',
+            margin: '2rem auto',
+            padding: window.innerWidth > 768 ? '3rem' : '1.5rem',
+            background: 'var(--bg-body)'
+        }}>
 
-            {/* Header avec Design Premium */}
-            <div className="p-8 md:p-12 text-center relative overflow-hidden flex flex-col items-center" style={{ background: 'var(--primary-gradient)' }}>
-                {/* Lignes/Cercles de décoration */}
-                <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 rounded-full bg-white opacity-10 blur-3xl mix-blend-overlay pointer-events-none"></div>
-                <div className="absolute bottom-0 left-0 -ml-16 -mb-16 w-48 h-48 rounded-full bg-white opacity-10 blur-2xl mix-blend-overlay pointer-events-none"></div>
-
-                <div className="bg-white/20 p-3 rounded-2xl backdrop-blur-md mb-5 shadow-sm inline-block relative z-10">
-                    <Settings2 className="w-8 h-8 text-white relative z-10" />
-                </div>
-
-                <h2 className="text-3xl md:text-4xl font-extrabold mb-3 !text-white !mt-0 relative z-10 leading-tight" style={{ letterSpacing: '-0.02em', textShadow: '0 2px 10px rgba(0,0,0,0.1)' }}>
+            {/* Header (Minimaliste, intégré au site) */}
+            <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+                <h2 className="alitested-title" style={{ marginTop: 0, marginBottom: '0.5rem', fontSize: '2.25rem' }}>
                     Trouvez votre Valise Idéale
                 </h2>
-                <p className="text-blue-50 text-base md:text-lg max-w-md !mb-0 relative z-10 font-medium opacity-90">
-                    Répondez à 3 questions rapides pour obtenir notre recommandation experte 100% personnalisée.
+                <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', margin: '0 auto', maxWidth: '600px' }}>
+                    Répondez à 3 questions pour obtenir notre recommandation experte.
                 </p>
 
+                {/* ProgressBar subtile */}
                 {step < 4 && (
-                    <div className="mt-8 flex justify-center items-center gap-3 relative z-10">
+                    <div style={{ display: 'flex', justifyContent: 'center', gap: '0.5rem', marginTop: '1.5rem' }}>
                         {[1, 2, 3].map(i => (
                             <div
                                 key={i}
-                                className={`h-2.5 rounded-full transition-all duration-500 ease-out ${step >= i ? 'w-12 bg-white shadow-[0_0_10px_rgba(255,255,255,0.5)]' : 'w-4 bg-white/20'}`}
+                                style={{
+                                    height: '6px',
+                                    borderRadius: '99px',
+                                    transition: 'var(--transition-bounce)',
+                                    width: step >= i ? '32px' : '12px',
+                                    background: step >= i ? 'var(--primary)' : 'var(--border)'
+                                }}
                             />
                         ))}
                     </div>
                 )}
             </div>
 
-            {/* Main Content Area */}
-            <div className="p-6 md:p-10 lg:p-12 bg-[#F8FAFC]">
+            {/* Étapes du Quiz */}
+            <div style={{ position: 'relative', minHeight: '300px' }}>
 
                 {step === 1 && (
-                    <div className="animate-in fade-in slide-in-from-bottom-8 duration-500 delay-100 ease-out fill-mode-both">
-                        <h3 className="text-2xl md:text-3xl font-extrabold !text-slate-900 mb-8 flex items-center justify-center gap-3 !mt-0" style={{ letterSpacing: '-0.02em' }}>
-                            <Wallet className="w-8 h-8 text-blue-600 shrink-0" />
-                            Quel est votre budget max ?
+                    <div className="animate-fade-in-up" style={{ textAlign: 'center' }}>
+                        <h3 style={{ marginTop: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.75rem', fontSize: '1.4rem' }}>
+                            <Wallet size={28} color="var(--primary)" />
+                            Quel est votre budget ?
                         </h3>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.5rem', marginTop: '2rem' }}>
                             {[
-                                { id: '<100', label: 'Moins de 100€', desc: 'Fonctions de base & effacement des voyants' },
-                                { id: '100-300', label: '100€ à 300€', desc: 'Rapport Qualité/Prix, resets avancés' },
-                                { id: 'pro', label: 'Pro (300€+)', desc: 'Sans compromis, vitesse & codage' }
+                                { id: '<100', label: 'Moins de 100€', desc: 'Basique & Efficace' },
+                                { id: '100-300', label: '100€ - 300€', desc: 'Rapport Qualité/Prix' },
+                                { id: 'pro', label: 'Pro (300€+)', desc: 'Sans compromis' }
                             ].map(opt => (
                                 <button
                                     key={opt.id}
                                     onClick={() => handleAnswer('budget', opt.id)}
-                                    className="group relative p-6 bg-white border-2 border-slate-200 rounded-[20px] text-center hover:border-blue-500 hover:shadow-[0_8px_30px_rgb(59,130,246,0.12)] transition-all duration-300 flex flex-col items-center justify-center min-h-[160px] cursor-pointer outline-none focus:border-blue-500 hover:-translate-y-1"
+                                    className="guide-card"
+                                    style={{
+                                        cursor: 'pointer',
+                                        padding: '1.5rem',
+                                        border: '2px solid var(--border)',
+                                        textAlign: 'center',
+                                        minHeight: '140px',
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        justifyContent: 'center'
+                                    }}
+                                    onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--primary)'}
+                                    onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--border)'}
                                 >
-                                    <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-blue-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity rounded-t-full"></div>
-                                    <div className="text-xl font-extrabold text-slate-800 group-hover:text-blue-600 transition-colors mb-2">
-                                        {opt.label}
-                                    </div>
-                                    <div className="text-sm font-medium text-slate-500 px-2 leading-relaxed">{opt.desc}</div>
+                                    <strong style={{ fontSize: '1.25rem', color: 'var(--text-main)', marginBottom: '0.5rem', display: 'block' }}>{opt.label}</strong>
+                                    <span style={{ fontSize: '0.95rem', color: 'var(--text-secondary)' }}>{opt.desc}</span>
                                 </button>
                             ))}
                         </div>
@@ -155,27 +168,36 @@ export default function SuitcaseSelector() {
                 )}
 
                 {step === 2 && (
-                    <div className="animate-in fade-in slide-in-from-bottom-8 duration-500 ease-out">
-                        <h3 className="text-2xl md:text-3xl font-extrabold !text-slate-900 mb-8 flex items-center justify-center gap-3 !mt-0" style={{ letterSpacing: '-0.02em' }}>
-                            <Award className="w-8 h-8 text-blue-600 shrink-0" />
-                            Quel est votre niveau ?
+                    <div className="animate-fade-in-up" style={{ textAlign: 'center' }}>
+                        <h3 style={{ marginTop: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.75rem', fontSize: '1.4rem' }}>
+                            <Award size={28} color="var(--primary)" />
+                            Niveau en mécanique ?
                         </h3>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.5rem', marginTop: '2rem' }}>
                             {[
-                                { id: 'debutant', label: 'Débutant', desc: 'Je fais mes entretiens de base (vidange, freins...)' },
-                                { id: 'confirme', label: 'Confirmé', desc: 'Je répare souvent moi-même des pannes complexes' },
-                                { id: 'pro', label: 'Expert / Pro', desc: 'Je fais du codage ECU et diag avancé au quotidien' }
+                                { id: 'debutant', label: 'Débutant', desc: 'Entretiens de base' },
+                                { id: 'confirme', label: 'Confirmé', desc: 'Réparations fréquentes' },
+                                { id: 'pro', label: 'Expert / Pro', desc: 'Codage & Diag avancé' }
                             ].map(opt => (
                                 <button
                                     key={opt.id}
                                     onClick={() => handleAnswer('level', opt.id)}
-                                    className="group relative p-6 bg-white border-2 border-slate-200 rounded-[20px] text-center hover:border-blue-500 hover:shadow-[0_8px_30px_rgb(59,130,246,0.12)] transition-all duration-300 flex flex-col items-center justify-center min-h-[160px] cursor-pointer outline-none focus:border-blue-500 hover:-translate-y-1"
+                                    className="guide-card"
+                                    style={{
+                                        cursor: 'pointer',
+                                        padding: '1.5rem',
+                                        border: '2px solid var(--border)',
+                                        textAlign: 'center',
+                                        minHeight: '140px',
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        justifyContent: 'center'
+                                    }}
+                                    onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--primary)'}
+                                    onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--border)'}
                                 >
-                                    <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-blue-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity rounded-t-full"></div>
-                                    <div className="text-xl font-extrabold text-slate-800 group-hover:text-blue-600 transition-colors mb-2">
-                                        {opt.label}
-                                    </div>
-                                    <div className="text-sm font-medium text-slate-500 px-2 leading-relaxed">{opt.desc}</div>
+                                    <strong style={{ fontSize: '1.25rem', color: 'var(--text-main)', marginBottom: '0.5rem', display: 'block' }}>{opt.label}</strong>
+                                    <span style={{ fontSize: '0.95rem', color: 'var(--text-secondary)' }}>{opt.desc}</span>
                                 </button>
                             ))}
                         </div>
@@ -183,15 +205,28 @@ export default function SuitcaseSelector() {
                 )}
 
                 {step === 3 && (
-                    <div className="animate-in fade-in slide-in-from-bottom-8 duration-500 ease-out text-center">
-                        <h3 className="text-2xl md:text-3xl font-extrabold !text-slate-900 mb-8 flex items-center justify-center gap-3 !mt-0" style={{ letterSpacing: '-0.02em' }}>
-                            <Car className="w-8 h-8 text-blue-600 shrink-0" />
-                            Marque de votre véhicule ?
+                    <div className="animate-fade-in-up" style={{ textAlign: 'center' }}>
+                        <h3 style={{ marginTop: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.75rem', fontSize: '1.4rem' }}>
+                            <Car size={28} color="var(--primary)" />
+                            Marque du véhicule ?
                         </h3>
-                        <div className="max-w-md mx-auto relative">
-                            <div className="relative group">
+                        <div style={{ maxWidth: '400px', margin: '2rem auto' }}>
+                            <div style={{ position: 'relative' }}>
                                 <select
-                                    className="w-full p-5 pl-6 pr-12 rounded-[20px] border-2 border-slate-200 bg-white text-slate-900 font-bold text-lg focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 outline-none transition-all cursor-pointer appearance-none shadow-sm hover:border-blue-300"
+                                    style={{
+                                        width: '100%',
+                                        padding: '1.25rem',
+                                        borderRadius: '12px',
+                                        border: '2px solid var(--border)',
+                                        background: 'var(--bg-content)',
+                                        color: 'var(--text-main)',
+                                        fontSize: '1.1rem',
+                                        fontWeight: 'bold',
+                                        outline: 'none',
+                                        cursor: 'pointer',
+                                        appearance: 'none',
+                                        boxShadow: 'var(--shadow-sm)'
+                                    }}
                                     onChange={(e) => handleAnswer('brand', e.target.value)}
                                     defaultValue=""
                                 >
@@ -200,71 +235,66 @@ export default function SuitcaseSelector() {
                                         <option key={brand} value={brand}>{brand}</option>
                                     ))}
                                 </select>
-                                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-6 text-slate-400 group-hover:text-blue-500 transition-colors">
-                                    <ChevronRight className="w-6 h-6 rotate-90" />
-                                </div>
+                                <ChevronRight style={{ position: 'absolute', right: '1rem', top: '50%', transform: 'translateY(-50%) rotate(90deg)', pointerEvents: 'none', color: 'var(--text-dim)' }} />
                             </div>
-                            <div className="mt-6 inline-flex items-center gap-2 bg-blue-50/80 px-4 py-3 rounded-xl border border-blue-100/50 text-sm font-medium text-blue-800">
-                                <CheckCircle2 className="w-4 h-4 text-blue-600" />
-                                Nos choix couvrent 99% du parc européen (OBD2).
-                            </div>
+                            <p style={{ marginTop: '1.5rem', fontSize: '0.95rem', color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
+                                <CheckCircle2 size={18} color="var(--success)" />
+                                Couvre plus de 99% du parc européen.
+                            </p>
                         </div>
                     </div>
                 )}
 
                 {step === 4 && (
-                    <div className="animate-in fade-in zoom-in-95 duration-500 ease-out">
-                        <div className="flex flex-col sm:flex-row justify-between items-center mb-8 pb-5 border-b border-slate-200 gap-4">
-                            <h3 className="text-2xl font-extrabold !text-slate-900 !mt-0 !mb-0 flex items-center gap-2">
-                                🎯 Vos recommandations :
+                    <div className="animate-fade-in-up">
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem', flexWrap: 'wrap', gap: '1rem' }}>
+                            <h3 style={{ margin: 0, fontSize: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                                <Crosshair size={24} color="var(--primary)" />
+                                Vos Résultats
                             </h3>
-                            <button onClick={resetQuiz} className="text-sm font-bold flex items-center gap-2 text-slate-500 hover:text-blue-600 transition-colors cursor-pointer bg-slate-200/50 hover:bg-blue-50 px-4 py-2 rounded-xl">
-                                <RotateCcw className="w-4 h-4" /> Modifier mes réponses
+                            <button
+                                onClick={resetQuiz}
+                                style={{
+                                    background: 'none', border: 'none', color: 'var(--text-secondary)', cursor: 'pointer',
+                                    display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.95rem', fontWeight: 'bold'
+                                }}
+                                onMouseEnter={(e) => e.currentTarget.style.color = 'var(--primary)'}
+                                onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}
+                            >
+                                <RotateCcw size={16} /> Refaire le test
                             </button>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                        <div className="guide-grid" style={{ marginTop: '1rem' }}>
                             {getRecommendations().map((product, idx) => (
-                                <div key={product.id} className="guide-card flex flex-col h-full bg-white !p-7 md:!p-8 relative" style={{ marginTop: 0 }}>
+                                <div key={product.id} className="guide-card" style={{ display: 'flex', flexDirection: 'column', position: 'relative', marginTop: 0 }}>
 
-                                    {/* Badges Premium */}
-                                    <div className="mb-5 flex flex-wrap gap-2">
+                                    <div style={{ marginBottom: '1.5rem', display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
                                         {idx === 0 && (
-                                            <span className="badge inline-flex items-center gap-1.5" style={{ background: 'var(--primary-gradient)', color: 'white', border: 'none', boxShadow: '0 4px 12px rgba(59,130,246,0.35)', padding: '0.4rem 1rem' }}>
+                                            <span className="badge" style={{ background: 'var(--primary-gradient)', color: 'white', border: 'none' }}>
                                                 🏆 Meilleur Choix
                                             </span>
                                         )}
-                                        {idx === 1 && (
-                                            <span className="badge inline-flex items-center gap-1.5" style={{ background: '#F1F5F9', color: 'var(--text-secondary)', borderColor: 'var(--border)', padding: '0.4rem 1rem' }}>
-                                                ⭐ Alternative
-                                            </span>
-                                        )}
-                                        <span className="badge inline-flex items-center gap-1.5" style={{ background: '#FFFBEB', color: '#B45309', borderColor: '#FEF3C7', padding: '0.4rem 1rem' }}>
-                                            {product.tag}
-                                        </span>
+                                        <span className="badge" style={{ background: 'var(--bg-body)' }}>{product.tag}</span>
                                     </div>
 
-                                    {/* Contenu */}
-                                    <h3 className="!mt-0 !mb-3 !text-2xl leading-tight">{product.name}</h3>
-                                    <div className="inline-flex items-center mb-6">
-                                        <span className="text-sm font-extrabold text-blue-700 bg-blue-50 px-3 py-1.5 rounded-lg border border-blue-100 shadow-sm">
-                                            PRIX : {product.price.toUpperCase()}
-                                        </span>
-                                    </div>
+                                    <h3 style={{ marginTop: 0, fontSize: '1.5rem', marginBottom: '0.5rem' }}>{product.name}</h3>
+                                    <span style={{ fontSize: '0.95rem', fontWeight: '800', color: 'var(--primary)', marginBottom: '1.5rem', display: 'block' }}>
+                                        {product.price.toUpperCase()}
+                                    </span>
 
-                                    <ul className="mb-8 space-y-3 flex-grow">
+                                    <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 2rem 0', flexGrow: 1 }}>
                                         {product.strengths.map((str, i) => (
-                                            <li key={i} className="flex items-start gap-3 text-base text-slate-700 font-medium leading-snug">
-                                                <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
-                                                <span>{str}</span>
+                                            <li key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.75rem', color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
+                                                <CheckCircle2 size={18} color="var(--success)" />
+                                                {str}
                                             </li>
                                         ))}
                                     </ul>
 
-                                    {/* CTA Button Using Site Styles */}
-                                    <a href={product.link} className="cta-button" style={{ marginTop: 'auto', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.5rem', padding: '1rem' }}>
-                                        Voir le Test / Acheter
-                                        <ChevronRight className="w-5 h-5" />
+                                    <a href={product.link} className="cta-button" style={{ marginTop: 'auto', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.5rem' }}>
+                                        <ShoppingCart size={20} />
+                                        Voir le Test & Acheter
                                     </a>
                                 </div>
                             ))}
