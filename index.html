@@ -39,8 +39,32 @@
     <title>AliTested – Tests experts et guides d’achat AliExpress en électronique automobile</title>
     <meta name="description"
         content="Tests indépendants de matériel AliExpress pour l’électronique automobile, diagnostic OBD et codage ECU. Avis experts, sans promesse marketing.">
+
+    <!-- Open Graph Meta Tags (SEO Overboost) -->
+    <meta property="og:title"
+        content="AliTested – Tests experts et guides d’achat AliExpress en électronique automobile">
+    <meta property="og:description"
+        content="Tests indépendants de matériel AliExpress pour l’électronique automobile, diagnostic OBD et codage ECU. Avis experts, sans promesse marketing.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alitested.com/">
+    <meta property="og:image" content="https://alitested.com/favicon.png">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AliTested – Tests experts en électronique auto">
+    <meta name="twitter:description"
+        content="Tests indépendants de matériel AliExpress pour l’électronique automobile (OBD, codage).">
+    <meta name="twitter:image" content="https://alitested.com/favicon.png">
+
+    <!-- Preload Fonts for Performance -->
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800&display=swap"
+        as="style">
+
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="canonical" href="https://alitested.com/">
+    <!-- React Widget Styles -->
+    <link rel="stylesheet" href="assets/widget/suitcase-selector.css">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -81,37 +105,45 @@
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <nav>
+    <nav id="navbar">
         <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
-            <a href="/" style="font-size: 1.2rem; font-weight: 800; color: #111827; letter-spacing: -0.05em;">
+            <a href="/"
+                style="font-size: 1.3rem; font-family: var(--font-display); font-weight: 800; color: #0F172A; letter-spacing: -0.02em;">
                 ALITESTED<span style="color: var(--primary);">.</span>
             </a>
-            <div style="display: flex; gap: 1.5rem;">
+            <div style="display: flex; gap: 0.5rem; align-items: center;">
                 <a href="#silos">Guides</a>
-                <a href="#top-picks" style="color: var(--success);">Top Picks</a>
+                <a href="#top-picks" style="color: var(--success); background: rgba(16, 185, 129, 0.1);">Top Picks</a>
             </div>
         </div>
     </nav>
 
     <section class="hero">
-        <div class="container">
+        <div class="container animate-fade-in-up">
             <span class="badge">Analyse Indépendante 2026</span>
-            <h1>Le Diagnostic Auto Pro,<br>Sans la Facture Pro.</h1>
-            <p class="lead">Ne payez plus 1500€ pour une valise. Nous testons les meilleurs outils AliExpress (Mucar,
+            <h1 class="animate-fade-in-up stagger-1">Le Diagnostic Auto Pro,<br>Sans la Facture Pro.</h1>
+            <p class="lead animate-fade-in-up stagger-2">Ne payez plus 1500€ pour une valise. Nous testons les meilleurs
+                outils AliExpress (Mucar,
                 Thinkcar) pour vous aider à diagnostiquer, coder et réparer vous-même.</p>
         </div>
     </section>
 
     <main class="container">
 
+        <!-- SÉLECTEUR DE VALISE INTERACTIF (React Widget) -->
+        <section id="selector-widget" style="margin-top: -3rem; position: relative; z-index: 20; padding-bottom: 2rem;">
+            <div id="suitcase-selector-root"></div>
+        </section>
+
         <!-- SILOS: ENTRY POINTS -->
-        <section id="silos" style="margin-top: -2rem;">
-            <div class="guide-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+        <section id="silos" style="position: relative; z-index: 10;">
+            <div class="guide-grid">
 
                 <!-- Silo A: Diag -->
-                <a href="guides/meilleure-valise-diagnostic-multimarque.html" class="guide-card"
-                    style="border-top: 4px solid var(--primary);">
-                    <div style="margin-bottom: 1rem; color: var(--primary);">
+                <a href="guides/meilleure-valise-diagnostic-multimarque.html"
+                    class="guide-card animate-fade-in-up stagger-1" style="border-top: 4px solid var(--primary);">
+                    <div
+                        style="margin-bottom: 1.25rem; color: var(--primary); background: rgba(59, 130, 246, 0.1); width: max-content; padding: 12px; border-radius: 12px;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path
@@ -120,13 +152,14 @@
                     </div>
                     <h3>Diagnostic Multimarque</h3>
                     <p>Lire les codes défauts, comprendre les voyants et effacer les erreurs moteur/ABS/Airbag.</p>
-                    <footer>Voir les Valises →</footer>
+                    <footer>Voir les Valises</footer>
                 </a>
 
                 <!-- Silo B: Clés -->
-                <a href="guides/programmation-cle-voiture-diy.html" class="guide-card"
+                <a href="guides/programmation-cle-voiture-diy.html" class="guide-card animate-fade-in-up stagger-2"
                     style="border-top: 4px solid var(--warning);">
-                    <div style="margin-bottom: 1rem; color: var(--warning);">
+                    <div
+                        style="margin-bottom: 1.25rem; color: var(--warning); background: rgba(245, 158, 11, 0.1); width: max-content; padding: 12px; border-radius: 12px;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path
@@ -135,13 +168,14 @@
                     </div>
                     <h3>Clés & Serrurerie</h3>
                     <p>Double de clé perdu ? Apprenez à programmer des nouvelles clés et télécommandes.</p>
-                    <footer>Voir le Matériel →</footer>
+                    <footer>Voir le Matériel</footer>
                 </a>
 
                 <!-- Silo C: Entretien -->
-                <a href="guides/entretien-auto-reset-electronique.html" class="guide-card"
+                <a href="guides/entretien-auto-reset-electronique.html" class="guide-card animate-fade-in-up stagger-3"
                     style="border-top: 4px solid var(--success);">
-                    <div style="margin-bottom: 1rem; color: var(--success);">
+                    <div
+                        style="margin-bottom: 1.25rem; color: var(--success); background: rgba(16, 185, 129, 0.1); width: max-content; padding: 12px; border-radius: 12px;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path
@@ -150,100 +184,121 @@
                     </div>
                     <h3>Maintenance & Reset</h3>
                     <p>Vidange, FAP, AdBlue, Freins Électriques... Remettez à zéro tous vos indicateurs à vie.</p>
-                    <footer>Voir les Tutos →</footer>
+                    <footer>Voir les Tutos</footer>
                 </a>
 
             </div>
         </section>
 
         <!-- TOP PICKS SECTION -->
-        <section id="top-picks" style="margin-top: 5rem;">
-            <h2 style="border-bottom: 2px solid #E5E7EB; padding-bottom: 1rem; margin-bottom: 2rem;">Les Choix de la
+        <section id="top-picks" style="margin-top: 6rem;">
+            <h2 style="border-bottom: 2px solid var(--border); padding-bottom: 1rem; margin-bottom: 2.5rem;"
+                class="animate-fade-in-up">Les Choix de la
                 Rédaction</h2>
 
             <div class="guide-grid">
 
                 <!-- Pick 1: Mucar 892BT -->
-                <div class="guide-card featured" style="background: #F9FAFB; border-color: var(--border);">
-                    <span class="badge" style="background: var(--primary); color: white;">Top 1 - Rapport
-                        Qualité/Prix</span>
-                    <h3>Mucar 892BT</h3>
+                <div class="glass-panel animate-fade-in-up stagger-1"
+                    style="border: 2px solid rgba(59, 130, 246, 0.4); background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);">
+                    <span class="badge"
+                        style="background: var(--primary-gradient); color: white; border: none; box-shadow: 0 4px 10px rgba(59,130,246,0.3);">🏆
+                        Top 1 - Rapport Qualité/Prix</span>
+                    <h3 style="font-size: 1.5rem; margin-top: 0.5rem;">Mucar 892BT</h3>
                     <p>Le seul outil à moins de 80€ qui offre le diagnostic bidirectionnel et le codage ECU.
-                        Indispensable.</p>
-                    <div style="margin-top: 1rem;">
+                        Indispensable pour la maison et le garage.</p>
+                    <div
+                        style="margin-top: 1rem; background: rgba(255,255,255,0.7); padding: 1rem; border-radius: 8px; border: 1px solid var(--border);">
                         <ul
-                            style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem; color: var(--text-secondary);">
-                            <li style="margin-bottom: 0.5rem;">✅ Diag Tous Systèmes</li>
-                            <li style="margin-bottom: 0.5rem;">✅ Mises à jour à vie</li>
-                            <li style="margin-bottom: 0.5rem;">✅ Code Promo : <strong
-                                    style="color: var(--text-main);">VIPTHINKCAR</strong></li>
+                            style="list-style: none; padding: 0; margin: 0; font-size: 0.95rem; color: var(--text-main); font-weight: 500;">
+                            <li style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">✅ Diag
+                                Tous Systèmes</li>
+                            <li style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">✅ Mises
+                                à jour à vie</li>
+                            <li style="margin-bottom: 0; display: flex; align-items: center; gap: 0.5rem;">🎁 Code Promo
+                                : <strong
+                                    style="color: var(--primary); font-family: var(--font-display); letter-spacing: 0.05em; background: rgba(59,130,246,0.1); padding: 2px 8px; border-radius: 4px;">VIPTHINKCAR</strong>
+                            </li>
                         </ul>
                     </div>
                     <a href="guides/mucar-892bt-test-avis.html" class="cta-button"
-                        style="margin-top: 1.5rem; text-align: center;">Lire le Test & Acheter</a>
+                        style="margin-top: 1.75rem; width: 100%; display: block;">Lire le Test & Acheter</a>
                 </div>
 
                 <!-- Pick 2: TKey 101 -->
-                <div class="guide-card" style="background: white;">
-                    <span class="badge" style="background: #E5E7EB; color: var(--text-main);">Programmation Clés</span>
+                <div class="guide-card animate-fade-in-up stagger-2">
+                    <span class="badge"
+                        style="background: #F1F5F9; color: var(--text-secondary); border-color: var(--border);">🔑
+                        Programmation Clés</span>
                     <h3>Thinkcar TKey 101</h3>
                     <p>La solution la plus simple pour cloner des clés et des transpondeurs sans connaissances
                         techniques.</p>
+                    <footer style="border-top: none; padding-top: 0; margin-top: auto;">Lire le test complet</footer>
+                    <!-- Overlay link for the whole card -->
                     <a href="guides/thinkcar-tkey-101-test-avis.html"
-                        style="margin-top: auto; color: var(--primary); font-weight: 600;">Lire le test →</a>
+                        style="position: absolute; top:0; left:0; width:100%; height:100%; z-index:10;"><span
+                            style="display:none;">Lire</span></a>
                 </div>
 
                 <!-- Pick 3: Mucar VO7 -->
-                <div class="guide-card" style="background: white;">
-                    <span class="badge" style="background: #E5E7EB; color: var(--text-main);">Tablette Garage</span>
+                <div class="guide-card animate-fade-in-up stagger-3">
+                    <span class="badge"
+                        style="background: #F1F5F9; color: var(--text-secondary); border-color: var(--border);">📱
+                        Tablette Garage</span>
                     <h3>Mucar VO7</h3>
-                    <p>Une tablette 7 pouces robuste pour l'atelier. Idéal si vous détestez utiliser votre téléphone.
+                    <p>Une tablette 7 pouces robuste pour l'atelier. Idéal si vous détestez utiliser votre téléphone
+                        avec les mains sales.
                     </p>
+                    <footer style="border-top: none; padding-top: 0; margin-top: auto;">Lire le test complet</footer>
+                    <!-- Overlay link for the whole card -->
                     <a href="guides/mucar-vo7-test-avis.html"
-                        style="margin-top: auto; color: var(--primary); font-weight: 600;">Lire le test →</a>
+                        style="position: absolute; top:0; left:0; width:100%; height:100%; z-index:10;"><span
+                            style="display:none;">Lire</span></a>
                 </div>
 
             </div>
         </section>
 
         <!-- LATEST GUIDES -->
-        <section id="latest-guides" style="margin-top: 5rem;">
-            <h2 style="font-size: 1.5rem; color: var(--text-secondary); margin-bottom: 2rem;">Derniers Guides Publiés
+        <section id="latest-guides" style="margin-top: 6rem;" class="animate-fade-in-up">
+            <h2 style="font-size: 1.75rem; color: var(--text-main); margin-bottom: 2rem;">Derniers Guides Publiés
             </h2>
 
-            <div style="display: flex; flex-direction: column; gap: 1rem;">
+            <div class="latest-guides-list" style="display: flex; flex-direction: column;">
 
-                <a href="guides/code-defaut-p20e8-solution.html"
-                    style="display: block; padding: 1.5rem; border: 1px solid var(--border); border-radius: 8px; color: var(--text-main); transition: 0.2s;"
-                    onmouseover="this.style.background='#F9FAFB'" onmouseout="this.style.background='white'">
+                <a href="guides/code-defaut-p20e8-solution.html" class="animate-fade-in-up stagger-1"
+                    style="position: relative;">
                     <span
-                        style="font-size: 0.8rem; color: var(--danger); font-weight: 700; text-transform: uppercase;">Problème
-                        Connu</span>
-                    <h3 style="margin: 0.5rem 0 0.5rem; font-size: 1.25rem;">Solution Code P20E8 (AdBlue)
+                        style="font-size: 0.75rem; color: var(--danger); font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; background: rgba(239, 68, 68, 0.1); padding: 4px 8px; border-radius: 4px; display: inline-block; margin-bottom: 0.5rem;">Problème
+                        Connu urgence</span>
+                    <h3 style="margin: 0.25rem 0 0.5rem; font-size: 1.35rem; color: var(--text-main);">Solution Code
+                        P20E8 (AdBlue)
                         Peugeot/Citroën</h3>
-                    <p style="margin: 0; color: var(--text-secondary); font-size: 1rem;">Comment éviter le remplacement
+                    <p style="margin: 0; color: var(--text-secondary); font-size: 1.05rem;">Comment éviter le
+                        remplacement
                         du réservoir d'urée à 1200€ grâce au diagnostic.</p>
                 </a>
 
-                <a href="guides/kingbolen-k7-test-avis.html"
-                    style="display: block; padding: 1.5rem; border: 1px solid var(--border); border-radius: 8px; color: var(--text-main); transition: 0.2s;"
-                    onmouseover="this.style.background='#F9FAFB'" onmouseout="this.style.background='white'">
+                <a href="guides/kingbolen-k7-test-avis.html" class="animate-fade-in-up stagger-2"
+                    style="position: relative;">
                     <span
-                        style="font-size: 0.8rem; color: var(--success); font-weight: 700; text-transform: uppercase;">Bon
+                        style="font-size: 0.75rem; color: var(--success); font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; background: rgba(16, 185, 129, 0.1); padding: 4px 8px; border-radius: 4px; display: inline-block; margin-bottom: 0.5rem;">Bon
                         Plan</span>
-                    <h3 style="margin: 0.5rem 0 0.5rem; font-size: 1.25rem;">Test KINGBOLEN K7 : La révélation 2026</h3>
-                    <p style="margin: 0; color: var(--text-secondary); font-size: 1rem;">Mises à jour gratuites à vie
+                    <h3 style="margin: 0.25rem 0 0.5rem; font-size: 1.35rem; color: var(--text-main);">Test KINGBOLEN K7
+                        : La révélation 2026</h3>
+                    <p style="margin: 0; color: var(--text-secondary); font-size: 1.05rem;">Mises à jour gratuites à vie
                         sur une tablette 7 pouces compatible CAN-FD.</p>
                 </a>
 
-                <a href="guides/autel-maxicom-mk900-bt-test-avis.html"
-                    style="display: block; padding: 1.5rem; border: 1px solid var(--border); border-radius: 8px; color: var(--text-main); transition: 0.2s;"
-                    onmouseover="this.style.background='#F9FAFB'" onmouseout="this.style.background='white'">
+                <a href="guides/autel-maxicom-mk900-bt-test-avis.html" class="animate-fade-in-up stagger-3"
+                    style="position: relative;">
                     <span
-                        style="font-size: 0.8rem; color: var(--text-dim); font-weight: 700; text-transform: uppercase;">Premium</span>
-                    <h3 style="margin: 0.5rem 0 0.5rem; font-size: 1.25rem;">Autel MK900-BT : Le roi des tests actifs
+                        style="font-size: 0.75rem; color: var(--primary); font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; background: rgba(59, 130, 246, 0.1); padding: 4px 8px; border-radius: 4px; display: inline-block; margin-bottom: 0.5rem;">Premium</span>
+                    <h3 style="margin: 0.25rem 0 0.5rem; font-size: 1.35rem; color: var(--text-main);">Autel MK900-BT :
+                        Le roi des tests actifs
                     </h3>
-                    <p style="margin: 0; color: var(--text-secondary); font-size: 1rem;">Si vous avez le budget, c'est
+                    <p style="margin: 0; color: var(--text-secondary); font-size: 1.05rem;">Si vous avez le budget,
+                        c'est
                         l'outil le plus rapide du marché actuel.</p>
                 </a>
 
@@ -254,13 +309,31 @@
 
     <footer class="main-footer">
         <div class="container">
+            <p
+                style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; color: #FFFFFF; margin-bottom: 1rem;">
+                ALITESTED.</p>
             <p>&copy; 2026 AliTested - L'Expertise Diagnostic Indépendante.</p>
-            <p style="font-size: 0.8rem; margin-top: 1rem; color: #9CA3AF;">En tant que Partenaire Amazon et AliExpress,
+            <p
+                style="font-size: 0.85rem; margin-top: 1.5rem; color: #64748B; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.5;">
+                En tant que Partenaire Amazon et AliExpress,
                 nous réalisons un bénéfice sur les achats remplissant les conditions requises.</p>
         </div>
     </footer>
 
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function () {
+            var navbar = document.getElementById('navbar');
+            if (window.scrollY > 10) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
     <script src="cookie-consent.js" defer></script>
+    <!-- React Widget Script -->
+    <script type="module" src="assets/widget/suitcase-selector.js"></script>
 </body>
 
 </html>

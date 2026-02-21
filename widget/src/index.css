@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+/* Scoped variables for the widget to match the site's dark mode if needed */
+.suitcase-widget-container {
+    /* You can add custom overrides here if Tailwind conflicts with global CSS */
+}
