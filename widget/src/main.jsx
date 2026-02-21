@@ -4,6 +4,8 @@ import './index.css';
 import SuitcaseSelector from './components/SuitcaseSelector';
 import TechDictionary from './components/TechDictionary';
 import ExpertComparison from './components/ExpertComparison';
+import ObdCodeResolver from './components/ObdCodeResolver';
+import DynamicComparator from './components/DynamicComparator';
 
 // Inject Suitcase Selector if container exists
 const suitcaseContainer = document.getElementById('suitcase-selector-root');
@@ -42,6 +44,32 @@ if (expertContainer) {
         <React.StrictMode>
             <div className="expert-widget-wrapper">
                 <ExpertComparison affiliateLink={affiliateLink} productName={productName} />
+            </div>
+        </React.StrictMode>
+    );
+}
+
+// Inject OBD Code Resolver if container exists
+const obdContainer = document.getElementById('obd-code-root');
+if (obdContainer) {
+    const root = createRoot(obdContainer);
+    root.render(
+        <React.StrictMode>
+            <div className="obd-widget-wrapper">
+                <ObdCodeResolver />
+            </div>
+        </React.StrictMode>
+    );
+}
+
+// Inject Dynamic Comparator if container exists
+const comparatorContainer = document.getElementById('dynamic-comparator-root');
+if (comparatorContainer) {
+    const root = createRoot(comparatorContainer);
+    root.render(
+        <React.StrictMode>
+            <div className="dynamic-comparator-wrapper">
+                <DynamicComparator />
             </div>
         </React.StrictMode>
     );
