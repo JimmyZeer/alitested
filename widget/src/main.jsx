@@ -7,6 +7,7 @@ import ExpertComparison from './components/ExpertComparison';
 import ObdCodeResolver from './components/ObdCodeResolver';
 import DynamicComparator from './components/DynamicComparator';
 import LeadMagnet from './components/LeadMagnet';
+import ReviewComments from './components/ReviewComments';
 
 // Inject Suitcase Selector if container exists
 const suitcaseContainer = document.getElementById('suitcase-selector-root');
@@ -85,6 +86,20 @@ if (leadMagnetContainer) {
         <React.StrictMode>
             <div className={`lead-magnet-wrapper ${mode === 'modal' ? 'modal-mode' : ''}`}>
                 <LeadMagnet mode={mode} />
+            </div>
+        </React.StrictMode>
+    );
+}
+
+// Inject Review Comments if container exists
+const reviewsContainer = document.getElementById('reviews-root');
+if (reviewsContainer) {
+    const productId = reviewsContainer.dataset.productId || 'default';
+    const root = createRoot(reviewsContainer);
+    root.render(
+        <React.StrictMode>
+            <div className="reviews-wrapper">
+                <ReviewComments productId={productId} />
             </div>
         </React.StrictMode>
     );
