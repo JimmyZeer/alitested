@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo, useRef, useEffect } from 'react';
 import { ChevronRight, RotateCcw, CheckCircle2, Car, Wallet, Award, ShoppingCart, Crosshair } from 'lucide-react';
 
 const CAR_BRANDS = [
@@ -68,15 +68,29 @@ export default function SuitcaseSelector() {
     const [step, setStep] = useState(1);
     const [answers, setAnswers] = useState({ budget: '', level: '', brand: '' });
 
+    const timerRef = useRef(null);
+
+    // Cleanup timer on unmount (Hygiène de code / memory leak prevention)
+    useEffect(() => {
+        return () => {
+            if (timerRef.current) clearTimeout(timerRef.current);
+        };
+    }, []);
+
     const handleAnswer = (field, value) => {
         setAnswers(prev => ({ ...prev, [field]: value }));
-        setTimeout(() => {
+
+        if (timerRef.current) clearTimeout(timerRef.current);
+
+        timerRef.current = setTimeout(() => {
             if (step < 3) setStep(step + 1);
             else setStep(4);
         }, 200);
     };
 
-    const getRecommendations = () => {
+    // Optimisation : Évite de recalculer le tri à chaque rendu
+    const recommendations = useMemo(() => {
+        if (step !== 4) return [];
         const scoredProducts = PRODUCTS.map(product => {
             let score = 0;
             if (product.budgets.includes(answers.budget)) score += 3;
@@ -84,7 +98,7 @@ export default function SuitcaseSelector() {
             return { ...product, score };
         });
         return scoredProducts.sort((a, b) => b.score - a.score).slice(0, 2);
-    };
+    }, [answers, step]);
 
     const resetQuiz = () => {
         setAnswers({ budget: '', level: '', brand: '' });
@@ -291,7 +305,7 @@ export default function SuitcaseSelector() {
                         </div>
 
                         <div className="guide-grid" style={{ marginTop: '1rem' }}>
-                            {getRecommendations().map((product, idx) => (
+                            {recommendations.map((product, idx) => (
                                 <div key={product.id} className="guide-card" style={{ display: 'flex', flexDirection: 'column', position: 'relative', marginTop: 0 }}>
 
                                     <div style={{ marginBottom: '1.5rem', display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>

@@ -127,6 +127,7 @@ export default function ExpertComparison() {
                             alt="Jimmy - Expert Auto"
                             className="w-14 h-14 rounded-full object-cover border-2 border-slate-100 shrink-0"
                             style={{ filter: 'grayscale(20%) sepia(10%) hue-rotate(180deg)', background: '#E2E8F0' }} // Placeholder visual cue
+                            onError={(e) => { e.currentTarget.style.display = 'none'; }}
                         />
                         <div>
                             <h4 className="font-bold text-slate-900 mb-1">L'avis de Jimmy</h4>

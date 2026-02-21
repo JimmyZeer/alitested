@@ -9,6 +9,7 @@ export default defineConfig({
         react()
     ],
     build: {
+        target: 'es2015', // Optimisation compatibilité (vieux navigateurs)
         outDir: '../assets/widget',
         emptyOutDir: true,
         rollupOptions: {
