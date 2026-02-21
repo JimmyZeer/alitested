@@ -34,11 +34,14 @@ if (dictionaryContainer) {
 // Inject Expert Comparison if container exists
 const expertContainer = document.getElementById('expert-comparison-root');
 if (expertContainer) {
+    const affiliateLink = expertContainer.dataset.affiliateLink || '#';
+    const productName = expertContainer.dataset.productName || 'Édition Recommandée';
+
     const root = createRoot(expertContainer);
     root.render(
         <React.StrictMode>
             <div className="expert-widget-wrapper">
-                <ExpertComparison />
+                <ExpertComparison affiliateLink={affiliateLink} productName={productName} />
             </div>
         </React.StrictMode>
     );
