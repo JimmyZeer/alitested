@@ -94,13 +94,16 @@ export default function SuitcaseSelector() {
     return (
         <div className="alitested-verdict animate-fade-in-up" style={{
             margin: '0',
-            padding: window.innerWidth > 768 ? '3rem' : '1.5rem',
-            background: 'var(--bg-body)'
+            padding: window.innerWidth > 768 ? '4rem' : '2rem',
+            background: 'var(--bg-content)',
+            border: '1px solid var(--border)',
+            borderRadius: '1rem',
+            boxShadow: 'none'
         }}>
 
             {/* Header (Minimaliste, intégré au site) */}
-            <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-                <h2 className="alitested-title" style={{ marginTop: 0, marginBottom: '0.5rem', fontSize: '2.25rem' }}>
+            <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+                <h2 className="alitested-title" style={{ marginTop: 0, marginBottom: '0.75rem', fontSize: '2.5rem', fontWeight: '800', color: 'var(--text-main)' }}>
                     Trouvez votre Valise Idéale
                 </h2>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', margin: '0 auto', maxWidth: '600px' }}>
@@ -114,10 +117,10 @@ export default function SuitcaseSelector() {
                             <div
                                 key={i}
                                 style={{
-                                    height: '6px',
+                                    height: '4px',
                                     borderRadius: '99px',
                                     transition: 'var(--transition-bounce)',
-                                    width: step >= i ? '32px' : '12px',
+                                    width: step >= i ? '40px' : '16px',
                                     background: step >= i ? 'var(--primary)' : 'var(--border)'
                                 }}
                             />
@@ -147,18 +150,28 @@ export default function SuitcaseSelector() {
                                     className="guide-card"
                                     style={{
                                         cursor: 'pointer',
-                                        padding: '1.5rem',
-                                        border: '2px solid var(--border)',
+                                        padding: '2rem 1.5rem',
+                                        border: '1px solid var(--border)',
                                         textAlign: 'center',
                                         minHeight: '140px',
                                         display: 'flex',
                                         flexDirection: 'column',
-                                        justifyContent: 'center'
+                                        justifyContent: 'center',
+                                        background: 'var(--bg-content)',
+                                        transition: 'all 0.3s ease'
                                     }}
-                                    onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--primary)'}
-                                    onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--border)'}
+                                    onMouseEnter={(e) => {
+                                        e.currentTarget.style.borderColor = 'var(--border-hover)';
+                                        e.currentTarget.style.boxShadow = 'var(--shadow-md)';
+                                        e.currentTarget.style.transform = 'translateY(-2px)';
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        e.currentTarget.style.borderColor = 'var(--border)';
+                                        e.currentTarget.style.boxShadow = 'none';
+                                        e.currentTarget.style.transform = 'translateY(0)';
+                                    }}
                                 >
-                                    <strong style={{ fontSize: '1.25rem', color: 'var(--text-main)', marginBottom: '0.5rem', display: 'block' }}>{opt.label}</strong>
+                                    <strong style={{ fontSize: '1.25rem', color: 'var(--text-main)', marginBottom: '0.5rem', display: 'block', fontWeight: '800' }}>{opt.label}</strong>
                                     <span style={{ fontSize: '0.95rem', color: 'var(--text-secondary)' }}>{opt.desc}</span>
                                 </button>
                             ))}
@@ -168,7 +181,7 @@ export default function SuitcaseSelector() {
 
                 {step === 2 && (
                     <div className="animate-fade-in-up" style={{ textAlign: 'center' }}>
-                        <h3 style={{ marginTop: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.75rem', fontSize: '1.4rem' }}>
+                        <h3 style={{ marginTop: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.75rem', fontSize: '1.4rem', fontWeight: '700', color: 'var(--text-main)' }}>
                             <Award size={28} color="var(--primary)" />
                             Niveau en mécanique ?
                         </h3>
@@ -184,18 +197,28 @@ export default function SuitcaseSelector() {
                                     className="guide-card"
                                     style={{
                                         cursor: 'pointer',
-                                        padding: '1.5rem',
-                                        border: '2px solid var(--border)',
+                                        padding: '2rem 1.5rem',
+                                        border: '1px solid var(--border)',
                                         textAlign: 'center',
                                         minHeight: '140px',
                                         display: 'flex',
                                         flexDirection: 'column',
-                                        justifyContent: 'center'
+                                        justifyContent: 'center',
+                                        background: 'var(--bg-content)',
+                                        transition: 'all 0.3s ease'
                                     }}
-                                    onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--primary)'}
-                                    onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--border)'}
+                                    onMouseEnter={(e) => {
+                                        e.currentTarget.style.borderColor = 'var(--border-hover)';
+                                        e.currentTarget.style.boxShadow = 'var(--shadow-md)';
+                                        e.currentTarget.style.transform = 'translateY(-2px)';
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        e.currentTarget.style.borderColor = 'var(--border)';
+                                        e.currentTarget.style.boxShadow = 'none';
+                                        e.currentTarget.style.transform = 'translateY(0)';
+                                    }}
                                 >
-                                    <strong style={{ fontSize: '1.25rem', color: 'var(--text-main)', marginBottom: '0.5rem', display: 'block' }}>{opt.label}</strong>
+                                    <strong style={{ fontSize: '1.25rem', color: 'var(--text-main)', marginBottom: '0.5rem', display: 'block', fontWeight: '800' }}>{opt.label}</strong>
                                     <span style={{ fontSize: '0.95rem', color: 'var(--text-secondary)' }}>{opt.desc}</span>
                                 </button>
                             ))}
@@ -205,8 +228,8 @@ export default function SuitcaseSelector() {
 
                 {step === 3 && (
                     <div className="animate-fade-in-up" style={{ textAlign: 'center' }}>
-                        <h3 style={{ marginTop: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.75rem', fontSize: '1.4rem' }}>
-                            <Car size={28} color="var(--primary)" />
+                        <h3 style={{ marginTop: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.75rem', fontSize: '1.4rem', fontWeight: '700', color: 'var(--text-main)' }}>
+                            <Car size={28} color="var(--warning)" />
                             Marque du véhicule ?
                         </h3>
                         <div style={{ maxWidth: '400px', margin: '2rem auto' }}>
@@ -216,16 +239,19 @@ export default function SuitcaseSelector() {
                                         width: '100%',
                                         padding: '1.25rem',
                                         borderRadius: '12px',
-                                        border: '2px solid var(--border)',
+                                        border: '1px solid var(--border)',
                                         background: 'var(--bg-content)',
                                         color: 'var(--text-main)',
                                         fontSize: '1.1rem',
-                                        fontWeight: 'bold',
+                                        fontWeight: '600',
                                         outline: 'none',
                                         cursor: 'pointer',
                                         appearance: 'none',
-                                        boxShadow: 'var(--shadow-sm)'
+                                        boxShadow: 'var(--shadow-sm)',
+                                        transition: 'var(--transition-smooth)'
                                     }}
+                                    onMouseEnter={(e) => e.currentTarget.style.boxShadow = 'var(--shadow-md)'}
+                                    onMouseLeave={(e) => e.currentTarget.style.boxShadow = 'var(--shadow-sm)'}
                                     onChange={(e) => handleAnswer('brand', e.target.value)}
                                     defaultValue=""
                                 >
