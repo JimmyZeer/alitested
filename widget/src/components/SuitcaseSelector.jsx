@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronRight, RotateCcw, CheckCircle2, Car, Wallet, Award, ShoppingCart, ExternalLink } from 'lucide-react';
+import { ChevronRight, RotateCcw, CheckCircle2, Car, Wallet, Award, ShoppingCart, ExternalLink, Settings2 } from 'lucide-react';
 
 const CAR_BRANDS = [
     'Peugeot', 'Renault', 'Citroën', 'Volkswagen', 'Audi', 'BMW',
@@ -13,9 +13,10 @@ const PRODUCTS = [
         price: 'Moins de 100€',
         budgets: ['<100'],
         levels: ['debutant', 'confirme'],
-        image: '/media/placeholder.png', // Remplacer par la vraie image
+        image: '/media/placeholder.png', // Fallback, will try to use the site's real image if available later
         strengths: ['Diag Tous Systèmes', 'Mises à jour à vie', 'Bidirectionnel'],
-        link: 'https://alitested.com/guides/mucar-892bt-test-avis.html'
+        link: 'https://alitested.com/guides/mucar-892bt-test-avis.html',
+        tag: 'Rapport Qualité/Prix'
     },
     {
         id: 'thinkcar-tkey',
@@ -25,7 +26,8 @@ const PRODUCTS = [
         levels: ['confirme', 'pro'],
         image: '/media/placeholder.png',
         strengths: ['Programmation Clés', 'Sans Token', 'Facile d\'utilisation'],
-        link: 'https://alitested.com/guides/thinkcar-tkey-101-test-avis.html'
+        link: 'https://alitested.com/guides/thinkcar-tkey-101-test-avis.html',
+        tag: 'Clés & Transpondeurs'
     },
     {
         id: 'mucar-vo7',
@@ -35,7 +37,8 @@ const PRODUCTS = [
         levels: ['debutant', 'confirme'],
         image: '/media/placeholder.png',
         strengths: ['Tablette 7 pouces', '34 Fonctions Reset', 'Coque Renforcée'],
-        link: 'https://alitested.com/guides/mucar-vo7-test-avis.html'
+        link: 'https://alitested.com/guides/mucar-vo7-test-avis.html',
+        tag: 'Tablette Atelier'
     },
     {
         id: 'kingbolen-k7',
@@ -45,7 +48,8 @@ const PRODUCTS = [
         levels: ['confirme', 'pro'],
         image: '/media/placeholder.png',
         strengths: ['Compatible CAN-FD', 'Mises à jour à vie', 'Idéal Garage'],
-        link: 'https://alitested.com/guides/kingbolen-k7-test-avis.html'
+        link: 'https://alitested.com/guides/kingbolen-k7-test-avis.html',
+        tag: 'Haute Résolution'
     },
     {
         id: 'autel-mk900',
@@ -55,37 +59,30 @@ const PRODUCTS = [
         levels: ['confirme', 'pro'],
         image: '/media/placeholder.png',
         strengths: ['Vitesse Extrême', 'Codage Avancé', 'Bluetooth Longue Portée'],
-        link: 'https://alitested.com/guides/autel-maxicom-mk900-bt-test-avis.html'
+        link: 'https://alitested.com/guides/autel-maxicom-mk900-bt-test-avis.html',
+        tag: 'Haut de gamme'
     }
 ];
 
 export default function SuitcaseSelector() {
     const [step, setStep] = useState(1);
-    const [answers, setAnswers] = useState({
-        budget: '',
-        level: '',
-        brand: ''
-    });
+    const [answers, setAnswers] = useState({ budget: '', level: '', brand: '' });
 
     const handleAnswer = (field, value) => {
         setAnswers(prev => ({ ...prev, [field]: value }));
-        if (step < 3) {
-            setStep(step + 1);
-        } else {
-            setStep(4); // Résultats
-        }
+        setTimeout(() => {
+            if (step < 3) setStep(step + 1);
+            else setStep(4);
+        }, 150); // Small delay for visual feedback
     };
 
     const getRecommendations = () => {
-        // Petit algorithme de scoring basique pour trouver les meilleures valises
         const scoredProducts = PRODUCTS.map(product => {
             let score = 0;
             if (product.budgets.includes(answers.budget)) score += 3;
             if (product.levels.includes(answers.level)) score += 2;
             return { ...product, score };
         });
-
-        // Trie par score décroissant et prend les 2 meilleurs
         return scoredProducts.sort((a, b) => b.score - a.score).slice(0, 2);
     };
 
@@ -95,154 +92,179 @@ export default function SuitcaseSelector() {
     };
 
     return (
-        <div className="w-full max-w-2xl mx-auto bg-white dark:bg-slate-900 rounded-2xl shadow-xl overflow-hidden border border-slate-200 dark:border-slate-800 transition-colors duration-300 mt-8 mb-8">
+        <div className="w-full max-w-4xl mx-auto rounded-2xl md:rounded-[24px] shadow-xl overflow-hidden border border-slate-200 mb-8 bg-white transition-all duration-500 ease-in-out relative z-10">
 
-            {/* En-tête du Quiz */}
-            <div className="bg-blue-600 dark:bg-blue-800 p-6 text-white text-center">
-                <h2 className="text-2xl font-bold mb-2 text-white">Trouvez votre Valise Idéale</h2>
-                <p className="text-blue-100/90 text-sm">Répondez à 3 questions pour obtenir notre recommandation experte.</p>
+            {/* Header avec Design Premium */}
+            <div className="p-8 md:p-12 text-center relative overflow-hidden flex flex-col items-center" style={{ background: 'var(--primary-gradient)' }}>
+                {/* Lignes/Cercles de décoration */}
+                <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 rounded-full bg-white opacity-10 blur-3xl mix-blend-overlay pointer-events-none"></div>
+                <div className="absolute bottom-0 left-0 -ml-16 -mb-16 w-48 h-48 rounded-full bg-white opacity-10 blur-2xl mix-blend-overlay pointer-events-none"></div>
 
-                {/* Barre de progression */}
+                <div className="bg-white/20 p-3 rounded-2xl backdrop-blur-md mb-5 shadow-sm inline-block relative z-10">
+                    <Settings2 className="w-8 h-8 text-white relative z-10" />
+                </div>
+
+                <h2 className="text-3xl md:text-4xl font-extrabold mb-3 !text-white !mt-0 relative z-10 leading-tight" style={{ letterSpacing: '-0.02em', textShadow: '0 2px 10px rgba(0,0,0,0.1)' }}>
+                    Trouvez votre Valise Idéale
+                </h2>
+                <p className="text-blue-50 text-base md:text-lg max-w-md !mb-0 relative z-10 font-medium opacity-90">
+                    Répondez à 3 questions rapides pour obtenir notre recommandation experte 100% personnalisée.
+                </p>
+
                 {step < 4 && (
-                    <div className="mt-6 flex justify-center items-center gap-2">
+                    <div className="mt-8 flex justify-center items-center gap-3 relative z-10">
                         {[1, 2, 3].map(i => (
                             <div
                                 key={i}
-                                className={`h-2 rounded-full transition-all duration-300 ${step >= i ? 'w-8 bg-white' : 'w-4 bg-white/30'}`}
+                                className={`h-2.5 rounded-full transition-all duration-500 ease-out ${step >= i ? 'w-12 bg-white shadow-[0_0_10px_rgba(255,255,255,0.5)]' : 'w-4 bg-white/20'}`}
                             />
                         ))}
                     </div>
                 )}
             </div>
 
-            {/* Contenu principal */}
-            <div className="p-6 md:p-8">
+            {/* Main Content Area */}
+            <div className="p-6 md:p-10 lg:p-12 bg-[#F8FAFC]">
 
-                {/* Étape 1 : Budget */}
                 {step === 1 && (
-                    <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-                        <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
-                            <Wallet className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-                            Quel est votre budget ?
+                    <div className="animate-in fade-in slide-in-from-bottom-8 duration-500 delay-100 ease-out fill-mode-both">
+                        <h3 className="text-2xl md:text-3xl font-extrabold !text-slate-900 mb-8 flex items-center justify-center gap-3 !mt-0" style={{ letterSpacing: '-0.02em' }}>
+                            <Wallet className="w-8 h-8 text-blue-600 shrink-0" />
+                            Quel est votre budget max ?
                         </h3>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
                             {[
-                                { id: '<100', label: 'Moins de 100€', desc: 'Basique & Efficace' },
-                                { id: '100-300', label: '100€ - 300€', desc: 'Rapport Qualité/Prix' },
-                                { id: 'pro', label: 'Pro (300€+)', desc: 'Sans compromis' }
+                                { id: '<100', label: 'Moins de 100€', desc: 'Fonctions de base & effacement des voyants' },
+                                { id: '100-300', label: '100€ à 300€', desc: 'Rapport Qualité/Prix, resets avancés' },
+                                { id: 'pro', label: 'Pro (300€+)', desc: 'Sans compromis, vitesse & codage' }
                             ].map(opt => (
                                 <button
                                     key={opt.id}
                                     onClick={() => handleAnswer('budget', opt.id)}
-                                    className="p-4 border-2 border-slate-200 dark:border-slate-800 rounded-xl text-left hover:border-blue-600 dark:hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-slate-800 transition-all group"
+                                    className="group relative p-6 bg-white border-2 border-slate-200 rounded-[20px] text-center hover:border-blue-500 hover:shadow-[0_8px_30px_rgb(59,130,246,0.12)] transition-all duration-300 flex flex-col items-center justify-center min-h-[160px] cursor-pointer outline-none focus:border-blue-500 hover:-translate-y-1"
                                 >
-                                    <div className="font-bold text-slate-800 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400">
+                                    <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-blue-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity rounded-t-full"></div>
+                                    <div className="text-xl font-extrabold text-slate-800 group-hover:text-blue-600 transition-colors mb-2">
                                         {opt.label}
                                     </div>
-                                    <div className="text-sm text-slate-500 dark:text-slate-400 mt-1">{opt.desc}</div>
+                                    <div className="text-sm font-medium text-slate-500 px-2 leading-relaxed">{opt.desc}</div>
                                 </button>
                             ))}
                         </div>
                     </div>
                 )}
 
-                {/* Étape 2 : Niveau */}
                 {step === 2 && (
-                    <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-                        <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
-                            <Award className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-                            Quel est votre niveau en mécanique ?
+                    <div className="animate-in fade-in slide-in-from-bottom-8 duration-500 ease-out">
+                        <h3 className="text-2xl md:text-3xl font-extrabold !text-slate-900 mb-8 flex items-center justify-center gap-3 !mt-0" style={{ letterSpacing: '-0.02em' }}>
+                            <Award className="w-8 h-8 text-blue-600 shrink-0" />
+                            Quel est votre niveau ?
                         </h3>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
                             {[
-                                { id: 'debutant', label: 'Débutant', desc: 'Je fais mes entretiens de base' },
-                                { id: 'confirme', label: 'Confirmé', desc: 'Je répare souvent moi-même' },
-                                { id: 'pro', label: 'Pro / Expert', desc: 'Je fais du codage et diag avancé' }
+                                { id: 'debutant', label: 'Débutant', desc: 'Je fais mes entretiens de base (vidange, freins...)' },
+                                { id: 'confirme', label: 'Confirmé', desc: 'Je répare souvent moi-même des pannes complexes' },
+                                { id: 'pro', label: 'Expert / Pro', desc: 'Je fais du codage ECU et diag avancé au quotidien' }
                             ].map(opt => (
                                 <button
                                     key={opt.id}
                                     onClick={() => handleAnswer('level', opt.id)}
-                                    className="p-4 border-2 border-slate-200 dark:border-slate-800 rounded-xl text-left hover:border-blue-600 dark:hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-slate-800 transition-all group"
+                                    className="group relative p-6 bg-white border-2 border-slate-200 rounded-[20px] text-center hover:border-blue-500 hover:shadow-[0_8px_30px_rgb(59,130,246,0.12)] transition-all duration-300 flex flex-col items-center justify-center min-h-[160px] cursor-pointer outline-none focus:border-blue-500 hover:-translate-y-1"
                                 >
-                                    <div className="font-bold text-slate-800 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400">
+                                    <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-blue-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity rounded-t-full"></div>
+                                    <div className="text-xl font-extrabold text-slate-800 group-hover:text-blue-600 transition-colors mb-2">
                                         {opt.label}
                                     </div>
-                                    <div className="text-sm text-slate-500 dark:text-slate-400 mt-1">{opt.desc}</div>
+                                    <div className="text-sm font-medium text-slate-500 px-2 leading-relaxed">{opt.desc}</div>
                                 </button>
                             ))}
                         </div>
                     </div>
                 )}
 
-                {/* Étape 3 : Marque du véhicule */}
                 {step === 3 && (
-                    <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-                        <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
-                            <Car className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-                            Quelle est la marque de votre véhicule ?
+                    <div className="animate-in fade-in slide-in-from-bottom-8 duration-500 ease-out text-center">
+                        <h3 className="text-2xl md:text-3xl font-extrabold !text-slate-900 mb-8 flex items-center justify-center gap-3 !mt-0" style={{ letterSpacing: '-0.02em' }}>
+                            <Car className="w-8 h-8 text-blue-600 shrink-0" />
+                            Marque de votre véhicule ?
                         </h3>
-                        <div className="max-w-md mx-auto">
-                            <select
-                                title="Marque"
-                                className="w-full p-4 rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-slate-100 font-medium focus:border-blue-600 focus:ring-4 focus:ring-blue-600/20 outline-none transition-all cursor-pointer"
-                                onChange={(e) => handleAnswer('brand', e.target.value)}
-                                defaultValue=""
-                            >
-                                <option value="" disabled>Sélectionnez une marque...</option>
-                                {CAR_BRANDS.map(brand => (
-                                    <option key={brand} value={brand}>{brand}</option>
-                                ))}
-                            </select>
-                            <p className="text-center text-sm text-slate-500 dark:text-slate-400 mt-4">
-                                Nos recommandations prennent en charge la quasi-totalité du parc automobile européen.
-                            </p>
+                        <div className="max-w-md mx-auto relative">
+                            <div className="relative group">
+                                <select
+                                    className="w-full p-5 pl-6 pr-12 rounded-[20px] border-2 border-slate-200 bg-white text-slate-900 font-bold text-lg focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 outline-none transition-all cursor-pointer appearance-none shadow-sm hover:border-blue-300"
+                                    onChange={(e) => handleAnswer('brand', e.target.value)}
+                                    defaultValue=""
+                                >
+                                    <option value="" disabled>Sélectionner ma marque...</option>
+                                    {CAR_BRANDS.map(brand => (
+                                        <option key={brand} value={brand}>{brand}</option>
+                                    ))}
+                                </select>
+                                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-6 text-slate-400 group-hover:text-blue-500 transition-colors">
+                                    <ChevronRight className="w-6 h-6 rotate-90" />
+                                </div>
+                            </div>
+                            <div className="mt-6 inline-flex items-center gap-2 bg-blue-50/80 px-4 py-3 rounded-xl border border-blue-100/50 text-sm font-medium text-blue-800">
+                                <CheckCircle2 className="w-4 h-4 text-blue-600" />
+                                Nos choix couvrent 99% du parc européen (OBD2).
+                            </div>
                         </div>
                     </div>
                 )}
 
-                {/* Étape 4 : Résultats */}
                 {step === 4 && (
-                    <div className="animate-in fade-in zoom-in-95 duration-500">
-                        <div className="flex justify-between items-center mb-6">
-                            <h3 className="text-xl font-bold text-slate-900 dark:text-white">Vos recommandations idéales :</h3>
-                            <button onClick={resetQuiz} className="text-sm flex items-center gap-1 text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200 transition-colors">
-                                <RotateCcw className="w-4 h-4" /> Refaire le test
+                    <div className="animate-in fade-in zoom-in-95 duration-500 ease-out">
+                        <div className="flex flex-col sm:flex-row justify-between items-center mb-8 pb-5 border-b border-slate-200 gap-4">
+                            <h3 className="text-2xl font-extrabold !text-slate-900 !mt-0 !mb-0 flex items-center gap-2">
+                                🎯 Vos recommandations :
+                            </h3>
+                            <button onClick={resetQuiz} className="text-sm font-bold flex items-center gap-2 text-slate-500 hover:text-blue-600 transition-colors cursor-pointer bg-slate-200/50 hover:bg-blue-50 px-4 py-2 rounded-xl">
+                                <RotateCcw className="w-4 h-4" /> Modifier mes réponses
                             </button>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                             {getRecommendations().map((product, idx) => (
-                                <div key={product.id} className="relative bg-slate-50 dark:bg-slate-800 rounded-2xl p-5 border border-slate-200 dark:border-slate-700 flex flex-col h-full shadow-sm hover:shadow-md transition-shadow">
-                                    {idx === 0 && (
-                                        <div className="absolute -top-3 -right-3 bg-gradient-to-r from-blue-600 to-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg flex items-center gap-1 border border-white dark:border-slate-900">
-                                            <Award className="w-3 h-3" /> Meilleur Choix
-                                        </div>
-                                    )}
+                                <div key={product.id} className="guide-card flex flex-col h-full bg-white !p-7 md:!p-8 relative" style={{ marginTop: 0 }}>
 
-                                    {/* Placeholder Image (peut être remplacé par les vraies images du site) */}
-                                    <div className="mb-4 aspect-video bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-inner flex items-center justify-center p-2 border border-slate-100 dark:border-slate-800">
-                                        <img src={product.image} alt={product.name} className="object-contain h-full w-full opacity-80 mix-blend-multiply dark:mix-blend-normal" />
+                                    {/* Badges Premium */}
+                                    <div className="mb-5 flex flex-wrap gap-2">
+                                        {idx === 0 && (
+                                            <span className="badge inline-flex items-center gap-1.5" style={{ background: 'var(--primary-gradient)', color: 'white', border: 'none', boxShadow: '0 4px 12px rgba(59,130,246,0.35)', padding: '0.4rem 1rem' }}>
+                                                🏆 Meilleur Choix
+                                            </span>
+                                        )}
+                                        {idx === 1 && (
+                                            <span className="badge inline-flex items-center gap-1.5" style={{ background: '#F1F5F9', color: 'var(--text-secondary)', borderColor: 'var(--border)', padding: '0.4rem 1rem' }}>
+                                                ⭐ Alternative
+                                            </span>
+                                        )}
+                                        <span className="badge inline-flex items-center gap-1.5" style={{ background: '#FFFBEB', color: '#B45309', borderColor: '#FEF3C7', padding: '0.4rem 1rem' }}>
+                                            {product.tag}
+                                        </span>
                                     </div>
 
-                                    <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-1">{product.name}</h4>
-                                    <div className="text-sm font-semibold text-blue-600 dark:text-blue-400 mb-4">{product.price}</div>
+                                    {/* Contenu */}
+                                    <h3 className="!mt-0 !mb-3 !text-2xl leading-tight">{product.name}</h3>
+                                    <div className="inline-flex items-center mb-6">
+                                        <span className="text-sm font-extrabold text-blue-700 bg-blue-50 px-3 py-1.5 rounded-lg border border-blue-100 shadow-sm">
+                                            PRIX : {product.price.toUpperCase()}
+                                        </span>
+                                    </div>
 
-                                    <ul className="space-y-2 mb-6 flex-grow">
+                                    <ul className="mb-8 space-y-3 flex-grow">
                                         {product.strengths.map((str, i) => (
-                                            <li key={i} className="flex items-start gap-2 text-sm text-slate-600 dark:text-slate-300">
-                                                <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                                            <li key={i} className="flex items-start gap-3 text-base text-slate-700 font-medium leading-snug">
+                                                <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
                                                 <span>{str}</span>
                                             </li>
                                         ))}
                                     </ul>
 
-                                    <a
-                                        href={product.link}
-                                        className="mt-auto w-full py-3 px-4 bg-slate-900 hover:bg-slate-800 dark:bg-blue-600 dark:hover:bg-blue-500 text-white rounded-xl font-medium flex items-center justify-center gap-2 transition-colors shadow-md group"
-                                    >
-                                        <ShoppingCart className="w-4 h-4" />
-                                        Voir le Test / Prix
-                                        <ExternalLink className="w-3 h-3 text-white/60 group-hover:text-white transition-colors" />
+                                    {/* CTA Button Using Site Styles */}
+                                    <a href={product.link} className="cta-button" style={{ marginTop: 'auto', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.5rem', padding: '1rem' }}>
+                                        Voir le Test / Acheter
+                                        <ChevronRight className="w-5 h-5" />
                                     </a>
                                 </div>
                             ))}
