@@ -6,6 +6,7 @@ import TechDictionary from './components/TechDictionary';
 import ExpertComparison from './components/ExpertComparison';
 import ObdCodeResolver from './components/ObdCodeResolver';
 import DynamicComparator from './components/DynamicComparator';
+import LeadMagnet from './components/LeadMagnet';
 
 // Inject Suitcase Selector if container exists
 const suitcaseContainer = document.getElementById('suitcase-selector-root');
@@ -70,6 +71,20 @@ if (comparatorContainer) {
         <React.StrictMode>
             <div className="dynamic-comparator-wrapper">
                 <DynamicComparator />
+            </div>
+        </React.StrictMode>
+    );
+}
+
+// Inject Lead Magnet if container exists
+const leadMagnetContainer = document.getElementById('lead-magnet-root');
+if (leadMagnetContainer) {
+    const mode = leadMagnetContainer.dataset.mode || 'inline';
+    const root = createRoot(leadMagnetContainer);
+    root.render(
+        <React.StrictMode>
+            <div className={`lead-magnet-wrapper ${mode === 'modal' ? 'modal-mode' : ''}`}>
+                <LeadMagnet mode={mode} />
             </div>
         </React.StrictMode>
     );
