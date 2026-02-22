@@ -40,7 +40,7 @@ const REVIEWS_DB = {
             verified: true,
             content: 'Franchement bluffé par cette marque. Mises à jour gratuites pendant 3 ans, c\'est énorme par rapport à Autel qui fait payer au bout d\'un an. Topologie réseau bien faite. J\'ai codé de nouveaux injecteurs sur mon DCI sans difficulté.',
             helpful: 31,
-            images: ['/media/ugc/ugc-mucar-892bt.png']
+            images: ['../assets/reviews/mechanic.jpg']
         },
         {
             id: 2,
@@ -61,7 +61,7 @@ const REVIEWS_DB = {
             verified: true,
             content: 'Le meilleur rapport qualité-prix de la gamme semi-pro. Thinkcar est pour moi largement au-dessus de Launch aujourd\'hui. Testé sur du BMW F30 et Renault Trafic, impeccable.',
             helpful: 18,
-            images: ['/media/ugc/ugc-thinktool-lite.png']
+            images: ['../assets/reviews/mechanic.jpg']
         },
         {
             id: 2,
@@ -82,7 +82,7 @@ const REVIEWS_DB = {
             verified: true,
             content: 'Acheté pour ma 308 de 2016. J\'avais le voyant moteur (P20E8 AdBlue). La tablette a trouvé le défaut en 2 min, j\'ai pu l\'effacer et rouler jusqu\'au garage. Tablette hyper fluide et maj gratuites, je recommande.',
             helpful: 42,
-            images: ['/media/ugc/ugc-mucar-v06.png']
+            images: ['../assets/reviews/interior.jpg']
         },
         {
             id: 2,
