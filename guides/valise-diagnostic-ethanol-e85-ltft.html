@@ -67,8 +67,8 @@
             </p>
             <div class="glass-panel"
                 style="margin-top: 2rem; padding: 0; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);">
-                <img src="../media/placeholder.png" alt="Ecran Live Data LTFT STFT"
-                    style="width: 100%; height: auto; display: block; filter: grayscale(20%);">
+                <img src="../media/test-ltft-e85-scanner.png" alt="Ecran Live Data LTFT STFT"
+                    style="width: 100%; height: auto; display: block;">
             </div>
         </div>
     </header>
@@ -100,19 +100,44 @@
                     (+15%) signifie que le calculateur ajoute du carburant via le signal de la Sonde Lambda (O2) car il
                     détecte trop d'oxygène. Une valeur négative (-10%), il en enlève.</p>
 
-                <div class="product-card">
-                    <h3>Le Crash du LTFT</h3>
-                    <p>Le <strong>Short Term Fuel Trim (STFT)</strong> bouge très vite en fonction de votre coup
-                        d'accélérateur. Le <strong>Long Term Fuel Trim (LTFT)</strong> est la mémoire à long terme de
-                        cet ajustement.</p>
+                <div class="product-card" style="border-left: 5px solid var(--success); margin-bottom: 1.5rem;">
+                    <h3>✅ Zone Normale : LTFT entre -10 % et +15 %</h3>
                     <ul>
-                        <li><strong style="color:var(--success);">LTFT entre -10% et +15% :</strong> La gestion E85 est
-                            normale. Votre cartographie/boîtier est toléré par l'ECU d'origine.</li>
-                        <li><strong style="color:#ff4444;">LTFT à +25% ou +33% (Maxé) :</strong> Danger absolu.
-                            L'ordinateur injecte le maximum de sa tolérance, et c'est toujours insuffisant. Code défaut
-                            P0171 (Mélange Trop Pauvre). Vos injecteurs sont ouverts en grand et saturent. Les
-                            températures d'échappement (EGT) s'envolent, risque de fonte de piston.</li>
+                        <li><strong style="color:var(--text-main);">Gestion saine :</strong> L’E85 est correctement
+                            absorbé par l’ECU d'origine.</li>
+                        <li><strong style="color:var(--text-main);">Marge de sécurité :</strong> Les injecteurs ne sont
+                            pas au maximum de leur capacité.</li>
+                        <li><strong style="color:var(--text-main);">Cohérence :</strong> La cartographie (ou le boîtier)
+                            est bien calibrée pour le véhicule.</li>
                     </ul>
+                </div>
+
+                <div class="product-card"
+                    style="border-left: 5px solid var(--warning); background-color: #FFFBEB; margin-bottom: 1.5rem;">
+                    <h3 style="color: #B45309;">⚠️ Zone Critique : LTFT > +25 %</h3>
+                    <ul>
+                        <li><strong style="color:#92400E;">Saturation :</strong> L’ECU injecte presque au maximum de sa
+                            capacité d’adaptation.</li>
+                        <li><strong style="color:#92400E;">Duty Cycle :</strong> Les injecteurs approchent de leur
+                            limite d'ouverture physique (ils restent ouverts trop longtemps).</li>
+                        <li><strong style="color:#B45309;">Alerte :</strong> Risque imminent de code défaut P0171
+                            (Mélange trop pauvre).</li>
+                    </ul>
+                </div>
+
+                <div class="product-card" style="border-left: 5px solid var(--danger); background-color: #FEF2F2;">
+                    <h3 style="color: #DC2626;">🔴 Les risques sous forte charge (Plein gaz)</h3>
+                    <p style="color: #991B1B;">Ce n'est pas parce que la voiture "roule bien" en ville que tout va bien.
+                        En cas de mélange trop pauvre prolongé :</p>
+                    <ul style="color: #991B1B;">
+                        <li><strong>Hausse des EGT :</strong> Les températures d’échappement s’envolent.</li>
+                        <li><strong>Risque de cliquetis :</strong> Auto-allumage destructeur pour les pistons.</li>
+                        <li><strong>Fatigue thermique :</strong> Risque de fonte des têtes de pistons, des soupapes ou
+                            des sièges de soupapes.</li>
+                    </ul>
+                    <p style="margin-top: 1rem; font-weight: bold; font-style: italic; color: #7F1D1D;">Note du
+                        motoriste : La casse n'est pas forcément instantanée, mais rouler en zone critique est une bombe
+                        à retardement pour votre moteur.</p>
                 </div>
             </section>
 
