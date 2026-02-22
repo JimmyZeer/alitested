@@ -8,26 +8,26 @@ const CAR_BRANDS = [
 
 const PRODUCTS = [
     {
-        id: 'mucar-892bt',
-        name: 'Mucar 892BT',
-        price: 'Moins de 100€',
+        id: 'mucar-bt200-max',
+        name: 'Mucar BT200 Max',
+        price: 'Moins de 60€',
         budgets: ['<100'],
         levels: ['debutant', 'confirme'],
         image: '/media/placeholder.png',
-        strengths: ['Diag Tous Systèmes', 'Mises à jour à vie', 'Bidirectionnel'],
-        link: 'https://alitested.com/guides/mucar-892bt-test-avis.html',
-        tag: 'Rapport Qualité/Prix'
+        strengths: ['Diag Tous Systèmes', 'Format Smartphone', 'Sans Abonnement'],
+        link: 'https://alitested.com/guides/mucar-bt200-test-avis.html',
+        tag: 'Le plus compact'
     },
     {
-        id: 'thinkcar-tkey',
-        name: 'Thinkcar TKey 101',
-        price: 'Environ 120€',
-        budgets: ['100-300'],
+        id: 'mucar-892bt',
+        name: 'Mucar 892BT',
+        price: 'Environ 450€',
+        budgets: ['pro'],
         levels: ['confirme', 'pro'],
         image: '/media/placeholder.png',
-        strengths: ['Programmation Clés', 'Sans Token', 'Facile d\'utilisation'],
-        link: 'https://alitested.com/guides/thinkcar-tkey-101-test-avis.html',
-        tag: 'Clés & Transpondeurs'
+        strengths: ['Diag Tous Systèmes', 'Mises à jour à vie', 'Bidirectionnel'],
+        link: 'https://alitested.com/guides/mucar-892bt-test-avis.html',
+        tag: 'Meilleur Choix Pro'
     },
     {
         id: 'mucar-vo7',
@@ -39,6 +39,17 @@ const PRODUCTS = [
         strengths: ['Tablette 7 pouces', '34 Fonctions Reset', 'Coque Renforcée'],
         link: 'https://alitested.com/guides/mucar-vo7-test-avis.html',
         tag: 'Tablette Atelier'
+    },
+    {
+        id: 'thinkcar-tkey',
+        name: 'Thinkcar TKey 101',
+        price: 'Environ 120€',
+        budgets: ['100-300'],
+        levels: ['confirme', 'pro'],
+        image: '/media/placeholder.png',
+        strengths: ['Programmation Clés', 'Sans Token', 'Facile d\'utilisation'],
+        link: 'https://alitested.com/guides/thinkcar-tkey-101-test-avis.html',
+        tag: 'Spécial Clés'
     },
     {
         id: 'kingbolen-k7',

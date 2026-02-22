@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        var initialConsent = localStorage.getItem('cookie_consent') === 'accepted' ? 'granted' : 'denied';
+        gtag('consent', 'default', {
+            analytics_storage: initialConsent,
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            wait_for_update: 500
+        });
+        window.dataLayer.push({
+            'event': 'consent_status_ready',
+            'consent_status': initialConsent
+        });
+    </script>
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MSBQXRPB');</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voyant Moteur Allumé Orange / Rouge : La Procédure Étape par Étape</title>
+    <meta name="description"
+        content="Panique totale : votre Check Engine Light (voyant moteur) vient de s'allumer. Comment diagnostiquer soi-même avec la bonne interface sans être un mécano pro.">
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="canonical" href="https://alitested.com/guides/voyant-moteur-allume-que-faire.html">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../assets/widget/suitcase-selector.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MSBQXRPB" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+
+    <nav style="padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
+        <div class="container">
+            <a href="../index.html"
+                style="color: var(--text-dim); text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;">
+                ← Retour à l'accueil AliTested
+            </a>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container">
+            <span class="badge">Solution Finder (Urgence Diag)</span>
+            <h1>Voyant Moteur Allumé Orange : Procédure de Diag sans Garage</h1>
+            <p class="lead"
+                style="font-style: italic; margin-top: 1.5rem; border-left: 2px solid var(--accent); padding-left: 1rem;">
+                “Il n'y a rien de pire que de voir le Check Engine s'allumer alors que vous roulez sur l'autoroute des
+                vacances sous la pluie. Panique totale, on s'arrête ou on continue ?”
+            </p>
+            <div class="glass-panel"
+                style="margin-top: 2rem; padding: 0; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);">
+                <img src="../media/placeholder.png"
+                    alt="Voyant moteur orange Check Engine sur tableau de bord vrombissant"
+                    style="width: 100%; height: auto; display: block; filter: grayscale(20%);">
+            </div>
+        </div>
+    </header>
+
+    <main class="container" style="max-width: 800px;">
+        <article>
+            <section id="introduction">
+                <p>Respirez. Un voyant orange fixe n'est pas une condamnation à mort pour votre piston. Une valise de
+                    diagnostic OBD2 branchée sur la prise sous le volant va nous donner le code DTC en moins de 3
+                    minutes.</p>
+                <p>On oublie la légende du mécanicien qui diagnostique à l'oreille. En 2026, si on ne lit pas les
+                    checksum de l'ECU (Engine Control Unit), on est aveugle. Voici la procédure clinique pour éviter la
+                    douille à 80€ chez le concessionnaire juste pour brancher sa tablette.</p>
+            </section>
+
+            <section id="etape-par-etape">
+                <h2>1. Fixe vs Clignotant : Le vrai danger</h2>
+
+                <div class="product-card">
+                    <h3>Voyant Moteur Orange FIXE</h3>
+                    <p>L'ECU a détecté une anomalie antipollution ou de gestion moteur (Sonde Lambda P0420, vanne EGR
+                        bouchée, etc.). Votre voiture peut sans doute continuer à rouler en mode "limp mode" (mode
+                        dégradé).</p>
+                </div>
+
+                <div class="product-card" style="border-left: 4px solid #ff4444;">
+                    <h3>Voyant Moteur Orange CLIGNOTANT (ou ROUGE)</h3>
+                    <p>Arrêtez-vous immédiatement. L'ordinateur hurle : un cylindre est en train de subir un raté
+                        d'allumage sévère (Severe Misfire) qui va détruire le catalyseur par surchauffe de l'essence non
+                        brûlée, ou la pression d'huile a dramatiquement chuté.</p>
+                </div>
+            </section>
+
+            <section id="lire-le-defaut">
+                <h2>2. Branchez le Tool : La lecture du P-Code</h2>
+                <p>Repérez la prise OBD2 (souvent au-dessus du pédalier). Branchez le boîtier avec le contact mis,
+                    moteur éteint.</p>
+                <p>Dans l'interface, lancez "Auto-Scan" ou "Smart OBD2 Diagnostics". Et là, la magie opère. Un code
+                    Pxxxx va s'afficher. Ne cherchez pas à effacer direct ! C'est ce que font les débutants.</p>
+                <p>P0301 ? Misfire sur le cylindre 1. P0400 ? Défaillance du débit EGR. Plongez dans les données gelées
+                    ("Freeze Frame Data") pour savoir à quelle température d'eau et quel régime le défaut s'est
+                    déclenché.</p>
+
+                <p style="margin-top: 2rem; font-weight: bold; color: var(--accent);">Pour éviter de vous tromper dans
+                    le choix de l'interface et être sûr de décoder les pannes les plus obscures de votre marque, j'ai
+                    codé ce petit outil qui va filtrer les meilleures options :</p>
+
+                <!-- WIDGET INTEGRATION -->
+                <div id="suitcase-selector-root"></div>
+            </section>
+
+            <section id="effacer-les-defauts">
+                <h2>3. Peut-on juste "Effacer" pour que ça reparte ?</h2>
+                <p>C'est le vieux mythe. Effacer un code d'erreur (Clear DTCs) ne répare pas la pompe défectueuse. Si le
+                    capteur MAF (Mass Air Flow) est encrassé, au 3ème démarrage (le drive cycle), la trame OBD va
+                    repérer le défaut et le voyant va pleurer de nouveau.</p>
+                <p>Le seul but d'un effacement est de vérifier si le défaut est "intermittent" (faux contact, tension
+                    batterie basse) ou "permanent" (composant mort).</p>
+            </section>
+
+            <section id="faq">
+                <h2>FAQ : Résoudre le Voyant Check Engine Position Zéro</h2>
+
+                <div class="faq-item">
+                    <h3>Quelles sont les pannes les plus courantes qui allument le voyant ?</h3>
+                    <p>Dans 60% des cas : le capteur d'oxygène (Sonde Lambda), le catalyseur bouché, des bougies
+                        d'allumage en fin de vie, ou une vanne EGR calaminée sur un diesel urbain.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Peut-on passer le contrôle technique (CT) avec le voyant moteur ?</h3>
+                    <p>Absolument pas (en France et Europe). Un voyant OBD allumé entraîne une contre-visite automatique
+                        pour défaillance majeure du système antipollution (OBD readiness monitor).</p>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer class="main-footer" style="margin-top: 4rem;">
+        <div class="container">
+            <p>&copy; 2026 AliTested - Le moteur ne ment pas, la valise non plus.</p>
+        </div>
+    </footer>
+
+    <script src="../cookie-consent.js" defer></script>
+    <script type="module" src="../assets/widget/suitcase-selector.js"></script>
+</body>
+
+</html>

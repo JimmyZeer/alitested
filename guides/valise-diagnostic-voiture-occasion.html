@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        var initialConsent = localStorage.getItem('cookie_consent') === 'accepted' ? 'granted' : 'denied';
+        gtag('consent', 'default', {
+            analytics_storage: initialConsent,
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            wait_for_update: 500
+        });
+        window.dataLayer.push({
+            'event': 'consent_status_ready',
+            'consent_status': initialConsent
+        });
+    </script>
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MSBQXRPB');</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achat voiture d'occasion : 5 points critiques à vérifier avec votre valise</title>
+    <meta name="description"
+        content="Comment éviter les compteurs trafiqués sur Leboncoin ? Guide d'expert pour vérifier le kilométrage réel dans l'ECU avec un scanner OBD2.">
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="canonical" href="https://alitested.com/guides/valise-diagnostic-voiture-occasion.html">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../assets/widget/expert-comparison.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800&display=swap"
+        rel="stylesheet">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Achat voiture d'occasion : 5 points critiques anti-arnaque",
+      "description": "5 points critiques à vérifier avec votre valise pour éviter les compteurs trafiqués.",
+      "image": "https://alitested.com/media/test-occasion-obd2.jpg",
+      "author": {
+        "@type": "Person",
+        "name": "Jimmy",
+        "jobTitle": "Master Motoriste SEO"
+      },
+      "datePublished": "2026-02-22"
+    }
+    </script>
+</head>
+
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MSBQXRPB" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+
+    <nav style="padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
+        <div class="container">
+            <a href="../index.html"
+                style="color: var(--text-dim); text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;">
+                ← Retour à l'accueil AliTested
+            </a>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container">
+            <span class="badge">Guide Anti-Arnaque</span>
+            <h1>Achat voiture d'occasion : 5 points critiques à vérifier à la valise</h1>
+            <p class="lead"
+                style="font-style: italic; margin-top: 1.5rem; border-left: 2px solid var(--accent); padding-left: 1rem;">
+                “Il n'y a rien de pire que de voir le voyant s'allumer alors que vous venez d'acheter la voiture
+                "nickel" à un particulier sur Leboncoin.”
+            </p>
+            <div class="glass-panel"
+                style="margin-top: 2rem; padding: 0; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);">
+                <img src="../media/placeholder.png" alt="Outil de scan branché sur une d'occasion allemande"
+                    style="width: 100%; height: auto; display: block; filter: grayscale(20%);">
+            </div>
+        </div>
+    </header>
+
+    <main class="container" style="max-width: 800px;">
+        <article>
+            <section id="introduction">
+                <p>En 2026, un carnet d'entretien rempli à la main ne vaut plus grand-chose. Ce qui compte, c'est ce que
+                    les calculateurs (ECUs) ont enregistré.</p>
+                <p>Modifier le kilométrage affiché sur le tableau de bord (Odomètre) prend 10 minutes à un fraudeur.
+                    Modifier le kilométrage stocké en "hard" dans le module ABS, la boîte de vitesses automatique (TCM)
+                    ou le calculateur moteur (EDC17/MED17), c'est une autre histoire.</p>
+                <p>Voici l'analyse d'expert pour lire entre les lignes des trames OBD et débusquer une merguez.</p>
+            </section>
+
+            <section id="verifications">
+                <h2>Les 5 indicateurs qui ne mentent pas</h2>
+
+                <div class="product-card">
+                    <h3>1. Comparer les Odomètres des différents modules</h3>
+                    <p>Ne regardez pas le module "Instrument Cluster" (tableau de bord). Regardez la lecture
+                        kilométrique dans l'ECU ABS, la mémoire de la batterie HTA ou l'ECU des Airbags. Une différence
+                        de plus de 5% ? Fuyez, la voiture a été rajeunie.</p>
+                </div>
+
+                <div class="product-card">
+                    <h3>2. Les Heures de Fonctionnement Moteur (Operating Hours)</h3>
+                    <p>BMW et Porsche adorent cette métrique. 5000 heures de fonctionnement pour seulement 50 000 km au
+                        compteur ? Ça fait une moyenne de 10 km/h sur toute la vie du véhicule. Impossible, sauf s'il a
+                        passé sa vie à tourner au ralenti ou s'il... a 150 000 km.</p>
+                </div>
+
+                <div class="product-card">
+                    <h3>3. Distance depuis le dernier effacement de codes (DTC)</h3>
+                    <p>Le vendeur certifie que la voiture n'a jamais de problème ? Allez dans les données Freeze Frame
+                        et lisez la "Distance travelled since DTCs cleared". Si c'est écrit "15 km", le vendeur a effacé
+                        un défaut moteur au coin de la rue juste avant votre arrivée.</p>
+                </div>
+
+                <div class="product-card">
+                    <h3>4. L'état de colmatage du FAP (Diesel)</h3>
+                    <p>Lisez le "Soot Mass" (Masse de suie) et le "Ash Mass" (Masse de cendres). Un FAP avec 60g de
+                        cendres signifie qu'il est en fin de vie, prévoyez un billet de 1500€ dans les 6 mois.</p>
+                </div>
+
+                <div class="product-card">
+                    <h3>5. Les ratés d'allumage en temps réel (Misfire Counter)</h3>
+                    <p>Laissez la voiture tourner au ralenti. Affichez les PIDs "Misfire Cylinder 1, 2, 3, 4". Si un
+                        cylindre cumule 20 ratés en 5 minutes alors que le voyant n'est pas encore allumé, les bobines
+                        ou l'injecteur sont mourants.</p>
+                </div>
+
+            </section>
+
+            <section id="comparaison-outils">
+                <h2>L'arme anti-fraude</h2>
+                <p>Une valise à lecteur Bluetooth à 10€ ne lira jamais les kilomètres dans l'ECU de l'ABS. Ce niveau de
+                    profondeur système ("OEM Level Depth") nécessite une infrastructure stable, comme un module CAN-FD
+                    natif d'une Thinkcar ou d'une Mucar avancée.</p>
+
+                <p style="margin-top: 2rem; font-weight: bold; color: var(--accent);">Pour éviter de vous tromper devant
+                    la voiture, j'ai codé ce petit outil qui va filtrer les meilleures options (celles qui peuvent
+                    vraiment sonder l'ABS/Boîte) pour vous :</p>
+
+                <!-- WIDGET INTEGRATION -->
+                <div id="expert-comparison-root" data-product-name="L'Outil Anti-Triche Expert"
+                    data-affiliate-link="https://s.click.aliexpress.com/e/_DBrbJqT"></div>
+            </section>
+
+            <section id="faq">
+                <h2>FAQ : Triche au compteur Position Zéro</h2>
+
+                <div class="faq-item">
+                    <h3>Puis-je savoir si le FAP a été vidé ou supprimé électroniquement ?</h3>
+                    <p>Oui. Regardez les valeurs de pression différentielle (Differential Pressure Sensor). Si, en
+                        accélérant, la pression reste bloquée à 0 mbar ou bouge de façon ultra-linéaire improbable, le
+                        logiciel a été flashé (DTC Off / DPF Off).</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Comment prouver une casse d'Airbag dissimulée ?</h3>
+                    <p>Une valise bidirectionnelle (comme le Mucar 892BT ou Kingbolen K7) lira le "Crash Data Recorder".
+                        S'il y a des "Deployment Events", les airbags ont pété, même si le tableau de bord est recousu
+                        proprement.</p>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <div class="sticky-footer">
+        <div class="product-info">
+            <span class="product-title">Kingbolen K7 (Diag Profond)</span>
+            <div class="rating">
+                <span class="stars">★★★★★</span>
+                <span class="review-count">(Anti-Arnaque)</span>
+            </div>
+        </div>
+        <div class="price-action">
+            <span class="price">~250€</span>
+            <a href="https://s.click.aliexpress.com/e/_DBrbJqT" class="buy-now-btn">Voir l'offre</a>
+        </div>
+    </div>
+
+    <footer class="main-footer" style="margin-top: 4rem;">
+        <div class="container">
+            <p>&copy; 2026 AliTested - Expert en Diagnostic Automobile.</p>
+        </div>
+    </footer>
+
+    <script src="../cookie-consent.js" defer></script>
+    <script src="../sticky-footer.js" defer></script>
+    <script type="module" src="../assets/widget/expert-comparison.js"></script>
+</body>
+
+</html>

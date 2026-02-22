@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        var initialConsent = localStorage.getItem('cookie_consent') === 'accepted' ? 'granted' : 'denied';
+        gtag('consent', 'default', {
+            analytics_storage: initialConsent,
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            wait_for_update: 500
+        });
+        window.dataLayer.push({
+            'event': 'consent_status_ready',
+            'consent_status': initialConsent
+        });
+    </script>
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MSBQXRPB');</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversion Éthanol E85 : Valises pour lire LTFT et STFT</title>
+    <meta name="description"
+        content="Les fuel trims décortiqués (Long Term & Short Term). Guide expert sur le diag des conversions FlexFuel / E85 et comment ne pas rouler trop pauvre.">
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="canonical" href="https://alitested.com/guides/valise-diagnostic-ethanol-e85-ltft.html">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../assets/widget/tech-dictionary.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MSBQXRPB" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+
+    <nav style="padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
+        <div class="container">
+            <a href="../index.html"
+                style="color: var(--text-dim); text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;">
+                ← Retour à l'accueil AliTested
+            </a>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container">
+            <span class="badge">Eco-Tuning / E85 (2026)</span>
+            <h1>Conversion Éthanol E85 : Quelle valise lire les LTFT / STFT ?</h1>
+            <p class="lead"
+                style="font-style: italic; margin-top: 1.5rem; border-left: 2px solid var(--accent); padding-left: 1rem;">
+                “Il n'y a rien de pire que de voir le voyant P0171 "Système trop pauvre" s'allumer alors que vous venez
+                de faire votre plein d'E85. Votre moteur est en train de fondre et vous roulez à l'aveugle.”
+            </p>
+            <div class="glass-panel"
+                style="margin-top: 2rem; padding: 0; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);">
+                <img src="../media/placeholder.png" alt="Ecran Live Data LTFT STFT"
+                    style="width: 100%; height: auto; display: block; filter: grayscale(20%);">
+            </div>
+        </div>
+    </header>
+
+    <main class="container" style="max-width: 800px;">
+        <article>
+            <section id="introduction">
+                <p>Convertir son véhicule à l'E85 (via boîtier ou reprog cartographie ECU), c'est accepter que le ratio
+                    stœchiométrique passe de 14.7:1 (SP98) à environ 9.7:1 (E85). Votre calculateur doit injecter
+                    environ 30% d'essence en plus.</p>
+                <p>Si la pompe à essence, les injecteurs ou le boîtier E85 sont en PLS, l'ECU va saturer ses "Fuel
+                    Trims". C'est ici que les termes LTFT et STFT entrent en piste.</p>
+                <p>Un bon motoriste va directement monitorer les Live Data des Fuel Trims. Pas de chichi, que de la
+                    donnée OBD brute.</p>
+            </section>
+
+            <section id="lexique">
+                <p style="margin-top: 2rem; font-weight: bold; color: var(--accent);">Pour éviter de vous tromper sur
+                    ces acronymes cruciaux dans l'analyse de cartographie, j'ai codé ce petit outil qui va filtrer les
+                    meilleures définitions de calibration pour vous :</p>
+
+                <!-- WIDGET INTEGRATION -->
+                <div id="tech-dictionary-root"></div>
+            </section>
+
+            <section id="explication-technique">
+                <h2>L'Analyse Pratique : Roulez-vous pauvre sans le savoir ?</h2>
+                <p>Les Fuel Trims s'affichent en pourcentage (%). L'équilibre parfait, c'est 0%. Une valeur positive
+                    (+15%) signifie que le calculateur ajoute du carburant via le signal de la Sonde Lambda (O2) car il
+                    détecte trop d'oxygène. Une valeur négative (-10%), il en enlève.</p>
+
+                <div class="product-card">
+                    <h3>Le Crash du LTFT</h3>
+                    <p>Le <strong>Short Term Fuel Trim (STFT)</strong> bouge très vite en fonction de votre coup
+                        d'accélérateur. Le <strong>Long Term Fuel Trim (LTFT)</strong> est la mémoire à long terme de
+                        cet ajustement.</p>
+                    <ul>
+                        <li><strong style="color:var(--success);">LTFT entre -10% et +15% :</strong> La gestion E85 est
+                            normale. Votre cartographie/boîtier est toléré par l'ECU d'origine.</li>
+                        <li><strong style="color:#ff4444;">LTFT à +25% ou +33% (Maxé) :</strong> Danger absolu.
+                            L'ordinateur injecte le maximum de sa tolérance, et c'est toujours insuffisant. Code défaut
+                            P0171 (Mélange Trop Pauvre). Vos injecteurs sont ouverts en grand et saturent. Les
+                            températures d'échappement (EGT) s'envolent, risque de fonte de piston.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="choice">
+                <h2>Quelle valise pour monitorer l'E85 en live ?</h2>
+                <p>Toutes les valises à 15€ peuvent lire le LTFT théoriquement, car c'est un PID générique OBD2 (Mode
+                    $01). Le problème, c'est la <strong>fréquence d'échantillonnage de l'interface</strong>.</p>
+                <p>Une valise bon marché va vous donner une donnée de sonde Lambda toutes les 3 secondes. Si un
+                    injecteur cliquète à haut régime (8000 RPM), vous ne le verrez pas sur le graphique ! Il faut un
+                    appareil capable d'isoler 4 paramètres (STFT B1, LTFT B1, O2 Sensor Voltage, RPM) à une fréquence de
+                    rafraîchissement sous les 50 millisecondes.</p>
+
+                <div class="glass-panel"
+                    style="background: white; border-left: 4px solid var(--primary); border-radius: 0;">
+                    <h3 style="margin-top: 0; color: var(--text-main);">Le Conseil Motoriste</h3>
+                    <p>Pour l'éco-tuning intense, le <strong>Mucar V06</strong> ou un lecteur ultra basique mais rapide
+                        type obdlink MX+ surpassent les tablettes bas de gamme grâce à la qualité de leur puce de
+                        traitement (stabilité du Bluetooth). Vérifiez que l'outil possède une option graphique fluide
+                        (Live Graphing Data).</p>
+                </div>
+            </section>
+
+            <section id="faq">
+                <h2>FAQ : Diagnostic E85 Position Zéro</h2>
+
+                <div class="faq-item">
+                    <h3>Pourquoi ma voiture démarre mal à froid à l'éthanol ?</h3>
+                    <p>L'éthanol s'évapore très mal à basse température. Si le boîtier E85 ou la reprogrammation ne
+                        possède pas une bonne stratégie d'enrichissement de démarrage à froid (Cold Start Enrichment)
+                        via le capteur IAT (Intake Air Temp), même un STFT maxé ne suffira pas avant l'activation en
+                        boucle fermée (Closed Loop).</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>P0172 Système trop riche, c'est grave ?</h3>
+                    <p>Moins dangereux pour les pistons que d'être trop pauvre, mais vos LTFT à -20% indiquent que votre
+                        calculateur essaie désespérément d'enlever du carburant. Le risque ? Rincer les cylindres et
+                        diluer l'huile moteur (qui perd son pouvoir lubrifiant). Danger pour les coussinets de bielle.
+                    </p>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer class="main-footer" style="margin-top: 4rem;">
+        <div class="container">
+            <p>&copy; 2026 AliTested - Ne roulez jamais pauvre.</p>
+        </div>
+    </footer>
+
+    <script src="../cookie-consent.js" defer></script>
+    <script type="module" src="../assets/widget/tech-dictionary.js"></script>
+</body>
+
+</html>

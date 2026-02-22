@@ -8,8 +8,8 @@ const SCANNERS = {
         name: 'Mucar 892BT',
         shortName: '892BT',
         brand: 'Mucar',
-        priceLabel: 'Moins de 80€',
-        target: 'Particulier / Amateur',
+        priceLabel: 'Environ 450€',
+        target: 'Semi-Pro / Mécanicien',
         image: '/favicon.png', // Fallback, would normally use product image
         link: 'https://s.click.aliexpress.com/e/_DEK9kO3',
         updates: 'À vie (Gratuit)',
