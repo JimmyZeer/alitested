@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        var initialConsent = localStorage.getItem('cookie_consent') === 'accepted' ? 'granted' : 'denied';
+        gtag('consent', 'default', { analytics_storage: initialConsent, ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', wait_for_update: 500 });
+        window.dataLayer.push({ 'event': 'consent_status_ready', 'consent_status': initialConsent });
+    </script>
+    <script>(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-MSBQXRPB');</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Défaut P0401 : Débit Vanne EGR Insuffisant (Nettoyage & Reset) - AliTested</title>
+    <meta name="description"
+        content="Voyant antipollution allumé ? Le code P0401 indique une vanne EGR bouchée ou défectueuse. Découvrez comment la nettoyer et la réinitialiser avec une valise.">
+
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="canonical" href="https://alitested.com/codes/p0401-vanne-egr.html">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../assets/widget/suitcase-selector.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MSBQXRPB" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+
+    <nav style="padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
+        <div class="container">
+            <a href="index.html"
+                style="color: var(--text-dim); text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;">
+                ← Retour au dictionnaire OBD2
+            </a>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container text-center">
+            <span class="badge"
+                style="background:rgba(59, 130, 246, 0.2); color:#93c5fd; border: 1px solid rgba(59, 130, 246, 0.5);">Code
+                P040x : Dépollution</span>
+            <h1>Code Défaut P0401 : Débit Vanne EGR Insuffisant</h1>
+            <p class="lead" style="max-width: 700px; margin: 1.5rem auto 0 auto;">C'est la maladie des diesels modernes
+                (TDI, dCi, HDI) qui font trop de ville. Votre moteur s'encrasse, et la vanne de recyclage des gaz
+                s'étouffe.</p>
+        </div>
+    </header>
+
+    <main class="container" style="padding-top: 3rem;">
+
+        <div class="layout-sidebar-right">
+
+            <article class="main-content">
+
+                <section>
+                    <h2>Que signifie le code P0401 ?</h2>
+                    <p>Le code d'erreur <strong>P0401 (Exhaust Gas Recirculation (EGR) Flow Insufficient
+                            Detected)</strong> indique que le système OBD-II de la voiture a détecté que la quantité de
+                        gaz d'échappement recyclés via la vanne EGR est inférieure au volume requis.</p>
+                    <p>En clair : votre moteur tente de renvoyer une partie de ses gaz d'échappement dans l'admission
+                        (pour refroidir la combustion et limiter les rejets de NOx), mais <strong>le conduit est bouché
+                            par la suie (calamine)</strong> ou la soupape de la vanne refuse de s'ouvrir complètement.
+                    </p>
+                </section>
+
+                <section style="margin-top: 3rem;">
+                    <h2>Symptômes du P0401</h2>
+                    <p>En plus de l'allumage du voyant moteur ("Check Engine" ou "Anomalie Antipollution"), vous
+                        constaterez :</p>
+                    <ul style="list-style-type: disc; margin-left: 1.5rem; color: var(--text-dim);">
+                        <li style="margin-bottom: 0.5rem;"><strong style="color:var(--text);">Ralenti instable ou
+                                calage</strong>, surtout à froid.</li>
+                        <li style="margin-bottom: 0.5rem;"><strong style="color:var(--text);">Cliquetis moteur</strong>
+                            lors des fortes accélérations, causé par la hausse de température dans les chambres de
+                            combustion.</li>
+                        <li style="margin-bottom: 0.5rem;"><strong style="color:var(--text);">Refus au Contrôle
+                                Technique</strong> automatique en raison du voyant OBD allumé.</li>
+                    </ul>
+                </section>
+
+                <section style="margin-top: 4rem;">
+                    <h2>Comment réparer : L'étape cachée par les garages</h2>
+                    <p>Le premier réflexe (souvent le bon) est de plonger les mains dans le cambouis : démonter la vanne
+                        EGR et nettoyer l'impressionnante couche de calamine goudronneuse à l'aide d'un nettoyant
+                        spécifique "EGR/Carburateur" et d'une brosse à dents. <strong>Mais cela ne suffit pas !</strong>
+                    </p>
+
+                    <h3>L'Obligation de Réinitialisation / d'Adaptation (Reset EGR)</h3>
+                    <p>Si vous nettoyez ou remplacez la vanne EGR, le témoin moteur reviendra de toute façon au bout de
+                        quelques jours si vous ne faites pas une <strong>"Adaptation des butées"</strong>.</p>
+                    <p>Le calculateur moteur "pense" toujours que la vanne est encrassée ! Il avait progressivement
+                        augmenté le courant électrique dans le moteur de la vanne pour forcer son ouverture contre la
+                        crasse. Si vous remettez une vanne propre sans "Reset" électronique, le calculateur va tellement
+                        forcer sur l'électro-aimant (sans résistance de la calamine cette fois) qu'il va griller la
+                        vanne neuve !</p>
+
+                    <div
+                        style="background: rgba(16, 185, 129, 0.1); border-left: 4px solid #10b981; padding: 1.5rem; border-radius: 8px; margin-top: 1.5rem;">
+                        <h4 style="color: #10b981; margin-bottom: 0.5rem;">C'est là que la valise diagnostic entre en
+                            jeu</h4>
+                        <p style="margin: 0; font-size: 0.95rem;">Pour indiquer au calculateur (ECU) qu'il a désormais
+                            affaire à une vanne propre et qu'il doive refaire son apprentissage électrique ("EGR Valve
+                            Learning"), il vous faut imperativement une valise dotée de <strong>tests bi-directionnels /
+                                fonctions de service avancées</strong>.</p>
+                        <p style="margin-top: 0.5rem; font-size: 0.95rem;">Une tablette (comme la recommandation sur la
+                            droite) vous permet d'effectuer la procédure "Reset EGR" ou "Adaptation de l'EGR" en
+                            pressant un simple bouton. C'est l'étape qui fait toute la différence et sauve votre pièce
+                            neuve.</p>
+                    </div>
+                </section>
+
+            </article>
+
+            <aside class="sidebar">
+                <div class="sticky-wrapper" style="top: 2rem;">
+                    <h3 style="margin-bottom: 1.5rem; font-size: 1.25rem;">L'Outil pour "Reset" la Vanne EGR 🔧</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-dim); margin-bottom: 1.5rem;">Les tablettes
+                        ci-dessous possèdent la fonction de service <strong>Reset EGR / Apprentissage des
+                            butées</strong>, indispensable après nettoyage ou changement de votre vanne.</p>
+
+                    <div id="suitcase-selector-root"></div>
+                </div>
+            </aside>
+
+        </div>
+    </main>
+
+    <footer class="main-footer" style="margin-top: 6rem;">
+        <div class="container">
+            <p>&copy; 2026 AliTested - Le moteur ne ment pas, la valise non plus.</p>
+        </div>
+    </footer>
+
+    <script src="../cookie-consent.js" defer></script>
+    <script type="module" src="../assets/widget/suitcase-selector.js"></script>
+
+</body>
+
+</html>
