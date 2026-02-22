@@ -132,7 +132,7 @@ export default function LeadMagnet({ mode = 'inline' }) {
                                             setEmail(e.target.value);
                                             if (status === 'error') setStatus('idle');
                                         }}
-                                        className={`block w-full pl-11 pr-4 py-4 bg-slate-50 border ${status === 'error' ? 'border-red-300 focus:ring-red-500/20 focus:border-red-500' : 'border-slate-200 focus:ring-blue-500/20 focus:border-blue-500'} rounded-xl placeholder-slate-400 focus:outline-none focus:bg-white focus:ring-4 transition-all text-slate-800 text-lg font-medium`}
+                                        className={`block w-full pl-14 pr-4 py-4 bg-slate-50 border ${status === 'error' ? 'border-red-300 focus:ring-red-500/20 focus:border-red-500' : 'border-slate-200 focus:ring-blue-500/20 focus:border-blue-500'} rounded-xl placeholder-slate-400 focus:outline-none focus:bg-white focus:ring-4 transition-all text-slate-800 text-lg font-medium`}
                                         disabled={status === 'loading'}
                                     />
                                     {status === 'error' && (
