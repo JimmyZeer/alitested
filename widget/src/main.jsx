@@ -67,11 +67,13 @@ if (obdContainer) {
 // Inject Dynamic Comparator if container exists
 const comparatorContainer = document.getElementById('dynamic-comparator-root');
 if (comparatorContainer) {
+    const s1 = comparatorContainer.dataset.scanner1 || 'thinktool-lite';
+    const s2 = comparatorContainer.dataset.scanner2 || 'autel-mk900';
     const root = createRoot(comparatorContainer);
     root.render(
         <React.StrictMode>
             <div className="dynamic-comparator-wrapper">
-                <DynamicComparator />
+                <DynamicComparator defaultScanner1={s1} defaultScanner2={s2} />
             </div>
         </React.StrictMode>
     );

@@ -160,10 +160,10 @@ const FeatureRow = ({ label, val1, val2, isBoolean = false, winner = 0 }) => {
     );
 };
 
-export default function DynamicComparator() {
+export default function DynamicComparator({ defaultScanner1 = 'thinktool-lite', defaultScanner2 = 'autel-mk900' }) {
     // Default selected scanners
-    const [scanner1Id, setScanner1Id] = useState('thinktool-lite');
-    const [scanner2Id, setScanner2Id] = useState('autel-mk900');
+    const [scanner1Id, setScanner1Id] = useState(defaultScanner1);
+    const [scanner2Id, setScanner2Id] = useState(defaultScanner2);
 
     const s1 = SCANNERS[scanner1Id];
     const s2 = SCANNERS[scanner2Id];
