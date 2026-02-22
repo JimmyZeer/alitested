@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        var initialConsent = localStorage.getItem('cookie_consent') === 'accepted' ? 'granted' : 'denied';
+        gtag('consent', 'default', {
+            analytics_storage: initialConsent,
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            wait_for_update: 500
+        });
+        window.dataLayer.push({
+            'event': 'consent_status_ready',
+            'consent_status': initialConsent
+        });
+    </script>
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MSBQXRPB');</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Défaut P0420 : Symptômes, Causes et Solution - AliTested</title>
+    <meta name="description"
+        content="Décodage du code P0420 (Rendement du système catalytique inférieur au seuil). Comprenez pourquoi votre voyant moteur s'allume et comment effacer ce défaut DTC.">
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="canonical" href="https://alitested.com/codes/p0420-catalyseur.html">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../assets/widget/suitcase-selector.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MSBQXRPB" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+
+    <nav style="padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
+        <div class="container">
+            <a href="index.html"
+                style="color: var(--text-dim); text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;">
+                ← Retour au Dictionnaire des Codes (DTC)
+            </a>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container">
+            <span class="badge"
+                style="background:rgba(239, 68, 68, 0.2); color:#fca5a5; border: 1px solid rgba(239,68,68,0.5);">Code
+                Moteur P0420</span>
+            <h1>Que signifie le Code Défaut P0420 ?</h1>
+            <p class="lead"
+                style="font-style: italic; margin-top: 1.5rem; border-left: 2px solid var(--danger); padding-left: 1rem;">
+                “Rendement du système catalytique inférieur au seuil (Banque 1) : L'erreur classique de la sonde Lambda
+                ou du pot catalytique bouché.”
+            </p>
+        </div>
+    </header>
+
+    <main class="container" style="max-width: 800px;">
+        <article>
+            <section id="definition">
+                <h2>Explication Technique du P0420</h2>
+                <p>Le <strong>code P0420</strong> indique que l'ordinateur de bord (ECU) a détecté que le convertisseur
+                    catalytique ne fonctionne pas à son niveau d'efficacité normal (généralement sur la "Banque 1", le
+                    côté du moteur contenant le cylindre numéro 1).</p>
+                <p>L'ECU surveille le catalyseur via deux <strong>Sondes Lambda (Capteurs O2)</strong> : une placée
+                    <em>avant</em> le catalyseur (amont) et une placée <em>après</em> (aval). Si le capteur aval lit des
+                    valeurs de débit d'oxygène trop similaires au capteur amont, cela signifie que le catalyseur ne
+                    purifie plus les gaz : le voyant moteur (Check Engine) s'allume.</p>
+            </section>
+
+            <section id="symptomes" style="margin-top: 3rem;">
+                <h2>Quels sont les symptômes fréquents ?</h2>
+                <ul class="styled-list">
+                    <li>Voyant moteur orange (MIL) allumé ou clignotant.</li>
+                    <li>Surconsommation de carburant inhabituelle.</li>
+                    <li>Perte de puissance à l'accélération (si le catalyseur est physiquement bouché/fondu).</li>
+                    <li>Odeur d'œuf pourri (soufre) à l'échappement.</li>
+                    <li>Échec automatique au test antipollution du Contrôle Technique.</li>
+                </ul>
+            </section>
+
+            <section id="causes" style="margin-top: 3rem;">
+                <h2>Les 4 Causes Principales</h2>
+                <div class="product-card">
+                    <h3 style="color: var(--danger);">1. Catalyseur (FAP) HS ou Encrasé</h3>
+                    <p>C'est la cause la plus chère, mais pas toujours la plus courante. La céramique interne a fondu
+                        suite à des ratés d'allumage (P0300) prolongés, ou il est bouché par la suie (petits trajets
+                        urbains répétés).</p>
+                </div>
+                <div class="product-card">
+                    <h3 style="color: var(--warning);">2. Sonde Lambda Aval Défectueuse</h3>
+                    <p>Le capteur O2 (Post-Cata) renvoie un signal erratique à l'ECU. Une simple lecture des Live Data
+                        (Graphiques du capteur) permet de valider si la sonde oscille correctement entre 0.1V et 0.9V.
+                    </p>
+                </div>
+                <div class="product-card">
+                    <h3 style="color: var(--primary);">3. Fuite à l'échappement</h3>
+                    <p>Un trou sur la ligne, juste avant ou sur le catalyseur, aspire de l'oxygène frais. La sonde aval
+                        lit cet oxygène et l'ECU pense (à tort) que le catalyseur ne purifie plus rien.</p>
+                </div>
+                <div class="product-card">
+                    <h3>4. Mélange Air/Essence Trop Riche</h3>
+                    <p>Un injecteur fuyard, des bougies fatiguées... L'essence imbrûlée arrive dans le catalyseur
+                        brûlant, provoquant une post-combustion qui détruit la céramique protectrice à long terme.</p>
+                </div>
+            </section>
+
+            <section id="diagnostic" style="margin-top: 4rem;">
+                <h2>Comment diagnostiquer et effacer le P0420 (sans aller au garage)</h2>
+                <p>Ne courez pas changer votre catalyseur (500 à 1000€) pour un voyant P0420. Vous devez brancher une
+                    valise OBD2 capable de lire les <strong>Graphiques en Temps Réel (Live Data)</strong>.</p>
+                <p>Si la ligne de la Sonde O2 Aval suit parfaitement les vagues de la Sonde Amont, le catalyseur est
+                    mort. Si la Sonde Aval reste bloquée à une tension fixe suspecte, c'est la sonde qui est morte
+                    (50€). Une fois la réparation effectuée (remplacement de la sonde, nettoyage, correction de fuite),
+                    vous <strong>devez utiliser votre outil OBD pour effacer la mémoire de l'ECU (Clear DTC)</strong>,
+                    sinon le voyant restera allumé.</p>
+
+                <div class="glass-panel" style="margin-top: 2rem; background: var(--bg-hover);">
+                    <h3>Trouvez le bon lecteur OBD pour gérer ce code :</h3>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-dim);">Toutes les valises à 10€ échouent à tracer
+                        simultanément 2 flux Live Data rapides. Laissez notre outil vous filtrer les scanners capables
+                        de résoudre ce problème :</p>
+                    <!-- Inject SuitcaseSelector -->
+                    <div id="suitcase-selector-root"></div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer class="main-footer" style="margin-top: 4rem;">
+        <div class="container">
+            <p>&copy; 2026 AliTested - Le moteur ne ment pas, la valise non plus.</p>
+        </div>
+    </footer>
+
+    <script src="../cookie-consent.js" defer></script>
+    <script type="module" src="../assets/widget/suitcase-selector.js"></script>
+</body>
+
+</html>

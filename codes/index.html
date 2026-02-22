@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        var initialConsent = localStorage.getItem('cookie_consent') === 'accepted' ? 'granted' : 'denied';
+        gtag('consent', 'default', {
+            analytics_storage: initialConsent,
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            wait_for_update: 500
+        });
+        window.dataLayer.push({
+            'event': 'consent_status_ready',
+            'consent_status': initialConsent
+        });
+    </script>
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MSBQXRPB');</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codes Défauts OBD2 : L'Encyclopédie AliTested</title>
+    <meta name="description"
+        content="Recherchez et comprenez instantanément la signification de votre code défaut moteur (DTC Pxxxx). Solutions, causes probables et valises recommandées.">
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="canonical" href="https://alitested.com/codes/index.html">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../assets/widget/obd-code-resolver.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MSBQXRPB" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+
+    <nav style="padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
+        <div class="container">
+            <a href="../index.html"
+                style="color: var(--text-dim); text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;">
+                ← Retour à l'accueil AliTested
+            </a>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container">
+            <span class="badge" style="background:#8b5cf6; color:white;">L'Encyclopédie DTC</span>
+            <h1>Le Dictionnaire des Codes Défauts OBD2</h1>
+            <p class="lead"
+                style="font-style: italic; margin-top: 1.5rem; border-left: 2px solid #8b5cf6; padding-left: 1rem;">
+                “Un Odomètre qui s'allume en plein trajet ? Trouvez immédiatement l'origine de l'erreur P0... avec notre
+                base de données motoriste centralisée.”
+            </p>
+        </div>
+    </header>
+
+    <main class="container" style="max-width: 1000px; width:100%;">
+
+        <!-- WIDGET INTEGRATION (Top Hub Page) -->
+        <section id="recherche-rapide" style="margin-top: 2rem; margin-bottom: 4rem;">
+            <!-- Inject ObdCodeResolver -->
+            <div id="obd-code-root"></div>
+        </section>
+
+        <section id="top-codes">
+            <h2>Les 5 Codes les plus recherchés en 2026</h2>
+            <div class="guide-grid">
+
+                <a href="p0420-catalyseur.html" class="guide-card">
+                    <span class="badge" style="background: rgba(239, 68, 68, 0.1); color: var(--danger);">Défaut
+                        Échappement</span>
+                    <h3>P0420</h3>
+                    <p>Rendement du système catalytique inférieur au seuil. L'erreur absolue de la sonde Lambda ou du
+                        catalyseur bouché.</p>
+                    <footer>Décoder le P0420 →</footer>
+                </a>
+
+                <a href="p0300-rates-allumage.html" class="guide-card">
+                    <span class="badge" style="background: rgba(245, 158, 11, 0.1); color: var(--warning);">Défaut
+                        Moteur Grave</span>
+                    <h3>P0300</h3>
+                    <p>Ratés d'allumage aléatoires/multiples détectés. Bobines, bougies, ou compression : le danger de
+                        fonte de cylindre.</p>
+                    <footer>Décoder le P0300 →</footer>
+                </a>
+
+                <a href="p0171-systeme-pauvre.html" class="guide-card">
+                    <span class="badge" style="background: rgba(59, 130, 246, 0.1); color: var(--primary);">Défaut
+                        Admission</span>
+                    <h3>P0171</h3>
+                    <p>Système trop pauvre (Banque 1). Un classique des conversions E85 sauvages ou des prises d'air au
+                        collecteur.</p>
+                    <footer>Décoder le P0171 →</footer>
+                </a>
+
+                <a href="p0113-sonde-iat.html" class="guide-card">
+                    <span class="badge" style="background: rgba(16, 185, 129, 0.1); color: var(--success);">Défaut
+                        Capteur</span>
+                    <h3>P0113</h3>
+                    <p>Valeur d'entrée élevée du capteur IAT (Température d'air). Très fréquent après avoir oublié de
+                        rebrancher le débitmètre.</p>
+                    <footer>Décoder le P0113 →</footer>
+                </a>
+
+                <a href="p0400-vanne-egr.html" class="guide-card">
+                    <span class="badge" style="background: rgba(139, 92, 246, 0.1); color: #8b5cf6;">Défaut
+                        Anti-Pollution</span>
+                    <h3>P0400</h3>
+                    <p>Défaut de débit de recyclage des gaz (EGR). Le fléau des diesels urbains (1.6 HDi, 1.5 dCi)
+                        encrassés par la calamine.</p>
+                    <footer>Décoder le P0400 →</footer>
+                </a>
+
+            </div>
+        </section>
+
+        <section id="comment-lire" style="margin-top: 5rem;">
+            <div class="glass-panel" style="background: var(--slate); border-left: 4px solid var(--primary);">
+                <h2 style="color: white; margin-top: 0;">Comment effacer un code défaut (DTC) ?</h2>
+                <p style="color: rgba(255,255,255,0.8);">Comprendre le code c'est bien, pouvoir réinitialiser le voyant
+                    c'est mieux.</p>
+                <p style="color: rgba(255,255,255,0.8);">Un dongle ELM327 basique lira le P0420 mais échouera à
+                    l'effacer sur les véhicules récents dotés d'une passerelle SGW. Pour lire et effacer tout
+                    l'électronique de bord sans ruiner l'ECU, nous recommandons la gamme <strong
+                        style="color:white;">Mucar</strong> ou <strong style="color:white;">Thinkcar</strong>.</p>
+                <a href="../guides/guide-choisir-valise-diagnostic-2026.html" class="cta-button"
+                    style="margin-top: 1.5rem; display: inline-block;">
+                    Voir notre outil pour choisir la bonne valise
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer" style="margin-top: 4rem;">
+        <div class="container">
+            <p>&copy; 2026 AliTested - Ne roulez plus avec le voyant jaune allumé.</p>
+        </div>
+    </footer>
+
+    <script src="../cookie-consent.js" defer></script>
+    <script type="module" src="../assets/widget/obd-code-resolver.js"></script>
+</body>
+
+</html>

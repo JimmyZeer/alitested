@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        var initialConsent = localStorage.getItem('cookie_consent') === 'accepted' ? 'granted' : 'denied';
+        gtag('consent', 'default', {
+            analytics_storage: initialConsent,
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            wait_for_update: 500
+        });
+        window.dataLayer.push({
+            'event': 'consent_status_ready',
+            'consent_status': initialConsent
+        });
+    </script>
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MSBQXRPB');</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Défaut P0113 : Sonde IAT - AliTested</title>
+    <meta name="description"
+        content="Décodage du code P0113 (Valeur élevée Sonde Température Air IAT). Comprenez le lien avec votre filtre à air et effacez ce défaut DTC très courant.">
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="canonical" href="https://alitested.com/codes/p0113-sonde-iat.html">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../assets/widget/suitcase-selector.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MSBQXRPB" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+
+    <nav style="padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
+        <div class="container">
+            <a href="index.html"
+                style="color: var(--text-dim); text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;">
+                ← Retour au Dictionnaire des Codes (DTC)
+            </a>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container">
+            <span class="badge"
+                style="background:rgba(16, 185, 129, 0.2); color:var(--success); border: 1px solid rgba(16, 185, 129, 0.5);">Code
+                Moteur P0113</span>
+            <h1>Que signifie le Code Défaut P0113 ?</h1>
+            <p class="lead"
+                style="font-style: italic; margin-top: 1.5rem; border-left: 2px solid var(--success); padding-left: 1rem;">
+                “Valeur d'entrée élevée du circuit du capteur IAT (Intake Air Temperature) : 9 fois sur 10, vous avez
+                oublié de rebrancher une cosse après avoir fait l'entretien moteur.”
+            </p>
+        </div>
+    </header>
+
+    <main class="container" style="max-width: 800px;">
+        <article>
+            <section id="definition">
+                <h2>Explication Technique du P0113</h2>
+                <p>Le <strong>code P0113</strong> indique que le calculateur du moteur (ECU) voit un signal de tension
+                    anormalement "élevé" (souvent autour de 5 Volts) sur le circuit de la Sonde IAT (Intake Air
+                    Temperature).</p>
+                <p>Le capteur IAT est une "thermistance" (Un résistor qui varie avec la chaleur de l'air aspiré). L'ECU
+                    a besoin de savoir à quel point l'air entrant est froid (et donc très dense) pour ajuster
+                    correctement la durée d'injection d'essence. Si le capteur P0113 est enregistré, l'ECU voit
+                    généralement la température à <strong>-40°C</strong> dans les <em>Live Data</em> (Tension de 5V
+                    fixe), ce qui est la valeur de défaut d'un circuit totalement ouvert.</p>
+            </section>
+
+            <section id="symptomes" style="margin-top: 3rem;">
+                <h2>Quels sont les symptômes fréquents ?</h2>
+                <ul class="styled-list">
+                    <li>Voyant moteur orange (MIL) fixe.</li>
+                    <li>Surconsommation (L'ECU force par sécurité un mélange très riche).</li>
+                    <li>Sensation que le moteur "tourne gras".</li>
+                    <li>Ratés éventuels au démarrage à froid.</li>
+                </ul>
+            </section>
+
+            <section id="causes" style="margin-top: 3rem;">
+                <h2>Les 4 Causes Principales</h2>
+                <div class="product-card">
+                    <h3 style="color: var(--success);">1. Le Classique Oubli d'Entretien</h3>
+                    <p>C'est l'erreur "humaine" par excellence. Vous venez de changer votre filtre à air ou vos bougies,
+                        vous avez débranché le capteur IAT (souvent intégré au Débitmètre MAF) au niveau de la boite à
+                        air... et vous avez oublié de le rebrancher, ou la cosse a été mal clipsée. Circuit Ouvert = 5V
+                        = P0113.</p>
+                </div>
+                <div class="product-card">
+                    <h3 style="color: var(--warning);">2. Faisceau Électrique Endommagé</h3>
+                    <p>Un rat, une fouine ou la forte chaleur a grignoté un des deux fils dans la baie moteur. C'est
+                        l'équivalent d'une déconnexion (Circuit Ouvert).</p>
+                </div>
+                <div class="product-card">
+                    <h3 style="color: var(--danger);">3. Sonde IAT interne grillée</h3>
+                    <p>À force d'aspirer les vapeurs d'huile via le reniflard, la délicate sonde (souvent recouverte de
+                        résine epoxie fine) peut se rompre. Sa résistance interne devient infinie.</p>
+                </div>
+                <div class="product-card">
+                    <h3>4. Bug ou défaut connectique MAF/IAT</h3>
+                    <p>Cosses de fiche oxydées ou pleines d'huile. La résistance de contact augmente et fausse les
+                        tensions avant qu'elles ne soient lues par l'ECU.</p>
+                </div>
+            </section>
+
+            <section id="diagnostic" style="margin-top: 4rem;">
+                <h2>Comment diagnostiquer et effacer le P0113 (sans aller au garage)</h2>
+                <p>Branchez votre valise de diagnostic et cherchez les informations en Direct (Live Data). Filtrez sur
+                    la variable IAT. Si elle indique fermement -40°C, votre ECU ne voit tout simplement "plus" le
+                    capteur.</p>
+                <p>Ouvrez votre capot, trouvez le tuyau d'admission d'air noir et vérifiez tous les connecteurs
+                    électriques. Un petit coup de spray Nettoyant Contact dans la cosse du MAF/IAT suffit parfois.
+                    Rebranchez fermement, mettez le contact, lisez de nouveau la variable IAT sur la tablette. Si elle
+                    annonce +25°C tranquillement, la réparation est faite. Effectuez alors le <strong>Clear DTC</strong>
+                    avec la valise.</p>
+
+                <div class="glass-panel" style="margin-top: 2rem; background: var(--bg-hover);">
+                    <h3>Trouvez le bon lecteur pour lire "PID_0F Température d'Admission" :</h3>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-dim);">Un lecteur ultra-basique vous guidera à
+                        l'aveugle, une vraie interface vous montrera la chute de température au millivolt près. Filtrez
+                        les meilleurs matériels :</p>
+                    <!-- Inject SuitcaseSelector -->
+                    <div id="suitcase-selector-root"></div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer class="main-footer" style="margin-top: 4rem;">
+        <div class="container">
+            <p>&copy; 2026 AliTested - Le moteur ne ment pas, la valise non plus.</p>
+        </div>
+    </footer>
+
+    <script src="../cookie-consent.js" defer></script>
+    <script type="module" src="../assets/widget/suitcase-selector.js"></script>
+</body>
+
+</html>

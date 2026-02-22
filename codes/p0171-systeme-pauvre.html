@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        var initialConsent = localStorage.getItem('cookie_consent') === 'accepted' ? 'granted' : 'denied';
+        gtag('consent', 'default', {
+            analytics_storage: initialConsent,
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            wait_for_update: 500
+        });
+        window.dataLayer.push({
+            'event': 'consent_status_ready',
+            'consent_status': initialConsent
+        });
+    </script>
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MSBQXRPB');</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Défaut P0171 : Système Trop Pauvre - AliTested</title>
+    <meta name="description"
+        content="Décodage du code P0171 (Système trop pauvre / System too lean). Comprenez le lien avec la sonde Lambda, l'éthanol E85 et effacez ce défaut DTC.">
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="canonical" href="https://alitested.com/codes/p0171-systeme-pauvre.html">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../assets/widget/suitcase-selector.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MSBQXRPB" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+
+    <nav style="padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
+        <div class="container">
+            <a href="index.html"
+                style="color: var(--text-dim); text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;">
+                ← Retour au Dictionnaire des Codes (DTC)
+            </a>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container">
+            <span class="badge"
+                style="background:rgba(59, 130, 246, 0.2); color:var(--primary); border: 1px solid rgba(59, 130, 246, 0.5);">Code
+                Moteur P0171</span>
+            <h1>Que signifie le Code Défaut P0171 ?</h1>
+            <p class="lead"
+                style="font-style: italic; margin-top: 1.5rem; border-left: 2px solid var(--primary); padding-left: 1rem;">
+                “Système trop pauvre (Banque 1) : L'ordinateur hurle qu'il y a beaucoup trop d'air ou pas assez
+                d'essence qui entre dans le moteur pour exploser correctement.”
+            </p>
+        </div>
+    </header>
+
+    <main class="container" style="max-width: 800px;">
+        <article>
+            <section id="definition">
+                <h2>Explication Technique du P0171</h2>
+                <p>Le <strong>code P0171</strong> s'affiche lorsque le calculateur (ECU) s'aperçoit que les "Fuel Trims"
+                    (ajustements d'essence à court et long terme) sont saturés en essayant d'ajouter du carburant.</p>
+                <p>En temps normal, le rapport stœchiométrique parfait (Lambda 1) est de 14.7 parts d'air pour 1 part
+                    d'essence. Si la <strong>Sonde O2 Amont</strong> détecte trop d'oxygène résiduel après combustion,
+                    l'ECU va ajouter du carburant (+10%, +20%). Si l'ECU dépasse un seuil critique (+25% de correction
+                    "LTFT") car il n'arrive pas à régler le problème, il s'allume en erreur P0171.</p>
+            </section>
+
+            <section id="symptomes" style="margin-top: 3rem;">
+                <h2>Quels sont les symptômes fréquents ?</h2>
+                <ul class="styled-list">
+                    <li>Voyant moteur orange (MIL) fixe.</li>
+                    <li>Ralenti instable ou "pompage" aigu.</li>
+                    <li>Trous à l'accélération (Hésitation lorgnant vers le calage).</li>
+                    <li>Démarrage à froid très difficile (particulièrement avec les conversions E85).</li>
+                </ul>
+            </section>
+
+            <section id="causes" style="margin-top: 3rem;">
+                <h2>Les 4 Causes Principales</h2>
+                <div class="product-card">
+                    <h3 style="color: var(--primary);">1. Une Prise d'Air (Vacuum Leak)</h3>
+                    <p>C'est de l'air "non mesuré" par le débitmètre (Capteur MAF). Une durite de reniflard fissurée, un
+                        joint de collecteur d'admission cuit, et de l'air frais parasite entre dans le cylindre. Le
+                        mélange devient trop pauvre.</p>
+                </div>
+                <div class="product-card">
+                    <h3 style="color: var(--success);">2. Capteur MAF encrassé (Débitmètre)</h3>
+                    <p>Le capteur MAF (Mass Air Flow) a un petit fil chaud. S'il est couvert de poussière d'huile
+                        (filtre à air sale ou huilé type K&N excédentaire), il sous-estime l'air entrant. L'ECU injecte
+                        moins d'essence, et boum : P0171.</p>
+                </div>
+                <div class="product-card">
+                    <h3 style="color: var(--warning);">3. Défaut d'alimentation de Carburant</h3>
+                    <p>Filtre à essence colmaté, pompe à essence fatiguée (pression de rail trop basse), ou injecteurs
+                        grippés. L'ECU "ouvre" les injecteurs mais rien ne sort, le mélange reste pauvre.</p>
+                </div>
+                <div class="product-card">
+                    <h3>4. La conversion "Bled" à l'Éthanol (E85)</h3>
+                    <p>Sans reprogrammation adéquate ou boîtier actif, l'E85 requiert environ 30% d'injection de plus.
+                        Si votre calculateur standard ne peut pas monter ses LTFT au-delà de 25%, il maxe son compteur
+                        et affiche un P0171.</p>
+                </div>
+            </section>
+
+            <section id="diagnostic" style="margin-top: 4rem;">
+                <h2>Comment diagnostiquer et effacer le P0171 (sans aller au garage)</h2>
+                <p>N'achetez pas de sonde Lambda direct. Vous devez vérifier les <strong>Long Term Fuel Trims
+                        (LTFT)</strong> sur votre valise OBD2. Si le LTFT tourne autour de +25% au ralenti, mais
+                    redescend à +5% quand vous maintenez le régime à 3000 RPM, <strong>c'est une certitude : vous avez
+                        une prise d'air d'admission (durite fissurée)</strong>.</p>
+                <p>Cherchez le léger "pssshhh" d'air sous le capot. Vaporisez un nettoyant frein vers les joints
+                    d'admission (si le moteur monte en régime, c'est là que l'air entre). Une fois colmatée, branchez la
+                    valise et effectuez le <strong>Clear DTC</strong>.</p>
+
+                <div class="glass-panel" style="margin-top: 2rem; background: var(--bg-hover);">
+                    <h3>Trouvez le bon lecteur OBD pour lire vos LTFT :</h3>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-dim);">Pour s'attaquer à ce code, vous devez
+                        accéder aux Données en Direct (Live Data PID 1). Notre widget trouve la valise parfaite pour
+                        vous :</p>
+                    <!-- Inject SuitcaseSelector -->
+                    <div id="suitcase-selector-root"></div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer class="main-footer" style="margin-top: 4rem;">
+        <div class="container">
+            <p>&copy; 2026 AliTested - Le moteur ne ment pas, la valise non plus.</p>
+        </div>
+    </footer>
+
+    <script src="../cookie-consent.js" defer></script>
+    <script type="module" src="../assets/widget/suitcase-selector.js"></script>
+</body>
+
+</html>
