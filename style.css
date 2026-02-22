@@ -254,6 +254,41 @@ nav a:hover {
     background: rgba(16, 185, 129, 0.1);
 }
 
+/* Mobile Menu Button (Hidden on Desktop) */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    padding: 0;
+    z-index: 60;
+}
+
+.mobile-menu-btn .bar {
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-main);
+    border-radius: 2px;
+    transition: var(--transition-smooth);
+}
+
+/* Hamburger active animation */
+.mobile-menu-btn.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.mobile-menu-btn.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-btn.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
 /* Hero Section */
 .hero {
     background: var(--bg-content);
@@ -733,21 +768,42 @@ footer.main-footer p {
     }
 
     .nav-container {
-        flex-direction: column;
-        gap: 0.75rem;
+        flex-direction: row;
+        gap: 0;
+    }
+
+    .mobile-menu-btn {
+        display: flex;
     }
 
     .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
         width: 100%;
-        overflow-x: auto;
-        padding-bottom: 0.5rem;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        justify-content: flex-start;
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.98);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        padding: 0;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        /* Hidden */
+        transition: clip-path 0.3s ease-in-out;
+        gap: 0;
     }
 
-    .nav-links::-webkit-scrollbar {
-        display: none;
+    .nav-links.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        /* Revealed */
+        padding: 1rem;
+        gap: 0.5rem;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .nav-links a {
+        width: 100%;
+        padding: 1rem;
+        border-radius: 8px;
+        text-align: center;
     }
 
     .guide-grid {
