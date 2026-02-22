@@ -57,6 +57,7 @@
 /* Base Styles & Smooth Scroll */
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 * {
