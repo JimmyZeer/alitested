@@ -40,6 +40,7 @@ const REVIEWS_DB = {
             verified: true,
             content: 'Franchement bluffé par cette marque. Mises à jour gratuites pendant 3 ans, c\'est énorme par rapport à Autel qui fait payer au bout d\'un an. Topologie réseau bien faite. J\'ai codé de nouveaux injecteurs sur mon DCI sans difficulté.',
             helpful: 31,
+            images: ['/media/ugc/ugc-mucar-892bt.png']
         },
         {
             id: 2,
@@ -60,6 +61,7 @@ const REVIEWS_DB = {
             verified: true,
             content: 'Le meilleur rapport qualité-prix de la gamme semi-pro. Thinkcar est pour moi largement au-dessus de Launch aujourd\'hui. Testé sur du BMW F30 et Renault Trafic, impeccable.',
             helpful: 18,
+            images: ['/media/ugc/ugc-thinktool-lite.png']
         },
         {
             id: 2,
@@ -80,6 +82,7 @@ const REVIEWS_DB = {
             verified: true,
             content: 'Acheté pour ma 308 de 2016. J\'avais le voyant moteur (P20E8 AdBlue). La tablette a trouvé le défaut en 2 min, j\'ai pu l\'effacer et rouler jusqu\'au garage. Tablette hyper fluide et maj gratuites, je recommande.',
             helpful: 42,
+            images: ['/media/ugc/ugc-mucar-v06.png']
         },
         {
             id: 2,
@@ -238,6 +241,15 @@ export default function ReviewComments({ productId }) {
                                 <p className="text-slate-600 leading-relaxed text-[1.05rem]">
                                     {review.content}
                                 </p>
+
+                                {/* UGC Images */}
+                                {review.images && review.images.length > 0 && (
+                                    <div className="mt-4 flex gap-2 overflow-x-auto pb-2">
+                                        {review.images.map((img, imgIdx) => (
+                                            <img key={imgIdx} src={img} alt="Avis Client" className="h-24 md:h-32 object-cover rounded-lg border border-slate-200 shadow-sm transition-opacity hover:opacity-90 cursor-pointer" />
+                                        ))}
+                                    </div>
+                                )}
 
                                 {/* Helpful Interaction */}
                                 <div className="mt-4 flex items-center gap-4 border-t border-slate-50 pt-4">
