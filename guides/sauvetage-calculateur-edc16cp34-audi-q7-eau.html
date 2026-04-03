@@ -37,13 +37,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Meta SEO Parfaites (Yoast Compliant) -->
-    <title>Sauvetage ECU Audi Q7 (EDC16CP34) : Eau & Clonage Complet</title>
+    <title>Audi Q7 3.0 TDI (2006-2010) : Panne de démarrage et infiltration d'eau dans le calculateur EDC16CP34</title>
     <meta name="description"
         content="Votre Audi Q7 refuse de démarrer après la pluie ? Découvrez notre étude de cas détaillée sur le sauvetage et le clonage d'un calculateur moteur EDC16CP34 noyé.">
     <meta name="keywords" content="Audi Q7, Panne démarrage, EDC16CP34, Infiltration eau, Clonage calculateur, Reprogrammation, KTAG, BDM, Réparation ECU, Autotuner">
     
     <!-- Open Graph Metadata -->
-    <meta property="og:title" content="Sauvetage ECU Audi Q7 (EDC16CP34) : Eau & Clonage Complet">
+    <meta property="og:title" content="Audi Q7 3.0 TDI (2006-2010) : Panne de démarrage et infiltration d'eau dans le calculateur EDC16CP34">
     <meta property="og:description" content="Votre Audi Q7 refuse de démarrer après la pluie ? Découvrez notre étude de cas détaillée sur le sauvetage et le clonage d'un calculateur moteur EDC16CP34 noyé.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://alitested.com/guides/sauvetage-calculateur-edc16cp34-audi-q7-eau.html">
@@ -65,7 +65,7 @@
         "@type": "WebPage",
         "@id": "https://alitested.com/guides/sauvetage-calculateur-edc16cp34-audi-q7-eau.html"
       },
-      "headline": "L'ennemi invisible du Q7 : Quand l'eau s'invite dans le calculateur moteur EDC16CP34",
+      "headline": "Audi Q7 3.0 TDI (2006-2010) : Panne de démarrage et infiltration d'eau dans le calculateur EDC16CP34",
       "description": "Étude de cas sur le clonage BDM d'un calculateur Audi Q7 3.0 TDI oxydé et corrodé par des infiltrations d'eau au niveau de la baie de pare-brise.",
       "image": "https://alitested.com/media/audi-q7-edc16cp34-water.png",  
       "author": {
@@ -105,7 +105,7 @@
     <header>
         <div class="container" style="max-width: 900px;">
             <span class="badge" style="background:#ef4444; color:white;">Étude de Cas & Reprogrammation</span>
-            <h1 style="margin-top: 1rem;">L'ennemi invisible du Q7 : Quand l'eau s'invite dans le calculateur moteur (EDC16CP34)</h1>
+            <h1 style="margin-top: 1rem;">Audi Q7 3.0 TDI (2006-2010) : Panne de démarrage et infiltration d'eau dans le calculateur EDC16CP34</h1>
             
             <div style="display: flex; align-items: center; gap: 1rem; margin-top: 1rem; color: var(--text-dim); font-size: 0.9rem;">
                 <span>⏱️ Temps de lecture : 16 minutes</span>
@@ -147,7 +147,7 @@
                 <p>À notre arrivée, nous branchons la valise diagnostique VCDS (VAG-COM). À première vue, la <strong>Gateway (19)</strong> parvient à interroger le calculateur moteur (Adresse 01 - Engine). La communication n'est pas totalement rompue, mais un détail alarmant saute aux yeux de notre technicien sur l'écran des "Identification Avancées" :</p>
                 
                 <ul>
-                    <li>L'Immo-ID (L'identifiant du système Antidémarrage) affiche <code>XXXXX-XXXXX-XXXX</code> au lieu des numéros de série habituels Audi.</li>
+                    <li>L'Immo-ID (L'identifiant du système Antidémarrage) affiche <code>XXXXX-XXXXX-XXXX</code> au lieu des numéros de série habituels Audi. Ce masquage de l'ID par des croix est souvent la signature d'une ancienne désactivation logicielle de l'antidémarrage (Immo Off), rendant le diagnostic standard inopérant.</li>
                     <li>Le paramètre d'état du calculateur indique "Locked" au lieu de "Ready to Start".</li>
                     <li>Des défauts de communication CAN intermittents remontent vers l'ABS et les modules de confort.</li>
                 </ul>
@@ -160,7 +160,7 @@
                 <p>Après l'extraction du boîtier de gestion moteur, référencé <strong>Bosch 0 281 012 919 (EDC16CP34)</strong>, il n'a même pas fallu l'ouvrir pour deviner le drame. En débranchant le connecteur de faisceau à 94 broches, nous avons remarqué un dépôt verdâtre distinctif sur plusieurs connectiques d'alimentation. Le verdict matériel était inévitable : l'infiltration de fluide destructeur.</p>
                 
                 <div class="product-card" style="margin-top: 2rem;">
-                    <h3>L'autopsie de la carte Arduino/Bosch</h3>
+                    <h3>L'autopsie du PCB Bosch</h3>
                     <p>En coupant minutieusement le joint de silicone de fermeture et en exposant le Circuit Imprimé (PCB) sous notre microscope d'inspection, le constat est sans appel :</p>
                     <ul>
                         <li><strong>Dépôts massifs de vert-de-gris :</strong> Une réaction chimique d'oxydation sévère du cuivre et de l'étain, principalement autour de la puce d'alimentation et des drivers d'injecteurs.</li>
