@@ -146,256 +146,213 @@
             });
         });
     </script>
-
-
     <section class="hero">
         <div class="container animate-fade-in-up">
-            <span class="badge">Analyse Indépendante 2026</span>
-            <h1 class="animate-fade-in-up stagger-1">Le Diagnostic Auto Pro,<br>Sans la Facture Pro.</h1>
-            <p class="lead animate-fade-in-up stagger-2">Ne payez plus 1500€ pour une valise. Nous testons les meilleurs
-                outils AliExpress (Mucar,
-                Thinkcar) pour vous aider à diagnostiquer, coder et réparer vous-même.</p>
+            <span class="badge">Expert Diagnostic & Électronique Auto</span>
+            <h1 class="animate-fade-in-up stagger-1">Ne laissez plus l'électronique de votre voiture vous dicter sa loi.</h1>
+            <p class="lead animate-fade-in-up stagger-2">Tutoriels de codage (VCDS, ODIS), guides de réparation de calculateurs et sélections des meilleures valises de diagnostic testées sur le terrain. Réparez comme un pro, sans vous ruiner en concession.</p>
+            
+            <div class="hero-cta-group animate-fade-in-up stagger-3">
+                <a href="#top-picks" class="cta-button">🛠️ Voir les valises recommandées</a>
+                <a href="guides/swap-abs-mk60ec1-vag.html" class="btn-ghost">📖 Lire le dernier guide</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bandeau de Réassurance -->
+    <div class="social-proof-banner animate-fade-in-up stagger-3">
+        Des centaines de calculateurs sauvés | Protocoles VAG, PSA, BMW | Outils 100% testés en atelier
+    </div>
+
+    <!-- Social Proof Section -->
+    <section class="social-proof-section">
+        <div class="container">
+            <div class="social-proof-card animate-fade-in-up">
+                <div class="social-proof-img-container">
+                    <img src="media/social-proof-diag.png" alt="Diagnostic automobile sur le terrain en atelier" loading="lazy">
+                </div>
+                <div class="social-proof-content">
+                    <h3 style="margin-top:0; font-size:1.75rem;">Ici, on ne parle pas dans le vide.</h3>
+                    <p style="font-size:1.1rem; color: var(--text-secondary);">Chaque outil recommandé et tutoriel publié est torturé en conditions réelles d'atelier. Que ce soit une Erreur 31 tenace sur un bloc ABS, un Immo Off récalcitrant, ou un rétrofit complexe, notre expertise repose sur du vécu. Fini les fiches techniques théoriques.</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <main class="container">
-
         <!-- SÉLECTEUR DE VALISE INTERACTIF (React Widget) -->
-        <section id="selector-widget" style="margin-top: -3rem; position: relative; z-index: 20; padding-bottom: 2rem;">
+        <section id="selector-widget" style="margin-top: 1rem; position: relative; z-index: 20; padding-bottom: 2rem;">
             <div id="suitcase-selector-root"></div>
         </section>
 
-        <!-- SILOS: ENTRY POINTS -->
+        <!-- SILOS: L'entonnoir de navigation -->
         <section id="silos" style="position: relative; z-index: 10;">
+            <h2 style="border-bottom: 2px solid var(--border); padding-bottom: 1rem; margin-bottom: 2.5rem; margin-top:0;" class="animate-fade-in-up">Votre parcours vers la maîtrise</h2>
+            
             <div class="guide-grid">
-
-                <!-- Silo A: Diag -->
-                <a href="guides/meilleure-valise-diagnostic-multimarque.html"
-                    class="guide-card animate-fade-in-up stagger-1" style="border-top: 4px solid var(--primary);">
-                    <div
-                        style="margin-bottom: 1.25rem; color: var(--primary); background: rgba(59, 130, 246, 0.1); width: max-content; padding: 12px; border-radius: 12px;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path
-                                d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                <!-- Pilier A: Diagnostic & Outils -->
+                <a href="comparatifs/index.html" class="guide-card animate-fade-in-up stagger-1" style="border-top: 4px solid var(--primary);">
+                    <div class="pillar-icon" style="color: var(--primary); background: rgba(59, 130, 246, 0.1);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
                         </svg>
                     </div>
-                    <h3>Diagnostic Multimarque</h3>
-                    <p>Lire les codes défauts, comprendre les voyants et effacer les erreurs moteur/ABS/Airbag.</p>
-                    <footer>Voir les Valises</footer>
+                    <h3>Diagnostic & Outils</h3>
+                    <p>Quelle valise choisir ? Launch, Autel, VCDS, Autocom... Découvrez mes comparatifs sans filtre pour trouver l'outil adapté à votre budget.</p>
+                    <footer style="margin-top:auto">Voir les Comparatifs</footer>
                 </a>
 
-                <!-- Silo B: Clés -->
-                <a href="guides/programmation-cle-voiture-diy.html" class="guide-card animate-fade-in-up stagger-2"
-                    style="border-top: 4px solid var(--warning);">
-                    <div
-                        style="margin-bottom: 1.25rem; color: var(--warning); background: rgba(245, 158, 11, 0.1); width: max-content; padding: 12px; border-radius: 12px;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path
-                                d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4" />
+                <!-- Pilier B: Tutoriels & Rétrofit -->
+                <a href="#latest-guides" class="guide-card animate-fade-in-up stagger-2" style="border-top: 4px solid var(--warning);">
+                    <div class="pillar-icon" style="color: var(--warning); background: rgba(245, 158, 11, 0.1);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4" />
                         </svg>
                     </div>
-                    <h3>Clés & Serrurerie</h3>
-                    <p>Double de clé perdu ? Apprenez à programmer des nouvelles clés et télécommandes.</p>
-                    <footer>Voir le Matériel</footer>
+                    <h3>Tutoriels & Rétrofit</h3>
+                    <p>Apprenez à coder un module, adapter un bloc ABS, ou réinitialiser un capteur. Des guides pas-à-pas pour ne plus bloquer en procédure.</p>
+                    <footer style="margin-top:auto">Explorer les Guides</footer>
                 </a>
 
-                <!-- Silo C: Entretien -->
-                <a href="guides/entretien-auto-reset-electronique.html" class="guide-card animate-fade-in-up stagger-3"
-                    style="border-top: 4px solid var(--success);">
-                    <div
-                        style="margin-bottom: 1.25rem; color: var(--success); background: rgba(16, 185, 129, 0.1); width: max-content; padding: 12px; border-radius: 12px;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path
-                                d="M12 2.69l5.74 5.74-5.74 5.74c-.78.78-.78 2.05 0 2.83l.87.87c.78.78 2.05.78 2.83 0l5.74-5.74L21.31 12 12 21.31 2.69 12 12 2.69z" />
+                <!-- Pilier C: Outils & Calculateurs -->
+                <a href="codes/index.html" class="guide-card animate-fade-in-up stagger-3" style="border-top: 4px solid var(--success);">
+                    <div class="pillar-icon" style="color: var(--success); background: rgba(16, 185, 129, 0.1);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2.69l5.74 5.74-5.74 5.74c-.78.78-.78 2.05 0 2.83l.87.87c.78.78 2.05.78 2.83 0l5.74-5.74L21.31 12 12 21.31 2.69 12 12 2.69z" />
                         </svg>
                     </div>
-                    <h3>Maintenance & Reset</h3>
-                    <p>Vidange, FAP, AdBlue, Freins Électriques... Remettez à zéro tous vos indicateurs à vie.</p>
-                    <footer>Voir les Tutos</footer>
+                    <h3>Outils & Calculateurs</h3>
+                    <p>Bloqué sur un Long Coding ? Utilisez nos générateurs en ligne pour calculer vos octets et décoder vos erreurs sans risquer l'erreur de checksum.</p>
+                    <footer style="margin-top:auto">Outils en ligne</footer>
                 </a>
-
             </div>
         </section>
 
-        <!-- TOP PICKS SECTION -->
+        <!-- TOP PICKS SECTION: Vitrine / Monétisation -->
         <section id="top-picks" style="margin-top: 6rem;">
-            <h2 style="border-bottom: 2px solid var(--border); padding-bottom: 1rem; margin-bottom: 2.5rem;"
-                class="animate-fade-in-up">Les Choix de la
-                Rédaction</h2>
+            <h2 style="border-bottom: 2px solid var(--border); padding-bottom: 1rem; margin-bottom: 2.5rem;" class="animate-fade-in-up">Les Choix de l'Expert</h2>
 
             <div class="guide-grid">
-
-                <!-- Pick 1: Mucar 892BT -->
-                <div class="glass-panel animate-fade-in-up stagger-1"
-                    style="border: 2px solid rgba(59, 130, 246, 0.4); background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);">
-                    <span class="badge"
-                        style="background: var(--primary-gradient); color: white; border: none; box-shadow: 0 4px 10px rgba(59,130,246,0.3);">🏆
-                        Top 1 - Rapport Qualité/Prix</span>
-                    <h3 style="font-size: 1.5rem; margin-top: 0.5rem;">Mucar 892BT</h3>
-                    <p>Le seul outil à moins de 500€ qui offre un véritable diagnostic bidirectionnel, le codage ECU et
-                        l'accès SGW. Une puissance de niveau concessionnaire sans abonnement annuel.</p>
-                    <div
-                        style="margin-top: 1rem; background: rgba(255,255,255,0.7); padding: 1rem; border-radius: 8px; border: 1px solid var(--border);">
-                        <ul
-                            style="list-style: none; padding: 0; margin: 0; font-size: 0.95rem; color: var(--text-main); font-weight: 500;">
-                            <li style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">✅ Diag
-                                Tous Systèmes</li>
-                            <li style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">✅ Mises
-                                à jour à vie</li>
-                            <li style="margin-bottom: 0; display: flex; align-items: center; gap: 0.5rem;">🎁 Code Promo
-                                : <strong
-                                    style="color: var(--primary); font-family: var(--font-display); letter-spacing: 0.05em; background: rgba(59,130,246,0.1); padding: 2px 8px; border-radius: 4px;">VIPTHINKCAR</strong>
-                            </li>
-                        </ul>
+                <!-- Choix VAG -->
+                <div class="glass-panel animate-fade-in-up stagger-1" style="border: 2px solid rgba(59, 130, 246, 0.4); background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);">
+                    <span class="badge" style="background: var(--primary-gradient); color: white; border: none; box-shadow: 0 4px 10px rgba(59,130,246,0.3);">🏆 Le Choix VAG</span>
+                    <h3 style="font-size: 1.5rem; margin-top: 0.5rem;">Câble type HEX-V2</h3>
+                    <p>L'incontournable absolu pour le groupe VAG (VW, Audi, Skoda, Seat). Accès le plus profond possible aux modules, diagrammes, et au long coding.</p>
+                    
+                    <div class="pros-cons-grid">
+                        <div class="pros-list">
+                            <h4>Avantages</h4>
+                            <ul>
+                                <li>Codage illimité VAG</li>
+                                <li>Logiciel PC puissant</li>
+                            </ul>
+                        </div>
+                        <div class="cons-list">
+                            <h4>Inconvénients</h4>
+                            <ul>
+                                <li>Windows uniquement</li>
+                                <li>Ne fait que VAG</li>
+                            </ul>
+                        </div>
                     </div>
-                    <a href="guides/mucar-892bt-test-avis.html" class="cta-button"
-                        style="margin-top: 1.75rem; width: 100%; display: block;">Lire le Test & Acheter</a>
+                    <a href="guides/hex-v2-test-avis.html" class="cta-button" style="margin-top: 1.75rem; width: 100%; display: block;">Découvrir ce câble</a>
                 </div>
 
-                <!-- Pick 2: TKey 101 -->
-                <div class="guide-card animate-fade-in-up stagger-2">
-                    <span class="badge"
-                        style="background: #F1F5F9; color: var(--text-secondary); border-color: var(--border);">🔑
-                        Programmation Clés</span>
-                    <h3>Thinkcar TKey 101</h3>
-                    <p>La solution la plus simple pour cloner des clés et des transpondeurs sans connaissances
-                        techniques.</p>
-                    <footer style="border-top: none; padding-top: 0; margin-top: auto;">Lire le test complet</footer>
-                    <!-- Overlay link for the whole card -->
-                    <a href="guides/thinkcar-tkey-101-test-avis.html"
-                        style="position: absolute; top:0; left:0; width:100%; height:100%; z-index:10;"><span
-                            style="display:none;">Lire</span></a>
+                <!-- Choix Grand Public -->
+                <div class="glass-panel animate-fade-in-up stagger-2" style="border: 1px solid var(--border); background: #FFFFFF;">
+                    <span class="badge" style="background: #F1F5F9; color: var(--text-secondary); border-color: var(--border);">📊 Multimarque Grand Public</span>
+                    <h3 style="font-size: 1.5rem; margin-top: 0.5rem;">ThinkDiag 2 / Mucar</h3>
+                    <p>Le compromis idéal pour attaquer n'importe quelle marque sans exploser le budget, le tout depuis le smartphone Android ou iOS.</p>
+                    
+                    <div class="pros-cons-grid">
+                        <div class="pros-list">
+                            <h4>Avantages</h4>
+                            <ul>
+                                <li>Supporte CAN FD</li>
+                                <li>Bidirectionnel (Tests)</li>
+                            </ul>
+                        </div>
+                        <div class="cons-list">
+                            <h4>Inconvénients</h4>
+                            <ul>
+                                <li>Abonnement annuel</li>
+                                <li>Écran téléphone petit</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="guides/mucar-892bt-test-avis.html" class="cta-button" style="margin-top: 1.75rem; width: 100%; display: block; background: #0F172A;">Voir le test complet</a>
                 </div>
 
-                <!-- Pick 3: Mucar VO7 -->
-                <div class="guide-card animate-fade-in-up stagger-3">
-                    <span class="badge"
-                        style="background: #F1F5F9; color: var(--text-secondary); border-color: var(--border);">📱
-                        Tablette Garage</span>
-                    <h3>Mucar VO7</h3>
-                    <p>Une tablette 7 pouces robuste pour l'atelier. Idéal si vous détestez utiliser votre téléphone
-                        avec les mains sales.
-                    </p>
-                    <footer style="border-top: none; padding-top: 0; margin-top: auto;">Lire le test complet</footer>
-                    <!-- Overlay link for the whole card -->
-                    <a href="guides/mucar-vo7-test-avis.html"
-                        style="position: absolute; top:0; left:0; width:100%; height:100%; z-index:10;"><span
-                            style="display:none;">Lire</span></a>
+                <!-- Choix Pro -->
+                <div class="glass-panel animate-fade-in-up stagger-3" style="border: 1px solid var(--border); background: #FFFFFF;">
+                    <span class="badge" style="background: #FFFBEB; color: #B45309; border-color: #FEF3C7;">⚠️ Outil Avancé / Pro</span>
+                    <h3 style="font-size: 1.5rem; margin-top: 0.5rem;">Launch X431 Pro</h3>
+                    <p>Outil d'atelier bidirectionnel format tablette avec topologie réseau réelle. Destiné à ceux qui veulent faire du vrai métier sans compromis.</p>
+                    
+                    <div class="pros-cons-grid">
+                        <div class="pros-list">
+                            <h4>Avantages</h4>
+                            <ul>
+                                <li>Topologie réseau</li>
+                                <li>Codage en ligne</li>
+                            </ul>
+                        </div>
+                        <div class="cons-list">
+                            <h4>Inconvénients</h4>
+                            <ul>
+                                <li>Prix élevé (Pro)</li>
+                                <li>Batterie à charger</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="guides/launch-x431-pro-test.html" class="cta-button" style="margin-top: 1.75rem; width: 100%; display: block; background: #0F172A;">Voir l'outil ultime</a>
                 </div>
-
-                <!-- Pick 4: Launch Creader 3001 -->
-                <div class="guide-card animate-fade-in-up stagger-4">
-                    <span class="badge"
-                        style="background: #F1F5F9; color: var(--text-secondary); border-color: var(--border);">🛠️
-                        Top Budget</span>
-                    <h3>Launch Creader 3001</h3>
-                    <p>L'outil filaire Plug & Play parfait pour lire et effacer les défauts moteur standards et vérifier
-                        le statut I/M.</p>
-                    <footer style="border-top: none; padding-top: 0; margin-top: auto;">Lire le test complet</footer>
-                    <a href="guides/launch-creader-3001-test-avis.html"
-                        style="position: absolute; top:0; left:0; width:100%; height:100%; z-index:10;"><span
-                            style="display:none;">Lire</span></a>
-                </div>
-
             </div>
         </section>
 
         <!-- LATEST GUIDES -->
         <section id="latest-guides" style="margin-top: 6rem;" class="animate-fade-in-up">
-            <h2 style="font-size: 1.75rem; color: var(--text-main); margin-bottom: 2rem;">Derniers Guides Publiés
-            </h2>
+            <h2 style="font-size: 1.75rem; color: var(--text-main); margin-bottom: 2rem;">Derniers Guides Publiés</h2>
 
             <div class="latest-guides-list" style="display: flex; flex-direction: column;">
-
-                <!-- Nouvelle Étude de cas : ECU Eau -->
                 <a href="guides/sauvetage-calculateur-edc16cp34-audi-q7-eau.html" class="animate-fade-in-up stagger-1" style="position: relative;">
                     <span style="font-size: 0.75rem; color: #ef4444; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; background: rgba(239, 68, 68, 0.1); padding: 4px 8px; border-radius: 4px; display: inline-block; margin-bottom: 0.5rem;">Étude de Cas (Calculateur)</span>
                     <h3 style="margin: 0.25rem 0 0.5rem; font-size: 1.35rem; color: var(--text-main);">Sauvetage ECU Audi Q7 (EDC16CP34) : Noyade & Clonage Complet</h3>
-                    <p style="margin: 0; color: var(--text-secondary); font-size: 1.05rem;">Infiltration d'eau dans la baie de pare-brise ? Découvrez le protocole de sauvetage complet extrayant la donnée via micro-soudure BDM d'un ECU oxydé.</p>
+                    <p style="margin: 0; color: var(--text-secondary); font-size: 1.05rem;">Infiltration d'eau dans la baie de pare-brise ? Découvrez le protocole de sauvetage complet extrayant la donnée via micro-soudure BDM.</p>
                 </a>
-
-                <!-- Nouvelle Étude de cas : EEPROM -->
-                <a href="guides/clonage-compteur-dacia-duster-eeprom.html" class="animate-fade-in-up stagger-2" style="position: relative;">
-                    <span style="font-size: 0.75rem; color: #10b981; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; background: rgba(16, 185, 129, 0.1); padding: 4px 8px; border-radius: 4px; display: inline-block; margin-bottom: 0.5rem;">Étude de Cas</span>
-                    <h3 style="margin: 0.25rem 0 0.5rem; font-size: 1.35rem; color: var(--text-main);">Clonage Compteur Dacia Duster : Remplacement & EEPROM 93C56</h3>
-                    <p style="margin: 0; color: var(--text-secondary); font-size: 1.05rem;">Découvrez notre procédure stricte de récupération des données et du kilométrage suite à la panne classique des jauges.</p>
-                </a>
-
-                <!-- Article Sniper 0 : Swap ABS -->
+                
                 <a href="guides/swap-abs-mk60ec1-vag.html" class="animate-fade-in-up stagger-2" style="position: relative;">
                     <span style="font-size: 0.75rem; color: #8b5cf6; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; background: rgba(139, 92, 246, 0.1); padding: 4px 8px; border-radius: 4px; display: inline-block; margin-bottom: 0.5rem;">Expertise Codage</span>
                     <h3 style="margin: 0.25rem 0 0.5rem; font-size: 1.35rem; color: var(--text-main);">Swap ABS MK60EC1 (VAG) : Comment vaincre le refus de codage (Erreur 31)</h3>
                     <p style="margin: 0; color: var(--text-secondary); font-size: 1.05rem;">Le remplacement d'un bloc ABS sur plateforme PQ35 se solde souvent par un rejet silencieux du code. Voici la méthode ultime pour l'accepter.</p>
                 </a>
-
-                <!-- Article Sniper 1 : Budget -->
-                <a href="guides/meilleure-valise-diagnostic-pas-chere-100-euros.html"
-                    class="animate-fade-in-up stagger-2" style="position: relative;">
-                    <span
-                        style="font-size: 0.75rem; color: var(--success); font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; background: rgba(16, 185, 129, 0.1); padding: 4px 8px; border-radius: 4px; display: inline-block; margin-bottom: 0.5rem;">Petit
-                        Budget</span>
-                    <h3 style="margin: 0.25rem 0 0.5rem; font-size: 1.35rem; color: var(--text-main);">Quelle est la
-                        meilleure valise pas chère en 2026 ?</h3>
-                    <p style="margin: 0; color: var(--text-secondary); font-size: 1.05rem;">Découvrez notre sélection
-                        des meilleures valises de diagnostic automobile à moins de 100€.
-                    </p>
+                 
+                 <a href="guides/meilleure-valise-diagnostic-codage-ecu-bi-directionnel.html" class="animate-fade-in-up stagger-3" style="position: relative;">
+                    <span style="font-size: 0.75rem; color: #10b981; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; background: rgba(16, 185, 129, 0.1); padding: 4px 8px; border-radius: 4px; display: inline-block; margin-bottom: 0.5rem;">Codage Expert</span>
+                    <h3 style="margin: 0.25rem 0 0.5rem; font-size: 1.35rem; color: var(--text-main);">Meilleure Valise Bi-Directionnelle & Codage ECU</h3>
+                    <p style="margin: 0; color: var(--text-secondary); font-size: 1.05rem;">Vous voulez activer des options cachées ? Il vous faut impérativement une valise bidirectionnelle (Tests Actifs).</p>
                 </a>
-
-                <!-- Article Sniper 2 : Codage -->
-                <a href="guides/meilleure-valise-diagnostic-codage-ecu-bi-directionnel.html"
-                    class="animate-fade-in-up stagger-2" style="position: relative;">
-                    <span
-                        style="font-size: 0.75rem; color: #8b5cf6; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; background: rgba(139, 92, 246, 0.1); padding: 4px 8px; border-radius: 4px; display: inline-block; margin-bottom: 0.5rem;">Codage
-                        Expert</span>
-                    <h3 style="margin: 0.25rem 0 0.5rem; font-size: 1.35rem; color: var(--text-main);">Meilleure Valise
-                        Bi-Directionnelle & Codage ECU</h3>
-                    <p style="margin: 0; color: var(--text-secondary); font-size: 1.05rem;">Vous voulez activer des
-                        options cachées ? Il vous faut une valise bi-directionnelle (Tests Actifs).</p>
+                 
+                <a href="guides/clonage-compteur-dacia-duster-eeprom.html" class="animate-fade-in-up stagger-4" style="position: relative;">
+                    <span style="font-size: 0.75rem; color: #F59E0B; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; background: rgba(245, 158, 11, 0.1); padding: 4px 8px; border-radius: 4px; display: inline-block; margin-bottom: 0.5rem;">Soudure & EEPROM</span>
+                    <h3 style="margin: 0.25rem 0 0.5rem; font-size: 1.35rem; color: var(--text-main);">Clonage Compteur Dacia Duster : Remplacement & EEPROM 93C56</h3>
+                    <p style="margin: 0; color: var(--text-secondary); font-size: 1.05rem;">Découvrez notre procédure stricte de récupération des données et du kilométrage suite à la panne classique des jauges.</p>
                 </a>
-
-                <!-- Article Sniper 3 : Occasion -->
-                <a href="guides/valise-diagnostic-voiture-occasion.html" class="animate-fade-in-up stagger-3"
-                    style="position: relative;">
-                    <span
-                        style="font-size: 0.75rem; color: var(--warning); font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; background: rgba(245, 158, 11, 0.1); padding: 4px 8px; border-radius: 4px; display: inline-block; margin-bottom: 0.5rem;">Anti-Arnaque</span>
-                    <h3 style="margin: 0.25rem 0 0.5rem; font-size: 1.35rem; color: var(--text-main);">Achat voiture
-                        d'occasion : Éviter les compteurs trafiqués</h3>
-                    <p style="margin: 0; color: var(--text-secondary); font-size: 1.05rem;">5 points critiques à
-                        vérifier avec votre valise pour démasquer une fraude (heures moteur, ABS, airbag).</p>
-                </a>
-
-                <!-- Article Sniper 4 : Éthanol -->
-                <a href="guides/valise-diagnostic-ethanol-e85-ltft.html" class="animate-fade-in-up stagger-4"
-                    style="position: relative;">
-                    <span
-                        style="font-size: 0.75rem; color: var(--success); font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; background: rgba(16, 185, 129, 0.1); padding: 4px 8px; border-radius: 4px; display: inline-block; margin-bottom: 0.5rem;">Eco-Tuning</span>
-                    <h3 style="margin: 0.25rem 0 0.5rem; font-size: 1.35rem; color: var(--text-main);">Conversion
-                        Éthanol E85 : Surveillez vos LTFT</h3>
-                    <p style="margin: 0; color: var(--text-secondary); font-size: 1.05rem;">Quelles valises permettent
-                        réellement de vérifier vos Fuel Trims et de rouler en toute sécurité à l'E85.</p>
-                </a>
-
-                <!-- Article Sniper 5 : Urgence Diag -->
-                <a href="guides/voyant-moteur-allume-que-faire.html" class="animate-fade-in-up stagger-5"
-                    style="position: relative;">
-                    <span
-                        style="font-size: 0.75rem; color: #8b5cf6; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; background: rgba(139, 92, 246, 0.1); padding: 4px 8px; border-radius: 4px; display: inline-block; margin-bottom: 0.5rem;">Urgence
-                        Diag</span>
-                    <h3 style="margin: 0.25rem 0 0.5rem; font-size: 1.35rem; color: var(--text-main);">Voyant Moteur
-                        Allumé : Procédure étape par étape</h3>
-                    <p style="margin: 0; color: var(--text-secondary); font-size: 1.05rem;">Comment diagnostiquer la
-                        panne soi-même sans passer par la case garage avec le bon lecteur OBD2.</p>
-                </a>
-
             </div>
         </section>
 
-        <!-- Lead Magnet Inline Inject -->
+        <!-- Lead Magnet Inject - Capture Email -->
         <section id="newsletter-hub" class="animate-fade-in-up" style="margin-top: 4rem;">
-            <div id="lead-magnet-root" data-mode="inline"></div>
+            <div class="lead-magnet-box">
+                <h2 style="margin-top: 0; font-size: 2.25rem; font-family: var(--font-display); letter-spacing: -0.02em;">Ne briquez plus jamais un calculateur.</h2>
+                <p style="font-size: 1.15rem; opacity: 0.9; max-width: 600px; margin: 1rem auto 0 auto;">Téléchargez mon guide gratuit : <strong>Les 5 erreurs fatales à ne jamais commettre lors d'un codage long VCDS</strong> (et comment sauver un module d'airbag bloqué).</p>
+                
+                <form class="lead-magnet-form" onsubmit="event.preventDefault(); alert('Merci ! Le guide arrive dans votre boite mail.');">
+                    <input type="text" placeholder="Votre Prénom" class="lead-magnet-input" required>
+                    <input type="email" placeholder="Votre Email" class="lead-magnet-input" required>
+                    <button type="submit" class="cta-button" style="padding: 1rem 2rem; border-radius: 12px; margin: 0; white-space: nowrap;">Je télécharge</button>
+                </form>
+            </div>
         </section>
 
     </main>
