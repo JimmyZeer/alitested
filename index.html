@@ -118,7 +118,7 @@
             </button>
 
             <div class="nav-links">
-                <a href="#silos">Guides</a>
+                <a href="#latest-guides">Guides</a>
                 <a href="codes/index.html">Codes défauts</a>
                 <a href="prises-obd2/index.html">Où brancher ?</a>
                 <a href="marques/index.html">Marques</a>
@@ -147,8 +147,10 @@
         });
     </script>
     <section class="hero hero-lab">
-        <div class="container hero-grid animate-fade-in-up">
+        <div class="hero-lab-media" aria-hidden="true"></div>
+        <div class="container hero-showcase animate-fade-in-up">
             <div class="hero-copy">
+                <span class="hero-kicker">Expert diagnostic & électronique auto</span>
                 <h1 class="animate-fade-in-up stagger-1">Tests terrain de valises diagnostic, sans promesse magique.</h1>
                 <p class="lead animate-fade-in-up stagger-2">AliTested décortique les outils OBD, le codage ECU et les pièges AliExpress pour acheter utile, réparer proprement et éviter les calculateurs briqués.</p>
 
@@ -163,26 +165,182 @@
                     <span>Limites expliquées</span>
                 </div>
             </div>
-
-            <div class="hero-bench" aria-label="Banc de diagnostic automobile">
-                <div class="hero-bench-main">
-                    <img src="media/test-mucar-892bt-obd2.png" alt="Valise diagnostic Mucar 892BT testée sur AliTested">
-                </div>
-                <div class="bench-note bench-note-top">
-                    <strong>Mucar 892BT</strong>
-                    <span>requête qui monte dans GSC</span>
-                </div>
-                <div class="bench-note bench-note-bottom">
-                    <strong>Verdict</strong>
-                    <span>usage réel, limites et alternatives</span>
-                </div>
-            </div>
         </div>
     </section>
 
     <main>
-        <!-- SÉLECTEUR DE VALISE INTERACTIF (React Widget) -->
-        <section id="selector-widget" class="section-band section-selector">
+        <section id="selector-widget" class="container recommendation-wrap">
+            <div class="recommendation-panel">
+                <div class="recommendation-main">
+                    <h2>Quel outil pour votre voiture ?</h2>
+                    <p>Répondez à 4 questions, on vous recommande l'outil adapté.</p>
+                    <form class="recommendation-form" onsubmit="event.preventDefault(); window.location.href='guides/guide-choisir-valise-diagnostic-2026.html';">
+                        <label>
+                            <span>1. Marque principale</span>
+                            <select aria-label="Marque principale">
+                                <option>Choisissez</option>
+                                <option>Peugeot / Citroën</option>
+                                <option>Renault / Dacia</option>
+                                <option>Volkswagen / Audi</option>
+                                <option>BMW / Mini</option>
+                            </select>
+                        </label>
+                        <label>
+                            <span>2. Année du véhicule</span>
+                            <select aria-label="Année du véhicule">
+                                <option>Sélectionnez</option>
+                                <option>Avant 2010</option>
+                                <option>2010 - 2017</option>
+                                <option>2018 et plus</option>
+                            </select>
+                        </label>
+                        <label>
+                            <span>3. Votre usage</span>
+                            <select aria-label="Votre usage">
+                                <option>Sélectionnez</option>
+                                <option>Lecture défauts</option>
+                                <option>Reset entretien</option>
+                                <option>Bidirectionnel</option>
+                                <option>Codage / atelier</option>
+                            </select>
+                        </label>
+                        <label>
+                            <span>4. Budget</span>
+                            <select aria-label="Budget">
+                                <option>Sélectionnez</option>
+                                <option>Moins de 100€</option>
+                                <option>100€ - 300€</option>
+                                <option>300€ et plus</option>
+                            </select>
+                        </label>
+                    </form>
+                    <a class="recommendation-help" href="guides/guide-choix-valise-obd2.html">Besoin d'aide ? Voir notre guide choix de valise</a>
+                </div>
+                <aside class="recommendation-side">
+                    <div class="side-icon">⌁</div>
+                    <h3>Obtenez 2 à 3 recommandations</h3>
+                    <p>Personnalisées en 30 secondes.</p>
+                    <a href="guides/guide-choisir-valise-diagnostic-2026.html" class="cta-button">Obtenir ma sélection</a>
+                </aside>
+            </div>
+        </section>
+
+        <section id="top-picks" class="container section-block">
+            <div class="section-heading section-heading-row">
+                <div>
+                    <h2>Top picks - Les choix de l'expert</h2>
+                </div>
+                <a href="comparatifs/index.html" class="inline-link">Voir tous les comparatifs</a>
+            </div>
+
+            <div class="product-picks">
+                <article class="product-card">
+                    <span class="product-badge green">Meilleur rapport qualité/prix</span>
+                    <img src="media/test-mucar-892bt-obd2.png" alt="Mucar 892BT">
+                    <h3>Mucar 892BT</h3>
+                    <p>Polyvalence & mises à jour gratuites</p>
+                    <ul class="check-list">
+                        <li>Tous systèmes + bi-directionnel</li>
+                        <li>CAN-FD natif, FCA AutoAuth</li>
+                        <li>Mises à jour gratuites à vie</li>
+                    </ul>
+                    <div class="mini-grid">
+                        <div><strong>Points forts</strong><span>Excellent rapport qualité/prix</span><span>Aucune frais caché</span></div>
+                        <div><strong>Limites</strong><span>Codage en ligne limité</span><span>Fonctions avancées ABS restreintes</span></div>
+                    </div>
+                    <div class="product-footer">
+                        <div><strong>239,00 €</strong><span>Livraison DE 2-7 jours</span></div>
+                        <a href="guides/mucar-892bt-test-avis.html" class="cta-button">Voir le test complet</a>
+                    </div>
+                    <small>Lien affilié AliExpress</small>
+                </article>
+
+                <article class="product-card">
+                    <span class="product-badge blue">Le plus complet</span>
+                    <img src="media/thinkcar-689bt-test.png" alt="Thinkcar Thinkscan 689BT">
+                    <h3>Thinkcar Thinkscan 689BT</h3>
+                    <p>Puissance & fonctions avancées</p>
+                    <ul class="check-list">
+                        <li>Bi-directionnel étendu</li>
+                        <li>Codage en ligne & topologie réseau</li>
+                        <li>FCA AutoAuth + CAN-FD</li>
+                    </ul>
+                    <div class="mini-grid">
+                        <div><strong>Points forts</strong><span>Fonctions avancées</span><span>Usage semi-pro/pro</span></div>
+                        <div><strong>Limites</strong><span>Abonnement codage</span><span>Prix plus élevé</span></div>
+                    </div>
+                    <div class="product-footer">
+                        <div><strong>399,00 €</strong><span>Livraison DE 2-7 jours</span></div>
+                        <a href="guides/thinkcar-thinkscan-689bt-test-avis.html" class="cta-button">Voir le test complet</a>
+                    </div>
+                    <small>Lien affilié AliExpress</small>
+                </article>
+
+                <article class="product-card">
+                    <span class="product-badge green">Budget malin</span>
+                    <img src="media/guide-choix-obd2.jpg" alt="Launch Creader 3001">
+                    <h3>Launch Creader 3001</h3>
+                    <p>Simple, efficace et ultra abordable</p>
+                    <ul class="check-list">
+                        <li>Lecture / effacement DTC</li>
+                        <li>4 systèmes principaux</li>
+                        <li>Compact et robuste</li>
+                    </ul>
+                    <div class="mini-grid">
+                        <div><strong>Points forts</strong><span>Prix imbattable</span><span>Très simple à utiliser</span></div>
+                        <div><strong>Limites</strong><span>Pas de bi-directionnel</span><span>Peu de fonctions avancées</span></div>
+                    </div>
+                    <div class="product-footer">
+                        <div><strong>19,90 €</strong><span>Livraison UE 5-7 jours</span></div>
+                        <a href="guides/launch-creader-3001-test-avis.html" class="cta-button">Voir le test complet</a>
+                    </div>
+                    <small>Lien affilié AliExpress</small>
+                </article>
+            </div>
+        </section>
+
+        <section id="latest-guides" class="container section-block blog-columns-section">
+            <div class="section-heading section-heading-row">
+                <div>
+                    <h2>Derniers articles du blog</h2>
+                </div>
+                <a href="guides/comparatif-valise-diagnostic-aliexpress.html" class="inline-link">Tous les articles</a>
+            </div>
+
+            <div class="blog-columns">
+                <div class="blog-column">
+                    <h3>Tests</h3>
+                    <a href="guides/mucar-892bt-test-avis.html"><img src="media/test-mucar-892bt-obd2.png" alt=""><span>Test Mucar 892BT : la meilleure valise sans abonnement ?</span><small>20 mai 2026</small></a>
+                    <a href="guides/thinkcar-thinkdiag-2-test-avis.html"><img src="media/test_thinkdiag_2_obd2.png" alt=""><span>Test Thinkcar Thinkdiag 2 : petit dongle, grandes capacités</span><small>17 mai 2026</small></a>
+                    <a href="guides/launch-creader-3001-test-avis.html"><img src="media/guide-choix-obd2.jpg" alt=""><span>Test Launch Creader 3001 : le lecteur de code à 20€</span><small>15 mai 2026</small></a>
+                    <a class="column-link" href="guides/guide-choix-valise-obd2.html">Voir tous les tests</a>
+                </div>
+                <div class="blog-column">
+                    <h3>Guides achat</h3>
+                    <a href="guides/quelle-valise-diagnostic-aliexpress-choisir-2026.html"><img src="media/valise-diagnostic-aliexpress-2026.png" alt=""><span>Quelle valise diagnostic AliExpress choisir en 2026 ?</span><small>18 mai 2026</small></a>
+                    <a href="guides/valise-diagnostic-aliexpress-psa-renault-vag.html"><img src="media/guide-psa-renault-vag-header.png" alt=""><span>Valise compatible PSA, Renault, VAG : le guide complet</span><small>12 mai 2026</small></a>
+                    <a href="guides/clones-aliexpress-danger-valise-diagnostic.html"><img src="media/clone-calculator-warning.png" alt=""><span>Clones AliExpress : pourquoi ils peuvent griller votre ECU</span><small>8 mai 2026</small></a>
+                    <a class="column-link" href="guides/comparatif-valise-diagnostic-aliexpress.html">Tous les guides d'achat</a>
+                </div>
+                <div class="blog-column">
+                    <h3>Cas atelier</h3>
+                    <a href="guides/swap-abs-mk60ec1-vag.html"><img src="media/swap-abs-mk60ec1.png" alt=""><span>Swap ABS MK60EC1 VAG : guide complet de codage</span><small>16 mai 2026</small></a>
+                    <a href="guides/code-defaut-p20e8-solution.html"><img src="media/p20e8_adblue_error_dashboard_1771168924118.png" alt=""><span>Code défaut P20E8 AdBlue : causes et solutions</span><small>11 mai 2026</small></a>
+                    <a href="guides/sauvetage-calculateur-edc16cp34-audi-q7-eau.html"><img src="media/audi-q7-edc16cp34-water.png" alt=""><span>Calculateur EDC16CP34 noyé : sauvetage d'un Audi Q7</span><small>6 mai 2026</small></a>
+                    <a class="column-link" href="guides/sauvetage-calculateur-edc16cp34-audi-q7-eau.html">Tous les cas atelier</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="container proof-strip">
+            <div><strong>Tests réels en atelier</strong><span>Chaque outil est vérifié sur des véhicules réels.</span></div>
+            <div><strong>Transparence totale</strong><span>Les liens affiliés sont indiqués. Vous payez le même prix.</span></div>
+            <div><strong>Limites assumées</strong><span>On ne vend pas du rêve : on dit ce qui ne va pas.</span></div>
+            <div><strong>Communauté & entraide</strong><span>Partagez vos questions, échanges et expériences.</span></div>
+        </section>
+
+        <!-- Ancien widget React conservé comme ressource, non affiché sur l'accueil -->
+        <section class="legacy-home-section" aria-hidden="true">
             <div class="container">
                 <div class="section-heading">
                     <p>Choisir sans suracheter</p>
@@ -201,9 +359,7 @@
                 </div>
             </div>
         </section>
-
-        <!-- SILOS: L'entonnoir de navigation -->
-        <section id="silos" class="container section-block">
+        <section id="silos" class="container section-block legacy-home-section" aria-hidden="true">
             <div class="section-heading">
                 <p>Parcours de lecture</p>
                 <h2>Entrer par le problème, pas par la fiche produit.</h2>
@@ -249,7 +405,7 @@
         </section>
 
         <!-- TOP PICKS SECTION: Vitrine / Monétisation -->
-        <section id="top-picks" class="section-band">
+        <section class="section-band legacy-home-section" aria-hidden="true">
             <div class="container">
             <div class="section-heading section-heading-row">
                 <div>
@@ -339,7 +495,7 @@
         </section>
 
         <!-- LATEST GUIDES -->
-        <section id="latest-guides" class="container section-block animate-fade-in-up">
+        <section class="container section-block animate-fade-in-up legacy-home-section" aria-hidden="true">
             <div class="section-heading section-heading-row">
                 <div>
                     <p>Blog atelier</p>
