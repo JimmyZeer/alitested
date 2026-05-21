@@ -2294,6 +2294,236 @@ article img {
     border-radius: 8px;
 }
 
+/* Premium article template */
+.article-premium-layout {
+    display: grid;
+    grid-template-columns: 230px minmax(0, 760px);
+    gap: 2.5rem;
+    align-items: start;
+    padding-top: 2.5rem;
+}
+
+.article-premium-content {
+    min-width: 0;
+    padding-top: 0;
+}
+
+.article-toc {
+    position: sticky;
+    top: 5.5rem;
+    display: grid;
+    gap: 0.25rem;
+    padding: 1rem;
+    background: #FFFFFF;
+    border: 1px solid #D8DEE8;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(17, 24, 39, 0.05);
+}
+
+.article-toc strong {
+    margin-bottom: 0.4rem;
+    color: #111827;
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+}
+
+.article-toc a {
+    padding: 0.48rem 0.55rem;
+    border-radius: 6px;
+    color: #4B5563;
+    font-size: 0.88rem;
+    font-weight: 800;
+}
+
+.article-toc a:hover {
+    color: #0F766E;
+    background: #ECFDF5;
+}
+
+.article-top-decision,
+.product-compact,
+.pros-cons-premium {
+    margin-bottom: 1.5rem;
+    background: #FFFFFF;
+    border: 1px solid #D8DEE8;
+    border-radius: 8px;
+    box-shadow: 0 12px 34px rgba(17, 24, 39, 0.07);
+}
+
+.article-top-decision {
+    display: grid;
+    grid-template-columns: 132px minmax(0, 1fr);
+    gap: 1.25rem;
+    align-items: center;
+    padding: 1.25rem;
+    border-left: 5px solid #0F766E;
+}
+
+.article-top-decision h2,
+.product-compact h2 {
+    margin: 0 0 0.5rem;
+}
+
+.article-top-decision p {
+    margin: 0;
+}
+
+.score-card {
+    display: grid;
+    place-items: center;
+    align-content: center;
+    min-height: 132px;
+    border-radius: 8px;
+    background: #111827;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.score-card strong {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    line-height: 1;
+}
+
+.score-card span {
+    color: rgba(255, 255, 255, 0.72);
+    font-weight: 800;
+}
+
+.score-label {
+    color: #FFFFFF !important;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+}
+
+.article-verdict-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-top: 0.9rem;
+}
+
+.article-verdict-tags span,
+.product-compact-row span {
+    display: inline-flex;
+    padding: 0.35rem 0.55rem;
+    border-radius: 999px;
+    background: #ECFDF5;
+    color: #0F766E;
+    font-size: 0.78rem;
+    font-weight: 900;
+}
+
+.product-compact {
+    display: grid;
+    grid-template-columns: 168px minmax(0, 1fr);
+    gap: 1.15rem;
+    padding: 1.15rem;
+}
+
+.product-compact img {
+    width: 100%;
+    height: 100%;
+    min-height: 190px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.product-compact p {
+    margin-bottom: 0.9rem;
+}
+
+.product-compact-label {
+    display: inline-flex;
+    margin-bottom: 0.5rem;
+    color: #2563EB;
+    font-size: 0.72rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.product-compact-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-bottom: 1rem;
+}
+
+.pros-cons-premium {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+}
+
+.pros-cons-premium div {
+    padding: 1.1rem;
+}
+
+.pros-cons-premium div:first-child {
+    background: #F0FDF4;
+    border-right: 1px solid #D8DEE8;
+}
+
+.pros-cons-premium div:last-child {
+    background: #FFF7ED;
+}
+
+.pros-cons-premium h3 {
+    margin-top: 0;
+    font-size: 1.05rem;
+}
+
+.pros-cons-premium ul {
+    margin: 0;
+    padding-left: 1.1rem;
+}
+
+.pros-cons-premium li {
+    margin-bottom: 0.35rem;
+}
+
+.faq-item {
+    padding: 1rem 0;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.faq-item h3 {
+    margin-top: 0;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 980px) {
+    .article-premium-layout {
+        display: block;
+    }
+
+    .article-toc {
+        position: static;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .article-toc {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .article-top-decision,
+    .product-compact,
+    .pros-cons-premium {
+        grid-template-columns: 1fr;
+    }
+
+    .score-card {
+        min-height: 112px;
+    }
+
+    .product-compact img {
+        min-height: 220px;
+    }
+}
+
 @media (max-width: 920px) {
     .hero-grid {
         grid-template-columns: 1fr;
