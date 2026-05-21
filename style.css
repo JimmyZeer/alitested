@@ -1360,6 +1360,140 @@ footer.main-footer p {
     }
 }
 
+/* Clean affiliate monetization blocks */
+.affiliate-panel,
+.choice-table,
+.buying-fit {
+    margin: 2rem 0;
+    background: #FFFFFF;
+    border: 1px solid #D8DEE8;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(17, 24, 39, 0.06);
+}
+
+.affiliate-panel {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 1.25rem;
+    align-items: center;
+    padding: 1.25rem;
+}
+
+.affiliate-panel h3,
+.buying-fit h3 {
+    margin: 0 0 0.45rem;
+    font-size: 1.25rem;
+}
+
+.affiliate-panel p,
+.affiliate-panel small {
+    margin: 0;
+}
+
+.affiliate-panel small,
+.affiliate-note,
+.product-card .affiliate-note {
+    display: block;
+    color: #6B7280;
+    font-size: 0.78rem;
+    line-height: 1.45;
+}
+
+.affiliate-price {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-top: 0.85rem;
+}
+
+.affiliate-price span {
+    display: inline-flex;
+    padding: 0.34rem 0.56rem;
+    border: 1px solid #D8DEE8;
+    border-radius: 999px;
+    background: #F8FAFC;
+    color: #374151;
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+
+.affiliate-panel .cta-button {
+    white-space: nowrap;
+}
+
+.buying-fit {
+    padding: 1.25rem;
+}
+
+.fit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.fit-box {
+    padding: 1rem;
+    border-radius: 8px;
+    background: #F8FAFC;
+    border: 1px solid #E5E7EB;
+}
+
+.fit-box strong {
+    display: block;
+    margin-bottom: 0.55rem;
+    color: #111827;
+}
+
+.fit-box ul {
+    margin: 0;
+    padding-left: 1.1rem;
+}
+
+.fit-box li {
+    margin-bottom: 0.35rem;
+    color: #4B5563;
+}
+
+.choice-table {
+    overflow: hidden;
+}
+
+.choice-table table {
+    margin: 0;
+    border: 0;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.choice-table caption {
+    padding: 1.1rem 1.25rem;
+    text-align: left;
+    color: #111827;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.35rem;
+}
+
+.product-card .affiliate-note {
+    margin-top: 0.65rem;
+    padding-top: 0.65rem;
+    border-top: 1px solid #E5E7EB;
+}
+
+@media (max-width: 760px) {
+    .affiliate-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .affiliate-panel .cta-button {
+        width: 100%;
+    }
+
+    .fit-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Blog Hub */
 .blog-hub-hero {
     background:
