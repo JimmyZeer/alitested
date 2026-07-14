@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "audit": "node audit.js"
+  },
   "dependencies": {
     "node-html-parser": "^7.0.2"
   }
