@@ -1382,6 +1382,10 @@ footer.main-footer p {
     padding: 1.25rem;
 }
 
+.affiliate-panel > * {
+    min-width: 0;
+}
+
 .affiliate-panel h3,
 .buying-fit h3 {
     margin: 0 0 0.45rem;
@@ -1624,10 +1628,12 @@ footer.main-footer p {
 @media (max-width: 760px) {
     .affiliate-panel {
         grid-template-columns: 1fr;
+        overflow: hidden;
     }
 
     .affiliate-panel .cta-button {
         width: 100%;
+        white-space: normal;
     }
 
     .fit-grid {
@@ -1669,6 +1675,50 @@ footer.main-footer p {
     .use-case-actions .cta-button,
     .use-case-actions .btn-ghost {
         width: 100%;
+    }
+
+    .use-case-decision-table {
+        padding-bottom: 0.2rem;
+    }
+
+    .use-case-decision-table table,
+    .use-case-decision-table tbody,
+    .use-case-decision-table tr,
+    .use-case-decision-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .use-case-decision-table thead {
+        display: none;
+    }
+
+    .use-case-decision-table tr {
+        margin: 0 0.9rem 0.9rem;
+        border: 1px solid #E5E7EB;
+        border-radius: 8px;
+        background: #FFFFFF;
+        overflow: hidden;
+    }
+
+    .use-case-decision-table td {
+        padding: 0.85rem 0.95rem;
+        border-bottom: 1px solid #EEF2F7;
+        white-space: normal;
+    }
+
+    .use-case-decision-table td:last-child {
+        border-bottom: 0;
+    }
+
+    .use-case-decision-table td::before {
+        content: attr(data-label);
+        display: block;
+        margin-bottom: 0.25rem;
+        color: #6B7280;
+        font-size: 0.72rem;
+        font-weight: 900;
+        text-transform: uppercase;
     }
 }
 
